@@ -4,13 +4,6 @@
 <a href="songs/create">Create</a>
 <div class="container mx-auto pl-20">
 <div class="">
-    <thead>
-      <tr>
-        <th class="px-4 py-2">Name</th>
-        <th class="px-4 py-2">thumbnail</th>
-        <th class="px-4 py-2">Length</th>
-      </tr>
-    </thead>
     <tbody>
         @foreach ($songs as $song)
             <tr>
@@ -19,7 +12,7 @@
                 <td class="border px-4 py-2">{{$song->length}}</td>
                 <div class="border px-4 py-2">
                     <audio controls>
-                        <source src="{{$song->mp3_link}} type="audio/mpeg">
+                        <source src="{{$song->mp3_link}}" type="audio/mpeg">
                     Your browser does not support the audio element.
                     </audio>
                 </div> 
