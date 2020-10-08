@@ -16,8 +16,14 @@ class Song extends Model
         
     ];
 
+    protected $appends = ['permalink'];
     public function playlists()
     {
         return $this->belongsToMany('App\Models\Playlist');
+    }
+
+    public function getPermalinkAttribute()
+    {
+        return route('songs.show', $this);
     }
 }

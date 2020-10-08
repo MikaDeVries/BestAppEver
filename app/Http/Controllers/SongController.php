@@ -7,6 +7,8 @@ use Illuminate\Http\Request;
 use App\Http\Controllers\Controller;
 use Illuminate\Support\Facades\DB;
 
+use Inertia;
+
 class SongController extends Controller
 {
     /**
@@ -17,10 +19,12 @@ class SongController extends Controller
     public function index()
     {
         $songs = Song::all();
-        $users = DB::table('songs')->get();
 
-        return view('songs.index', ['songs' => $songs]);
+        // return view('songs.index', ['songs' => $songs]);
 
+        return Inertia\Inertia::render('Songs/Index', [
+            'songs' => $songs
+        ]);
        
     }
 
@@ -68,7 +72,10 @@ class SongController extends Controller
      */
     public function show(Song $song)
     {
-        return view('songs.show', ['song' => $song]);
+        // return view('songs.show', ['song' => $song]);
+        return Inertia\Inertia::render('Songs/Show', [
+            'song' => $song
+        ]);
 
         // return view('songs.show', compact('songs'));
     }
@@ -81,7 +88,9 @@ class SongController extends Controller
      */
     public function edit(Song $song)
     {
-        return view('songs.edit', ['song' => $song]);
+        return Inertia\Inertia::render('Songs/Edit', [
+            'song' => $song
+        ]);
 
     }
 

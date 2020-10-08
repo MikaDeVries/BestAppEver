@@ -1,57 +1,24 @@
 <!DOCTYPE html>
 <html lang="{{ str_replace('_', '-', app()->getLocale()) }}">
+    <head>
+        <meta charset="utf-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1">
+        <meta name="csrf-token" content="{{ csrf_token() }}">
 
-<head>
-   <meta charset="utf-8">
-   <meta http-equiv="X-UA-Compatible" content="IE=edge">
-   <meta name="viewport" content="width=device-width, initial-scale=1">
-   <meta name="description" content="Non dynamic content">
+        <title>{{ config('app.name', 'Laravel') }}</title>
 
-   <title>Non dynamic title</title>
+        <!-- Fonts -->
+        <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Nunito:wght@400;600;700&display=swap">
 
-   <!-- Styles -->
-   <link href="{{ asset('css/app.css') }}" rel="stylesheet">
+        <!-- Styles -->
+        <link rel="stylesheet" href="{{ mix('css/app.css') }}">
 
-</head>
-
-<body>
-   <div id="app">
-
-      <!-- Navbar -->
-      @include('includes.navbar')
-
-      <!-- Hero -->
-
-      <div class="container">
-
-         <div class="row">
-
-            <div class="col-lg-9">
-
-               <!-- Main Content -->
-               @yield('content')
-					
-            </div>
-
-            <div class="col-lg-3">
-
-               <!-- Sidebar -->
-               @section('sidebar')
-                  @include('includes.sidebar')
-                  @show
-            </div>
-
-         </div>
-
-      </div>
-
-   </div>
-
-   <!-- Footer -->
-
-   <!-- Scripts -->
-   <script src="{{ asset('js/app.js') }}"></script>
-
-</body>
-
+        <!-- Scripts -->
+        @routes
+        <script src="https://cdnjs.cloudflare.com/ajax/libs/moment.js/2.26.0/moment.min.js"></script>
+        <script src="{{ mix('js/app.js') }}" defer></script>
+    </head>
+    <body class="font-sans antialiased">
+        @inertia
+    </body>
 </html>
