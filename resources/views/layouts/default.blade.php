@@ -21,7 +21,7 @@
             </div>
          </div>
 
-        <div id="main" class="flex-1 p-4">
+        <div id="main" class="flex-1 ">
                 @yield('content')
         </div>
 
