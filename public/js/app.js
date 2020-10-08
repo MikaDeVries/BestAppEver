@@ -4220,7 +4220,8 @@ __webpack_require__.r(__webpack_exports__);
 "use strict";
 __webpack_require__.r(__webpack_exports__);
 /* harmony import */ var _Layouts_AppLayout__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! ./../../Layouts/AppLayout */ "./resources/js/Layouts/AppLayout.vue");
-/* harmony import */ var _Components_Songs_SongComponent__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! ./../../Components/Songs/SongComponent */ "./resources/js/Components/Songs/SongComponent.vue");
+/* harmony import */ var _Jetstream_InputError__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! ./../../Jetstream/InputError */ "./resources/js/Jetstream/InputError.vue");
+/* harmony import */ var _Components_Songs_SongComponent__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(/*! ./../../Components/Songs/SongComponent */ "./resources/js/Components/Songs/SongComponent.vue");
 //
 //
 //
@@ -4279,13 +4280,54 @@ __webpack_require__.r(__webpack_exports__);
 //
 //
 //
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+
 
 
 /* harmony default export */ __webpack_exports__["default"] = ({
   props: ['song'],
   components: {
     AppLayout: _Layouts_AppLayout__WEBPACK_IMPORTED_MODULE_0__["default"],
-    Song: _Components_Songs_SongComponent__WEBPACK_IMPORTED_MODULE_1__["default"]
+    JetInputError: _Jetstream_InputError__WEBPACK_IMPORTED_MODULE_1__["default"],
+    Song: _Components_Songs_SongComponent__WEBPACK_IMPORTED_MODULE_2__["default"]
+  },
+  data: function data() {
+    return {
+      form: this.$inertia.form({
+        '_method': 'PUT',
+        name: this.song.name,
+        thumbnail: this.song.thumbnail,
+        length: this.song.length,
+        mp3_link: this.song.mp3_link
+      }, {
+        // bag: 'updateProfileInformation',
+        resetOnSuccess: false
+      }),
+      photoPreview: null
+    };
+  },
+  methods: {
+    submit: function submit() {
+      this.$inertia.post("/songs/".concat(this.song.id), this.form);
+    }
   }
 });
 
@@ -27820,7 +27862,7 @@ var render = function() {
                             staticClass:
                               "text-gray-700 text-center bg-blue-400 hover:bg-blue-500 px-4 py-2 m-2"
                           },
-                          [_vm._v("Edit")]
+                          [_vm._v("back")]
                         )
                       ]
                     )
@@ -27862,52 +27904,178 @@ var render = function() {
                               "text-gray-700 text-center bg-black-400 p-2"
                           },
                           [
-                            _c("div", { staticClass: "text-xl" }, [
-                              _c("h1", [_vm._v(_vm._s(_vm.song.name))])
-                            ]),
-                            _vm._v(" "),
                             _c(
                               "div",
-                              { staticClass: "flex flex-center p-5 " },
-                              [
-                                _c(
-                                  "audio",
-                                  {
-                                    staticClass: "flex-1",
-                                    attrs: { controls: "" }
-                                  },
-                                  [
-                                    _c("source", {
-                                      attrs: {
-                                        scr: _vm.song.mp3_link,
-                                        type: "audio/mpeg"
-                                      }
-                                    }),
-                                    _vm._v(
-                                      "\n                                            Your browser does not support the audio element.\n                                        "
-                                    )
-                                  ]
-                                )
-                              ]
+                              { staticClass: "texts-center text-xl pb-3" },
+                              [_c("h1", [_vm._v("Editor")])]
                             ),
                             _vm._v(" "),
-                            _c("div", { staticClass: "text-left" }, [
-                              _vm._v(
-                                "\n                                        Author:\n                                    "
-                              )
-                            ]),
-                            _vm._v(" "),
-                            _c("div", { staticClass: "text-left" }, [
-                              _vm._v(
-                                "\n                                        Publised:\n                                    "
-                              )
-                            ]),
-                            _vm._v(" "),
-                            _c("div", { staticClass: "text-left" }, [
-                              _vm._v(
-                                "\n                                        Albums:\n                                    "
-                              )
-                            ])
+                            _c(
+                              "form",
+                              {
+                                on: {
+                                  submit: function($event) {
+                                    $event.preventDefault()
+                                    return _vm.submit($event)
+                                  }
+                                }
+                              },
+                              [
+                                _c("div", { staticClass: "flex flex-col" }, [
+                                  _c("div", { staticClass: "flex w-1/1 p-1" }, [
+                                    _c("div", { staticClass: "flex w-1/2" }, [
+                                      _vm._v("Name: ")
+                                    ]),
+                                    _vm._v(" "),
+                                    _c(
+                                      "div",
+                                      { staticClass: "flex w-1/2" },
+                                      [
+                                        _c("input", {
+                                          directives: [
+                                            {
+                                              name: "model",
+                                              rawName: "v-model",
+                                              value: _vm.form.name,
+                                              expression: "form.name"
+                                            }
+                                          ],
+                                          staticStyle: {},
+                                          attrs: { id: "name" },
+                                          domProps: { value: _vm.form.name },
+                                          on: {
+                                            input: function($event) {
+                                              if ($event.target.composing) {
+                                                return
+                                              }
+                                              _vm.$set(
+                                                _vm.form,
+                                                "name",
+                                                $event.target.value
+                                              )
+                                            }
+                                          }
+                                        }),
+                                        _vm._v(" "),
+                                        _c("jet-input-error", {
+                                          staticClass: "mt-2",
+                                          attrs: {
+                                            message: _vm.form.error("name")
+                                          }
+                                        })
+                                      ],
+                                      1
+                                    )
+                                  ]),
+                                  _vm._v(" "),
+                                  _c("div", { staticClass: "flex w-1/1 p-1" }, [
+                                    _c("div", { staticClass: "flex w-1/2" }, [
+                                      _vm._v("Thumbnail: ")
+                                    ]),
+                                    _vm._v(" "),
+                                    _c("div", { staticClass: "flex w-1/2" }, [
+                                      _c("input", {
+                                        directives: [
+                                          {
+                                            name: "model",
+                                            rawName: "v-model",
+                                            value: _vm.form.thumbnail,
+                                            expression: "form.thumbnail"
+                                          }
+                                        ],
+                                        staticStyle: {},
+                                        attrs: { id: "thumbnail" },
+                                        domProps: { value: _vm.form.thumbnail },
+                                        on: {
+                                          input: function($event) {
+                                            if ($event.target.composing) {
+                                              return
+                                            }
+                                            _vm.$set(
+                                              _vm.form,
+                                              "thumbnail",
+                                              $event.target.value
+                                            )
+                                          }
+                                        }
+                                      })
+                                    ])
+                                  ]),
+                                  _vm._v(" "),
+                                  _c("div", { staticClass: "flex w-1/1 p-1" }, [
+                                    _c("div", { staticClass: "flex w-1/2" }, [
+                                      _vm._v("length ")
+                                    ]),
+                                    _vm._v(" "),
+                                    _c("div", { staticClass: "flex w-1/2" }, [
+                                      _c("input", {
+                                        directives: [
+                                          {
+                                            name: "model",
+                                            rawName: "v-model",
+                                            value: _vm.form.length,
+                                            expression: "form.length"
+                                          }
+                                        ],
+                                        staticStyle: {},
+                                        attrs: { id: "length" },
+                                        domProps: { value: _vm.form.length },
+                                        on: {
+                                          input: function($event) {
+                                            if ($event.target.composing) {
+                                              return
+                                            }
+                                            _vm.$set(
+                                              _vm.form,
+                                              "length",
+                                              $event.target.value
+                                            )
+                                          }
+                                        }
+                                      })
+                                    ])
+                                  ]),
+                                  _vm._v(" "),
+                                  _c("div", { staticClass: "flex w-1/1 p-1" }, [
+                                    _c("div", { staticClass: "flex w-1/2" }, [
+                                      _vm._v("mp3_link ")
+                                    ]),
+                                    _vm._v(" "),
+                                    _c("div", { staticClass: "flex w-1/2" }, [
+                                      _c("input", {
+                                        directives: [
+                                          {
+                                            name: "model",
+                                            rawName: "v-model",
+                                            value: _vm.form.mp3_link,
+                                            expression: "form.mp3_link"
+                                          }
+                                        ],
+                                        staticStyle: {},
+                                        attrs: { id: "mp3_link" },
+                                        domProps: { value: _vm.form.mp3_link },
+                                        on: {
+                                          input: function($event) {
+                                            if ($event.target.composing) {
+                                              return
+                                            }
+                                            _vm.$set(
+                                              _vm.form,
+                                              "mp3_link",
+                                              $event.target.value
+                                            )
+                                          }
+                                        }
+                                      })
+                                    ])
+                                  ]),
+                                  _vm._v(" "),
+                                  _c("button", { attrs: { type: "submit" } }, [
+                                    _vm._v("Submit")
+                                  ])
+                                ])
+                              ]
+                            )
                           ]
                         )
                       ])

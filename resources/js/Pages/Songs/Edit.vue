@@ -11,10 +11,11 @@
                     <div class="flex"> 
                         <div class="flex w-1/5">
                             <inertia-link :href="'/songs/'+song.id" >
-                                <div class="text-gray-700 text-center bg-blue-400 hover:bg-blue-500 px-4 py-2 m-2">Edit</div>
+                                <div class="text-gray-700 text-center bg-blue-400 hover:bg-blue-500 px-4 py-2 m-2">back</div>
                             </inertia-link>
                         </div>
                         <div class="flex w-3/5 flex-wrap justify-center">
+                            
                         </div>
                         <div class="flex w-1/5">
                         </div>
@@ -27,44 +28,91 @@
                             </div>
                             <div class="w-3/5 p-2">
                                 <div class="text-gray-700 text-center bg-black-400 p-2">
-                                    <div class="text-xl">
-                                        <h1>{{song.name}}</h1>
+                                    <div class="texts-center text-xl pb-3"> 
+                                        <h1>Editor</h1>
                                     </div>
-                                    <div class="flex flex-center p-5 ">
-                                        <audio controls class="flex-1">
-                                            <source :scr="song.mp3_link" type="audio/mpeg">
-                                            Your browser does not support the audio element.
-                                        </audio>
-                                    </div>
-                                    <div class="text-left">
-                                        Author:
-                                    </div>
-                                    <div class="text-left">
-                                        Publised:
-                                    </div>
-                                    <div class="text-left">
-                                        Albums:
-                                    </div>
+                                    <form @submit.prevent="submit">
+                                        <div class="flex flex-col">
+                                            <div class="flex w-1/1 p-1">
+                                                <div class="flex w-1/2">Name: </div>
+                                                <div class="flex w-1/2">
+                                                    <input style="text" id="name" v-model="form.name" />
+                                                    <jet-input-error :message="form.error('name')" class="mt-2" />
+
+                                                </div>
+                                            </div>
+                                            <div class="flex w-1/1 p-1">
+                                                <div class="flex w-1/2">Thumbnail: </div>
+                                                <div class="flex w-1/2">
+                                                    <input style="text" id="thumbnail" v-model="form.thumbnail" />
+                                                </div>
+                                            </div>
+                                            <div class="flex w-1/1 p-1">
+                                                <div class="flex w-1/2">length </div>
+                                                <div class="flex w-1/2">
+                                                    <input style="text" id="length" v-model="form.length" />
+                                                </div>
+                                            </div>
+                                            <div class="flex w-1/1 p-1">
+                                                <div class="flex w-1/2">mp3_link </div>
+                                                <div class="flex w-1/2">
+                                                    <input style="text" id="mp3_link" v-model="form.mp3_link" />
+                                                </div>
+                                            </div>
+                                            <button type="submit">Submit</button>
+                                        </div>
+                                    </form>
                                 </div>
                             </div>
                         </div>
+                    </div>
                        
                    </div>
                 </div>
             </div>
-        </div>
+        
     </app-layout>
 </template>
 
+
 <script>
     import AppLayout from './../../Layouts/AppLayout'
+    import JetInputError from './../../Jetstream/InputError'
     import Song from './../../Components/Songs/SongComponent'
 
     export default {
+
         props: ['song'],
         components: {
             AppLayout,
+            JetInputError,
             Song,
         },
+        data() {
+            return {
+                form: this.$inertia.form({
+                    '_method': 'PUT',
+                    name: this.song.name,
+                    thumbnail: this.song.thumbnail,
+                    length: this.song.length,
+                    mp3_link : this.song.mp3_link,
+                    
+                }, {
+                    // bag: 'updateProfileInformation',
+                    resetOnSuccess: false,
+                }),
+
+                photoPreview: null,
+            }
+        },
+        methods: {
+            submit() {
+            this.$inertia.post(`/songs/${this.song.id}`, this.form)
+            },
+        },
+        
+       
+        
     }
+    
 </script>
