@@ -36,7 +36,7 @@ class SongController extends Controller
      */
     public function create()
     {
-        return view('songs.create');
+        return Inertia\Inertia::render('Songs/Create',);
     }
 
     /**
@@ -51,6 +51,7 @@ class SongController extends Controller
             'name' => 'required',
             'thumbnail' => 'required',
             'length' => 'required',
+            'mp3_link' => 'required',
             
         ]);
 
@@ -58,6 +59,7 @@ class SongController extends Controller
             'name' => $request->get('name'),
             'thumbnail' => $request->get('thumbnail'),
             'length' => $request->get('length'),
+            'mp3_link' => $request->get('mp3_link'),
             
         ]);
 
@@ -110,7 +112,7 @@ class SongController extends Controller
             'length' => 'required',
             
         ]);
-        
+         
 
         $song->update([
             'name' => $request->get('name'),

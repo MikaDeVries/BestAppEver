@@ -12,7 +12,8 @@ class Song extends Model
     protected $fillable = [
         'name',
         'thumbnail',
-        'length'
+        'length',
+        'mp3_link'
         
     ];
 

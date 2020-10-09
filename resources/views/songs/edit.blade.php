@@ -20,7 +20,7 @@
         <button type="submit">Submit</button>
       </div>
   </div>
-  <table class="text-black">
+  {{-- <table class="text-black">
       <tr>
           <td>Name:</td>
           <td><input type="text" name="name" placeholder="{{$song->name}}" value="{{$song->name}}"></td>
@@ -36,7 +36,7 @@
       <tr>
           <td><button type="submit">Submit</button></td>
       </tr>
-  </table>
+  </table> --}}
   </form>
 
 

@@ -17,6 +17,12 @@
                             <jet-nav-link :href="route('dashboard')" :active="$page.currentRouteName == 'dashboard'">
                                 Dashboard
                             </jet-nav-link>
+                             <jet-nav-link :href="route('songs.index')" :active="$page.currentRouteName == 'songs.index'">
+                                Songs
+                            </jet-nav-link>
+                            <jet-nav-link :href="route('playlists.index')" :active="$page.currentRouteName == 'playlists.index'">
+                                Playlists
+                            </jet-nav-link>
                         </div>
                     </div>
 

@@ -4,6 +4,10 @@ namespace App\Http\Controllers;
 
 use App\Models\Playlist;
 use Illuminate\Http\Request;
+use App\Http\Controllers\Controller;
+use Illuminate\Support\Facades\DB;
+
+use Inertia;
 
 class PlaylistController extends Controller
 {
@@ -17,8 +21,11 @@ class PlaylistController extends Controller
         $playlists = Playlist::all();
         
 
-        return view('playlists.index', ['playlists' => $playlists]);
+        // return view('playlists.index', ['playlists' => $playlists]);
         
+        return Inertia\Inertia::render('Playlists/Index', [
+            'playlists' => $playlists
+        ]);
     }
 
     /**
@@ -28,8 +35,9 @@ class PlaylistController extends Controller
      */
     public function create()
     {
-        return view('playlists.create');
+        return Inertia\Inertia::render('Playlists/Create',);
     }
+    
 
     /**
      * Store a newly created resource in storage.
@@ -43,7 +51,7 @@ class PlaylistController extends Controller
             'name' => 'required',
             'description' => 'required',
             'thumbnail' => 'required',
-            
+             
         ]);
 
         Playlist::create([
@@ -65,7 +73,9 @@ class PlaylistController extends Controller
      */
     public function show(Playlist $playlist)
     {
-        return view('playlists.show', ['playlist' => $playlist]);
+        return Inertia\Inertia::render('Playlists/Show', [
+            'playlist' => $playlist
+        ]);
     }
 
     /**
@@ -76,7 +86,9 @@ class PlaylistController extends Controller
      */
     public function edit(Playlist $playlist)
     {
-        return view('playlists.edit', ['playlist' => $playlist]);
+        return Inertia\Inertia::render('Playlist/Edit', [
+            'playlist' => $playlist
+        ]);
     }
 
     /**
@@ -108,6 +120,9 @@ class PlaylistController extends Controller
      */
     public function destroy(Playlist $playlist)
     {
-        //
+        $playlist->delete();
+           
+        return redirect()->route('playlists.index')
+            ->with('success', 'songs deleted successfully');
     }
 }

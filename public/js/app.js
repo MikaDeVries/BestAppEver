@@ -1925,6 +1925,96 @@ module.exports = {
 
 /***/ }),
 
+/***/ "./node_modules/babel-loader/lib/index.js?!./node_modules/vue-loader/lib/index.js?!./resources/js/Components/Playlists/DeletePlaylistButtonComponent.vue?vue&type=script&lang=js&":
+/*!**************************************************************************************************************************************************************************************************!*\
+  !*** ./node_modules/babel-loader/lib??ref--4-0!./node_modules/vue-loader/lib??vue-loader-options!./resources/js/Components/Playlists/DeletePlaylistButtonComponent.vue?vue&type=script&lang=js& ***!
+  \**************************************************************************************************************************************************************************************************/
+/*! exports provided: default */
+/***/ (function(module, __webpack_exports__, __webpack_require__) {
+
+"use strict";
+__webpack_require__.r(__webpack_exports__);
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+/* harmony default export */ __webpack_exports__["default"] = ({
+  props: ['playlist'],
+  components: {},
+  mounted: function mounted() {},
+  data: function data() {
+    return {
+      showModal: false,
+      hideModal: true,
+      form: this.$inertia.form({
+        '_method': 'PUT',
+        name: this.playlist.name,
+        description: this.playlist.description,
+        thumbnail: this.playlist.thumbnail,
+        user_id: this.playlist.user_id
+      }, {
+        // bag: 'updateProfileInformation',
+        resetOnSuccess: false
+      }),
+      photoPreview: null
+    };
+  },
+  methods: {
+    deletePlaylist: function deletePlaylist(song) {
+      song._method = 'DELETE';
+      this.$inertia.post("/playlists/".concat(this.playlist.id), playlist);
+    }
+  } // methods: {
+  //     submit() {
+  //     this.$inertia.post(`/songs/${this.song.id}`, this.form)
+  //     },
+  // },
+
+});
+
+/***/ }),
+
+/***/ "./node_modules/babel-loader/lib/index.js?!./node_modules/vue-loader/lib/index.js?!./resources/js/Components/Playlists/PlaylistComponent.vue?vue&type=script&lang=js&":
+/*!**************************************************************************************************************************************************************************************!*\
+  !*** ./node_modules/babel-loader/lib??ref--4-0!./node_modules/vue-loader/lib??vue-loader-options!./resources/js/Components/Playlists/PlaylistComponent.vue?vue&type=script&lang=js& ***!
+  \**************************************************************************************************************************************************************************************/
+/*! exports provided: default */
+/***/ (function(module, __webpack_exports__, __webpack_require__) {
+
+"use strict";
+__webpack_require__.r(__webpack_exports__);
+/* harmony import */ var _DeletePlaylistButtonComponent__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! ./DeletePlaylistButtonComponent */ "./resources/js/Components/Playlists/DeletePlaylistButtonComponent.vue");
+//
+//
+//
+//
+//
+//
+
+/* harmony default export */ __webpack_exports__["default"] = ({
+  props: ['playlist'],
+  components: {
+    DeletePlaylist: _DeletePlaylistButtonComponent__WEBPACK_IMPORTED_MODULE_0__["default"]
+  },
+  mounted: function mounted() {}
+});
+
+/***/ }),
+
 /***/ "./node_modules/babel-loader/lib/index.js?!./node_modules/vue-loader/lib/index.js?!./resources/js/Components/Songs/DeleteSongButtonComponent.vue?vue&type=script&lang=js&":
 /*!******************************************************************************************************************************************************************************************!*\
   !*** ./node_modules/babel-loader/lib??ref--4-0!./node_modules/vue-loader/lib??vue-loader-options!./resources/js/Components/Songs/DeleteSongButtonComponent.vue?vue&type=script&lang=js& ***!
@@ -1940,16 +2030,50 @@ __webpack_require__.r(__webpack_exports__);
 //
 //
 //
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
 /* harmony default export */ __webpack_exports__["default"] = ({
   props: ['song'],
   components: {},
   mounted: function mounted() {},
+  data: function data() {
+    return {
+      showModal: false,
+      hideModal: true,
+      form: this.$inertia.form({
+        '_method': 'PUT',
+        name: this.song.name,
+        thumbnail: this.song.thumbnail,
+        length: this.song.length,
+        mp3_link: this.song.mp3_link
+      }, {
+        // bag: 'updateProfileInformation',
+        resetOnSuccess: false
+      }),
+      photoPreview: null
+    };
+  },
   methods: {
     deleteSong: function deleteSong(song) {
       song._method = 'DELETE';
-      this.$inertia.post("/songs/".concat(song.id), song);
+      this.$inertia.post("/songs/".concat(this.song.id), song);
     }
-  }
+  } // methods: {
+  //     submit() {
+  //     this.$inertia.post(`/songs/${this.song.id}`, this.form)
+  //     },
+  // },
+
 });
 
 /***/ }),
@@ -3010,6 +3134,12 @@ __webpack_require__.r(__webpack_exports__);
 //
 //
 //
+//
+//
+//
+//
+//
+//
 
 
 
@@ -3416,6 +3546,55 @@ __webpack_require__.r(__webpack_exports__);
   components: {
     AppLayout: _Layouts_AppLayout__WEBPACK_IMPORTED_MODULE_0__["default"],
     Song: _Components_Songs_SongComponent__WEBPACK_IMPORTED_MODULE_1__["default"]
+  }
+});
+
+/***/ }),
+
+/***/ "./node_modules/babel-loader/lib/index.js?!./node_modules/vue-loader/lib/index.js?!./resources/js/Pages/Playlists/Index.vue?vue&type=script&lang=js&":
+/*!*********************************************************************************************************************************************************************!*\
+  !*** ./node_modules/babel-loader/lib??ref--4-0!./node_modules/vue-loader/lib??vue-loader-options!./resources/js/Pages/Playlists/Index.vue?vue&type=script&lang=js& ***!
+  \*********************************************************************************************************************************************************************/
+/*! exports provided: default */
+/***/ (function(module, __webpack_exports__, __webpack_require__) {
+
+"use strict";
+__webpack_require__.r(__webpack_exports__);
+/* harmony import */ var _Layouts_AppLayout__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! ./../../Layouts/AppLayout */ "./resources/js/Layouts/AppLayout.vue");
+/* harmony import */ var _Components_Playlists_PlaylistComponent__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! ./../../Components/Playlists/PlaylistComponent */ "./resources/js/Components/Playlists/PlaylistComponent.vue");
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+
+
+/* harmony default export */ __webpack_exports__["default"] = ({
+  props: ['playlists'],
+  components: {
+    AppLayout: _Layouts_AppLayout__WEBPACK_IMPORTED_MODULE_0__["default"],
+    Playlist: _Components_Playlists_PlaylistComponent__WEBPACK_IMPORTED_MODULE_1__["default"]
   }
 });
 
@@ -4210,6 +4389,115 @@ __webpack_require__.r(__webpack_exports__);
 
 /***/ }),
 
+/***/ "./node_modules/babel-loader/lib/index.js?!./node_modules/vue-loader/lib/index.js?!./resources/js/Pages/Songs/Create.vue?vue&type=script&lang=js&":
+/*!******************************************************************************************************************************************************************!*\
+  !*** ./node_modules/babel-loader/lib??ref--4-0!./node_modules/vue-loader/lib??vue-loader-options!./resources/js/Pages/Songs/Create.vue?vue&type=script&lang=js& ***!
+  \******************************************************************************************************************************************************************/
+/*! exports provided: default */
+/***/ (function(module, __webpack_exports__, __webpack_require__) {
+
+"use strict";
+__webpack_require__.r(__webpack_exports__);
+/* harmony import */ var _Layouts_AppLayout__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! ./../../Layouts/AppLayout */ "./resources/js/Layouts/AppLayout.vue");
+/* harmony import */ var _Jetstream_InputError__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! ./../../Jetstream/InputError */ "./resources/js/Jetstream/InputError.vue");
+/* harmony import */ var _Components_Songs_SongComponent__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(/*! ./../../Components/Songs/SongComponent */ "./resources/js/Components/Songs/SongComponent.vue");
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+
+
+
+/* harmony default export */ __webpack_exports__["default"] = ({
+  props: ['song'],
+  components: {
+    AppLayout: _Layouts_AppLayout__WEBPACK_IMPORTED_MODULE_0__["default"],
+    JetInputError: _Jetstream_InputError__WEBPACK_IMPORTED_MODULE_1__["default"],
+    Song: _Components_Songs_SongComponent__WEBPACK_IMPORTED_MODULE_2__["default"]
+  },
+  data: function data() {
+    return {
+      form: this.$inertia.form({
+        '_method': 'POST'
+      }, {
+        // bag: 'updateProfileInformation',
+        resetOnSuccess: false
+      }),
+      photoPreview: null
+    };
+  },
+  methods: {
+    submit: function submit() {
+      this.$inertia.post("/songs/", this.form);
+    }
+  }
+});
+
+/***/ }),
+
 /***/ "./node_modules/babel-loader/lib/index.js?!./node_modules/vue-loader/lib/index.js?!./resources/js/Pages/Songs/Edit.vue?vue&type=script&lang=js&":
 /*!****************************************************************************************************************************************************************!*\
   !*** ./node_modules/babel-loader/lib??ref--4-0!./node_modules/vue-loader/lib??vue-loader-options!./resources/js/Pages/Songs/Edit.vue?vue&type=script&lang=js& ***!
@@ -4222,6 +4510,9 @@ __webpack_require__.r(__webpack_exports__);
 /* harmony import */ var _Layouts_AppLayout__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! ./../../Layouts/AppLayout */ "./resources/js/Layouts/AppLayout.vue");
 /* harmony import */ var _Jetstream_InputError__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! ./../../Jetstream/InputError */ "./resources/js/Jetstream/InputError.vue");
 /* harmony import */ var _Components_Songs_SongComponent__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(/*! ./../../Components/Songs/SongComponent */ "./resources/js/Components/Songs/SongComponent.vue");
+//
+//
+//
 //
 //
 //
@@ -4368,6 +4659,8 @@ __webpack_require__.r(__webpack_exports__);
 //
 //
 //
+//
+//
 
 
 /* harmony default export */ __webpack_exports__["default"] = ({
@@ -4391,6 +4684,7 @@ __webpack_require__.r(__webpack_exports__);
 __webpack_require__.r(__webpack_exports__);
 /* harmony import */ var _Layouts_AppLayout__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! ./../../Layouts/AppLayout */ "./resources/js/Layouts/AppLayout.vue");
 /* harmony import */ var _Components_Songs_SongComponent__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! ./../../Components/Songs/SongComponent */ "./resources/js/Components/Songs/SongComponent.vue");
+/* harmony import */ var _Components_Songs_DeleteSongButtonComponent__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(/*! ./../../Components/Songs/DeleteSongButtonComponent */ "./resources/js/Components/Songs/DeleteSongButtonComponent.vue");
 //
 //
 //
@@ -4456,14 +4750,19 @@ __webpack_require__.r(__webpack_exports__);
 //
 //
 //
+//
+//
+
 
 
 /* harmony default export */ __webpack_exports__["default"] = ({
   props: ['song'],
   components: {
     AppLayout: _Layouts_AppLayout__WEBPACK_IMPORTED_MODULE_0__["default"],
-    Song: _Components_Songs_SongComponent__WEBPACK_IMPORTED_MODULE_1__["default"]
-  }
+    Song: _Components_Songs_SongComponent__WEBPACK_IMPORTED_MODULE_1__["default"],
+    DeleteSong: _Components_Songs_DeleteSongButtonComponent__WEBPACK_IMPORTED_MODULE_2__["default"]
+  },
+  mounted: function mounted() {}
 });
 
 /***/ }),
@@ -23741,6 +24040,147 @@ exports.clearImmediate = (typeof self !== "undefined" && self.clearImmediate) ||
 
 /***/ }),
 
+/***/ "./node_modules/vue-loader/lib/loaders/templateLoader.js?!./node_modules/vue-loader/lib/index.js?!./resources/js/Components/Playlists/DeletePlaylistButtonComponent.vue?vue&type=template&id=74631776&":
+/*!******************************************************************************************************************************************************************************************************************************************!*\
+  !*** ./node_modules/vue-loader/lib/loaders/templateLoader.js??vue-loader-options!./node_modules/vue-loader/lib??vue-loader-options!./resources/js/Components/Playlists/DeletePlaylistButtonComponent.vue?vue&type=template&id=74631776& ***!
+  \******************************************************************************************************************************************************************************************************************************************/
+/*! exports provided: render, staticRenderFns */
+/***/ (function(module, __webpack_exports__, __webpack_require__) {
+
+"use strict";
+__webpack_require__.r(__webpack_exports__);
+/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "render", function() { return render; });
+/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "staticRenderFns", function() { return staticRenderFns; });
+var render = function() {
+  var _vm = this
+  var _h = _vm.$createElement
+  var _c = _vm._self._c || _h
+  return _c("div", [
+    _c(
+      "button",
+      {
+        staticClass:
+          "text-gray-700 text-center bg-red-400 hover:bg-red-500 px-4 py-2 m-2",
+        on: {
+          click: function($event) {
+            _vm.showModal = true
+          }
+        }
+      },
+      [_vm._v("\n                Delete\n    ")]
+    ),
+    _vm._v(" "),
+    _c(
+      "div",
+      {
+        directives: [
+          {
+            name: "show",
+            rawName: "v-show",
+            value: _vm.showModal,
+            expression: "showModal"
+          }
+        ],
+        staticClass:
+          "modal fixed z-0 left-0 top-0 w-full h-full overflow-auto bg-black bg-opacity-75",
+        attrs: { id: "DeleteModal" }
+      },
+      [
+        _c(
+          "div",
+          {
+            staticClass:
+              "modal-content text-black bg-white m-auto px-5 border-solid border-1 border-gray-600 w-2/5 "
+          },
+          [
+            _c(
+              "span",
+              {
+                staticClass:
+                  "close text-black-500 hover:text-black cursor-pointer"
+              },
+              [_vm._v("×")]
+            ),
+            _vm._v(" "),
+            _c("div", { staticClass: "mb-5" }, [
+              _vm._v("Weet je het zeker dat je dit wilt verwijderen?")
+            ]),
+            _vm._v(" "),
+            _c(
+              "span",
+              {
+                staticClass:
+                  "close text-gray-700 text-center bg-gray-400 hover:bg-gray-500 px-4 py-2 m-2"
+              },
+              [
+                _c(
+                  "a",
+                  {
+                    on: {
+                      click: function($event) {
+                        _vm.showModal = false
+                      }
+                    }
+                  },
+                  [_vm._v("annuleren")]
+                )
+              ]
+            ),
+            _vm._v(" | \n            "),
+            _c(
+              "button",
+              {
+                staticClass:
+                  "text-gray-700 text-center bg-red-400 hover:bg-red-500 px-4 py-2 m-2",
+                on: {
+                  click: function($event) {
+                    return _vm.deletePlaylist(_vm.playlist)
+                  }
+                }
+              },
+              [_vm._v("\n                Delete\n            ")]
+            )
+          ]
+        )
+      ]
+    )
+  ])
+}
+var staticRenderFns = []
+render._withStripped = true
+
+
+
+/***/ }),
+
+/***/ "./node_modules/vue-loader/lib/loaders/templateLoader.js?!./node_modules/vue-loader/lib/index.js?!./resources/js/Components/Playlists/PlaylistComponent.vue?vue&type=template&id=0f6bb7fc&":
+/*!******************************************************************************************************************************************************************************************************************************!*\
+  !*** ./node_modules/vue-loader/lib/loaders/templateLoader.js??vue-loader-options!./node_modules/vue-loader/lib??vue-loader-options!./resources/js/Components/Playlists/PlaylistComponent.vue?vue&type=template&id=0f6bb7fc& ***!
+  \******************************************************************************************************************************************************************************************************************************/
+/*! exports provided: render, staticRenderFns */
+/***/ (function(module, __webpack_exports__, __webpack_require__) {
+
+"use strict";
+__webpack_require__.r(__webpack_exports__);
+/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "render", function() { return render; });
+/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "staticRenderFns", function() { return staticRenderFns; });
+var render = function() {
+  var _vm = this
+  var _h = _vm.$createElement
+  var _c = _vm._self._c || _h
+  return _c("div", {}, [
+    _c("div", { staticClass: "font-bold text-black text-xl pl-5 text-left" }, [
+      _vm._v(" >" + _vm._s(_vm.playlist.name))
+    ])
+  ])
+}
+var staticRenderFns = []
+render._withStripped = true
+
+
+
+/***/ }),
+
 /***/ "./node_modules/vue-loader/lib/loaders/templateLoader.js?!./node_modules/vue-loader/lib/index.js?!./resources/js/Components/Songs/DeleteSongButtonComponent.vue?vue&type=template&id=00b638ff&":
 /*!**********************************************************************************************************************************************************************************************************************************!*\
   !*** ./node_modules/vue-loader/lib/loaders/templateLoader.js??vue-loader-options!./node_modules/vue-loader/lib??vue-loader-options!./resources/js/Components/Songs/DeleteSongButtonComponent.vue?vue&type=template&id=00b638ff& ***!
@@ -23756,17 +24196,96 @@ var render = function() {
   var _vm = this
   var _h = _vm.$createElement
   var _c = _vm._self._c || _h
-  return _c(
-    "button",
-    {
-      on: {
-        click: function($event) {
-          return _vm.deleteSong(_vm.song)
+  return _c("div", [
+    _c(
+      "button",
+      {
+        staticClass:
+          "text-gray-700 text-center bg-red-400 hover:bg-red-500 px-4 py-2 m-2",
+        on: {
+          click: function($event) {
+            _vm.showModal = true
+          }
         }
-      }
-    },
-    [_vm._v("\n    Dit is een button\n")]
-  )
+      },
+      [_vm._v("\n                Delete\n    ")]
+    ),
+    _vm._v(" "),
+    _c(
+      "div",
+      {
+        directives: [
+          {
+            name: "show",
+            rawName: "v-show",
+            value: _vm.showModal,
+            expression: "showModal"
+          }
+        ],
+        staticClass:
+          "modal fixed z-0 left-0 top-0 w-full h-full overflow-auto bg-black bg-opacity-75",
+        attrs: { id: "DeleteModal" }
+      },
+      [
+        _c(
+          "div",
+          {
+            staticClass:
+              "modal-content text-black bg-white m-auto px-5 border-solid border-1 border-gray-600 w-2/5 "
+          },
+          [
+            _c(
+              "span",
+              {
+                staticClass:
+                  "close text-black-500 hover:text-black cursor-pointer"
+              },
+              [_vm._v("×")]
+            ),
+            _vm._v(" "),
+            _c("div", { staticClass: "mb-5" }, [
+              _vm._v("Weet je het zeker dat je het wilt verwijderen?")
+            ]),
+            _vm._v(" "),
+            _c(
+              "span",
+              {
+                staticClass:
+                  "close text-gray-700 text-center bg-gray-400 hover:bg-gray-500 px-4 py-2 m-2"
+              },
+              [
+                _c(
+                  "a",
+                  {
+                    on: {
+                      click: function($event) {
+                        _vm.showModal = false
+                      }
+                    }
+                  },
+                  [_vm._v("annuleren")]
+                )
+              ]
+            ),
+            _vm._v(" | \n            "),
+            _c(
+              "button",
+              {
+                staticClass:
+                  "text-gray-700 text-center bg-red-400 hover:bg-red-500 px-4 py-2 m-2",
+                on: {
+                  click: function($event) {
+                    return _vm.deleteSong(_vm.song)
+                  }
+                }
+              },
+              [_vm._v("\n                Delete\n            ")]
+            )
+          ]
+        )
+      ]
+    )
+  ])
 }
 var staticRenderFns = []
 render._withStripped = true
@@ -25163,6 +25682,36 @@ var render = function() {
                         "\n                            Dashboard\n                        "
                       )
                     ]
+                  ),
+                  _vm._v(" "),
+                  _c(
+                    "jet-nav-link",
+                    {
+                      attrs: {
+                        href: _vm.route("songs.index"),
+                        active: _vm.$page.currentRouteName == "songs.index"
+                      }
+                    },
+                    [
+                      _vm._v(
+                        "\n                            Songs\n                        "
+                      )
+                    ]
+                  ),
+                  _vm._v(" "),
+                  _c(
+                    "jet-nav-link",
+                    {
+                      attrs: {
+                        href: _vm.route("playlists.index"),
+                        active: _vm.$page.currentRouteName == "playlists.index"
+                      }
+                    },
+                    [
+                      _vm._v(
+                        "\n                            Playlists\n                        "
+                      )
+                    ]
                   )
                 ],
                 1
@@ -26557,6 +27106,97 @@ render._withStripped = true
 
 /***/ }),
 
+/***/ "./node_modules/vue-loader/lib/loaders/templateLoader.js?!./node_modules/vue-loader/lib/index.js?!./resources/js/Pages/Playlists/Index.vue?vue&type=template&id=732c416b&":
+/*!*************************************************************************************************************************************************************************************************************!*\
+  !*** ./node_modules/vue-loader/lib/loaders/templateLoader.js??vue-loader-options!./node_modules/vue-loader/lib??vue-loader-options!./resources/js/Pages/Playlists/Index.vue?vue&type=template&id=732c416b& ***!
+  \*************************************************************************************************************************************************************************************************************/
+/*! exports provided: render, staticRenderFns */
+/***/ (function(module, __webpack_exports__, __webpack_require__) {
+
+"use strict";
+__webpack_require__.r(__webpack_exports__);
+/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "render", function() { return render; });
+/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "staticRenderFns", function() { return staticRenderFns; });
+var render = function() {
+  var _vm = this
+  var _h = _vm.$createElement
+  var _c = _vm._self._c || _h
+  return _c(
+    "app-layout",
+    {
+      scopedSlots: _vm._u([
+        {
+          key: "header",
+          fn: function() {
+            return [
+              _c(
+                "h2",
+                {
+                  staticClass:
+                    "font-semibold text-xl text-gray-800 leading-tight"
+                },
+                [_vm._v("\n            Dashboard\n        ")]
+              )
+            ]
+          },
+          proxy: true
+        }
+      ])
+    },
+    [
+      _vm._v(" "),
+      _c("inertia-link", { attrs: { href: "/playlists/create" } }, [
+        _c(
+          "div",
+          {
+            staticClass:
+              "text-gray-700 text-center bg-blue-400 hover:bg-blue-500 px-4 py-2 m-2"
+          },
+          [_vm._v("Create")]
+        )
+      ]),
+      _vm._v(" "),
+      _c("div", { staticClass: "py-12" }, [
+        _c("div", { staticClass: "max-w-7xl mx-auto sm:px-6 lg:px-8" }, [
+          _c(
+            "div",
+            { staticClass: "bg-white overflow-hidden shadow-xl sm:rounded-lg" },
+            [
+              _c(
+                "div",
+                {
+                  staticClass:
+                    "flex flex-wrap bg-gray-500 bg-opacity-25 rounded justify-center "
+                },
+                [
+                  _c(
+                    "div",
+                    { staticClass: "flex flex-col" },
+                    _vm._l(_vm.playlists, function(playlist) {
+                      return _c("playlist", {
+                        key: playlist.id,
+                        attrs: { playlist: playlist }
+                      })
+                    }),
+                    1
+                  )
+                ]
+              )
+            ]
+          )
+        ])
+      ])
+    ],
+    1
+  )
+}
+var staticRenderFns = []
+render._withStripped = true
+
+
+
+/***/ }),
+
 /***/ "./node_modules/vue-loader/lib/loaders/templateLoader.js?!./node_modules/vue-loader/lib/index.js?!./resources/js/Pages/Profile/DeleteUserForm.vue?vue&type=template&id=4ed1f029&":
 /*!********************************************************************************************************************************************************************************************************************!*\
   !*** ./node_modules/vue-loader/lib/loaders/templateLoader.js??vue-loader-options!./node_modules/vue-loader/lib??vue-loader-options!./resources/js/Pages/Profile/DeleteUserForm.vue?vue&type=template&id=4ed1f029& ***!
@@ -27802,6 +28442,303 @@ render._withStripped = true
 
 /***/ }),
 
+/***/ "./node_modules/vue-loader/lib/loaders/templateLoader.js?!./node_modules/vue-loader/lib/index.js?!./resources/js/Pages/Songs/Create.vue?vue&type=template&id=2bf7e414&":
+/*!**********************************************************************************************************************************************************************************************************!*\
+  !*** ./node_modules/vue-loader/lib/loaders/templateLoader.js??vue-loader-options!./node_modules/vue-loader/lib??vue-loader-options!./resources/js/Pages/Songs/Create.vue?vue&type=template&id=2bf7e414& ***!
+  \**********************************************************************************************************************************************************************************************************/
+/*! exports provided: render, staticRenderFns */
+/***/ (function(module, __webpack_exports__, __webpack_require__) {
+
+"use strict";
+__webpack_require__.r(__webpack_exports__);
+/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "render", function() { return render; });
+/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "staticRenderFns", function() { return staticRenderFns; });
+var render = function() {
+  var _vm = this
+  var _h = _vm.$createElement
+  var _c = _vm._self._c || _h
+  return _c(
+    "app-layout",
+    {
+      scopedSlots: _vm._u([
+        {
+          key: "header",
+          fn: function() {
+            return [
+              _c(
+                "h2",
+                {
+                  staticClass:
+                    "font-semibold text-xl text-gray-800 leading-tight"
+                },
+                [_vm._v(" Song : Create")]
+              )
+            ]
+          },
+          proxy: true
+        }
+      ])
+    },
+    [
+      _vm._v(" "),
+      _c("div", { staticClass: "py-12" }, [
+        _c("div", { staticClass: "max-w-7xl mx-auto sm:px-6 lg:px-8" }, [
+          _c(
+            "div",
+            { staticClass: "bg-white overflow-hidden shadow-xl sm:rounded-lg" },
+            [
+              _c(
+                "div",
+                {
+                  staticClass:
+                    "flex justify-center  bg-gray-500 bg-opacity-25 rounded  p-5 "
+                },
+                [
+                  _c(
+                    "div",
+                    { staticClass: "flex flex-wrap-reverse bg-gray-200" },
+                    [
+                      _c("div", { staticClass: "w-full p-2" }, [
+                        _c(
+                          "div",
+                          {
+                            staticClass:
+                              "text-gray-700 text-center bg-black-400 p-2"
+                          },
+                          [
+                            _c(
+                              "div",
+                              { staticClass: "texts-center text-xl pb-3" },
+                              [_c("h1", [_vm._v("Editor")])]
+                            ),
+                            _vm._v(" "),
+                            _c(
+                              "form",
+                              {
+                                on: {
+                                  submit: function($event) {
+                                    $event.preventDefault()
+                                    return _vm.submit($event)
+                                  }
+                                }
+                              },
+                              [
+                                _c("div", { staticClass: "flex flex-col" }, [
+                                  _c("div", { staticClass: "flex w-1/1 p-1" }, [
+                                    _c("div", { staticClass: "flex w-1/2" }, [
+                                      _vm._v("Name: ")
+                                    ]),
+                                    _vm._v(" "),
+                                    _c(
+                                      "div",
+                                      { staticClass: "flex w-1/2" },
+                                      [
+                                        _c("input", {
+                                          directives: [
+                                            {
+                                              name: "model",
+                                              rawName: "v-model",
+                                              value: _vm.form.name,
+                                              expression: "form.name"
+                                            }
+                                          ],
+                                          staticStyle: {},
+                                          attrs: { id: "name" },
+                                          domProps: { value: _vm.form.name },
+                                          on: {
+                                            input: function($event) {
+                                              if ($event.target.composing) {
+                                                return
+                                              }
+                                              _vm.$set(
+                                                _vm.form,
+                                                "name",
+                                                $event.target.value
+                                              )
+                                            }
+                                          }
+                                        }),
+                                        _vm._v(" "),
+                                        _c("jet-input-error", {
+                                          staticClass: "mt-2",
+                                          attrs: {
+                                            message: _vm.form.error("name")
+                                          }
+                                        })
+                                      ],
+                                      1
+                                    )
+                                  ]),
+                                  _vm._v(" "),
+                                  _c("div", { staticClass: "flex w-1/1 p-1" }, [
+                                    _c("div", { staticClass: "flex w-1/2" }, [
+                                      _vm._v("Thumbnail: ")
+                                    ]),
+                                    _vm._v(" "),
+                                    _c(
+                                      "div",
+                                      { staticClass: "flex w-1/2" },
+                                      [
+                                        _c("input", {
+                                          directives: [
+                                            {
+                                              name: "model",
+                                              rawName: "v-model",
+                                              value: _vm.form.thumbnail,
+                                              expression: "form.thumbnail"
+                                            }
+                                          ],
+                                          staticStyle: {},
+                                          attrs: { id: "thumbnail" },
+                                          domProps: {
+                                            value: _vm.form.thumbnail
+                                          },
+                                          on: {
+                                            input: function($event) {
+                                              if ($event.target.composing) {
+                                                return
+                                              }
+                                              _vm.$set(
+                                                _vm.form,
+                                                "thumbnail",
+                                                $event.target.value
+                                              )
+                                            }
+                                          }
+                                        }),
+                                        _vm._v(" "),
+                                        _c("jet-input-error", {
+                                          staticClass: "mt-2",
+                                          attrs: {
+                                            message: _vm.form.error("thumbnail")
+                                          }
+                                        })
+                                      ],
+                                      1
+                                    )
+                                  ]),
+                                  _vm._v(" "),
+                                  _c("div", { staticClass: "flex w-1/1 p-1" }, [
+                                    _c("div", { staticClass: "flex w-1/2" }, [
+                                      _vm._v("length ")
+                                    ]),
+                                    _vm._v(" "),
+                                    _c(
+                                      "div",
+                                      { staticClass: "flex w-1/2" },
+                                      [
+                                        _c("input", {
+                                          directives: [
+                                            {
+                                              name: "model",
+                                              rawName: "v-model",
+                                              value: _vm.form.length,
+                                              expression: "form.length"
+                                            }
+                                          ],
+                                          staticStyle: {},
+                                          attrs: { id: "length" },
+                                          domProps: { value: _vm.form.length },
+                                          on: {
+                                            input: function($event) {
+                                              if ($event.target.composing) {
+                                                return
+                                              }
+                                              _vm.$set(
+                                                _vm.form,
+                                                "length",
+                                                $event.target.value
+                                              )
+                                            }
+                                          }
+                                        }),
+                                        _vm._v(" "),
+                                        _c("jet-input-error", {
+                                          staticClass: "mt-2",
+                                          attrs: {
+                                            message: _vm.form.error("length")
+                                          }
+                                        })
+                                      ],
+                                      1
+                                    )
+                                  ]),
+                                  _vm._v(" "),
+                                  _c("div", { staticClass: "flex w-1/1 p-1" }, [
+                                    _c("div", { staticClass: "flex w-1/2" }, [
+                                      _vm._v("mp3_link ")
+                                    ]),
+                                    _vm._v(" "),
+                                    _c(
+                                      "div",
+                                      { staticClass: "flex w-1/2" },
+                                      [
+                                        _c("input", {
+                                          directives: [
+                                            {
+                                              name: "model",
+                                              rawName: "v-model",
+                                              value: _vm.form.mp3_link,
+                                              expression: "form.mp3_link"
+                                            }
+                                          ],
+                                          staticStyle: {},
+                                          attrs: { id: "mp3_link" },
+                                          domProps: {
+                                            value: _vm.form.mp3_link
+                                          },
+                                          on: {
+                                            input: function($event) {
+                                              if ($event.target.composing) {
+                                                return
+                                              }
+                                              _vm.$set(
+                                                _vm.form,
+                                                "mp3_link",
+                                                $event.target.value
+                                              )
+                                            }
+                                          }
+                                        }),
+                                        _vm._v(" "),
+                                        _c("jet-input-error", {
+                                          staticClass: "mt-2",
+                                          attrs: {
+                                            message: _vm.form.error("mp3_link")
+                                          }
+                                        })
+                                      ],
+                                      1
+                                    )
+                                  ]),
+                                  _vm._v(" "),
+                                  _c("button", { attrs: { type: "submit" } }, [
+                                    _vm._v("Submit")
+                                  ])
+                                ])
+                              ]
+                            )
+                          ]
+                        )
+                      ])
+                    ]
+                  )
+                ]
+              )
+            ]
+          )
+        ])
+      ])
+    ]
+  )
+}
+var staticRenderFns = []
+render._withStripped = true
+
+
+
+/***/ }),
+
 /***/ "./node_modules/vue-loader/lib/loaders/templateLoader.js?!./node_modules/vue-loader/lib/index.js?!./resources/js/Pages/Songs/Edit.vue?vue&type=template&id=b6d956f8&":
 /*!********************************************************************************************************************************************************************************************************!*\
   !*** ./node_modules/vue-loader/lib/loaders/templateLoader.js??vue-loader-options!./node_modules/vue-loader/lib??vue-loader-options!./resources/js/Pages/Songs/Edit.vue?vue&type=template&id=b6d956f8& ***!
@@ -27973,33 +28910,47 @@ var render = function() {
                                       _vm._v("Thumbnail: ")
                                     ]),
                                     _vm._v(" "),
-                                    _c("div", { staticClass: "flex w-1/2" }, [
-                                      _c("input", {
-                                        directives: [
-                                          {
-                                            name: "model",
-                                            rawName: "v-model",
-                                            value: _vm.form.thumbnail,
-                                            expression: "form.thumbnail"
-                                          }
-                                        ],
-                                        staticStyle: {},
-                                        attrs: { id: "thumbnail" },
-                                        domProps: { value: _vm.form.thumbnail },
-                                        on: {
-                                          input: function($event) {
-                                            if ($event.target.composing) {
-                                              return
+                                    _c(
+                                      "div",
+                                      { staticClass: "flex w-1/2" },
+                                      [
+                                        _c("input", {
+                                          directives: [
+                                            {
+                                              name: "model",
+                                              rawName: "v-model",
+                                              value: _vm.form.thumbnail,
+                                              expression: "form.thumbnail"
                                             }
-                                            _vm.$set(
-                                              _vm.form,
-                                              "thumbnail",
-                                              $event.target.value
-                                            )
+                                          ],
+                                          staticStyle: {},
+                                          attrs: { id: "thumbnail" },
+                                          domProps: {
+                                            value: _vm.form.thumbnail
+                                          },
+                                          on: {
+                                            input: function($event) {
+                                              if ($event.target.composing) {
+                                                return
+                                              }
+                                              _vm.$set(
+                                                _vm.form,
+                                                "thumbnail",
+                                                $event.target.value
+                                              )
+                                            }
                                           }
-                                        }
-                                      })
-                                    ])
+                                        }),
+                                        _vm._v(" "),
+                                        _c("jet-input-error", {
+                                          staticClass: "mt-2",
+                                          attrs: {
+                                            message: _vm.form.error("thumbnail")
+                                          }
+                                        })
+                                      ],
+                                      1
+                                    )
                                   ]),
                                   _vm._v(" "),
                                   _c("div", { staticClass: "flex w-1/1 p-1" }, [
@@ -28007,33 +28958,45 @@ var render = function() {
                                       _vm._v("length ")
                                     ]),
                                     _vm._v(" "),
-                                    _c("div", { staticClass: "flex w-1/2" }, [
-                                      _c("input", {
-                                        directives: [
-                                          {
-                                            name: "model",
-                                            rawName: "v-model",
-                                            value: _vm.form.length,
-                                            expression: "form.length"
-                                          }
-                                        ],
-                                        staticStyle: {},
-                                        attrs: { id: "length" },
-                                        domProps: { value: _vm.form.length },
-                                        on: {
-                                          input: function($event) {
-                                            if ($event.target.composing) {
-                                              return
+                                    _c(
+                                      "div",
+                                      { staticClass: "flex w-1/2" },
+                                      [
+                                        _c("input", {
+                                          directives: [
+                                            {
+                                              name: "model",
+                                              rawName: "v-model",
+                                              value: _vm.form.length,
+                                              expression: "form.length"
                                             }
-                                            _vm.$set(
-                                              _vm.form,
-                                              "length",
-                                              $event.target.value
-                                            )
+                                          ],
+                                          staticStyle: {},
+                                          attrs: { id: "length" },
+                                          domProps: { value: _vm.form.length },
+                                          on: {
+                                            input: function($event) {
+                                              if ($event.target.composing) {
+                                                return
+                                              }
+                                              _vm.$set(
+                                                _vm.form,
+                                                "length",
+                                                $event.target.value
+                                              )
+                                            }
                                           }
-                                        }
-                                      })
-                                    ])
+                                        }),
+                                        _vm._v(" "),
+                                        _c("jet-input-error", {
+                                          staticClass: "mt-2",
+                                          attrs: {
+                                            message: _vm.form.error("length")
+                                          }
+                                        })
+                                      ],
+                                      1
+                                    )
                                   ]),
                                   _vm._v(" "),
                                   _c("div", { staticClass: "flex w-1/1 p-1" }, [
@@ -28041,33 +29004,47 @@ var render = function() {
                                       _vm._v("mp3_link ")
                                     ]),
                                     _vm._v(" "),
-                                    _c("div", { staticClass: "flex w-1/2" }, [
-                                      _c("input", {
-                                        directives: [
-                                          {
-                                            name: "model",
-                                            rawName: "v-model",
-                                            value: _vm.form.mp3_link,
-                                            expression: "form.mp3_link"
-                                          }
-                                        ],
-                                        staticStyle: {},
-                                        attrs: { id: "mp3_link" },
-                                        domProps: { value: _vm.form.mp3_link },
-                                        on: {
-                                          input: function($event) {
-                                            if ($event.target.composing) {
-                                              return
+                                    _c(
+                                      "div",
+                                      { staticClass: "flex w-1/2" },
+                                      [
+                                        _c("input", {
+                                          directives: [
+                                            {
+                                              name: "model",
+                                              rawName: "v-model",
+                                              value: _vm.form.mp3_link,
+                                              expression: "form.mp3_link"
                                             }
-                                            _vm.$set(
-                                              _vm.form,
-                                              "mp3_link",
-                                              $event.target.value
-                                            )
+                                          ],
+                                          staticStyle: {},
+                                          attrs: { id: "mp3_link" },
+                                          domProps: {
+                                            value: _vm.form.mp3_link
+                                          },
+                                          on: {
+                                            input: function($event) {
+                                              if ($event.target.composing) {
+                                                return
+                                              }
+                                              _vm.$set(
+                                                _vm.form,
+                                                "mp3_link",
+                                                $event.target.value
+                                              )
+                                            }
                                           }
-                                        }
-                                      })
-                                    ])
+                                        }),
+                                        _vm._v(" "),
+                                        _c("jet-input-error", {
+                                          staticClass: "mt-2",
+                                          attrs: {
+                                            message: _vm.form.error("mp3_link")
+                                          }
+                                        })
+                                      ],
+                                      1
+                                    )
                                   ]),
                                   _vm._v(" "),
                                   _c("button", { attrs: { type: "submit" } }, [
@@ -28136,6 +29113,17 @@ var render = function() {
     },
     [
       _vm._v(" "),
+      _c("inertia-link", { attrs: { href: "/songs/create" } }, [
+        _c(
+          "div",
+          {
+            staticClass:
+              "text-gray-700 text-center bg-blue-400 hover:bg-blue-500 px-4 py-2 m-2"
+          },
+          [_vm._v("Create")]
+        )
+      ]),
+      _vm._v(" "),
       _c("div", { staticClass: "py-12" }, [
         _c("div", { staticClass: "max-w-7xl mx-auto sm:px-6 lg:px-8" }, [
           _c(
@@ -28166,7 +29154,8 @@ var render = function() {
           )
         ])
       ])
-    ]
+    ],
+    1
   )
 }
 var staticRenderFns = []
@@ -28259,16 +29248,7 @@ var render = function() {
                       ]
                     ),
                     _vm._v(" "),
-                    _c("inertia-link", { attrs: { href: "/songs/delete" } }, [
-                      _c(
-                        "div",
-                        {
-                          staticClass:
-                            "text-gray-700 text-center bg-red-500 hover:bg-red-600 px-4 py-2 m-2"
-                        },
-                        [_vm._v("Delete")]
-                      )
-                    ])
+                    _c("delete-song", { attrs: { song: _vm.song } })
                   ],
                   1
                 ),
@@ -40543,6 +41523,144 @@ module.exports = function(module) {
 
 /***/ }),
 
+/***/ "./resources/js/Components/Playlists/DeletePlaylistButtonComponent.vue":
+/*!*****************************************************************************!*\
+  !*** ./resources/js/Components/Playlists/DeletePlaylistButtonComponent.vue ***!
+  \*****************************************************************************/
+/*! exports provided: default */
+/***/ (function(module, __webpack_exports__, __webpack_require__) {
+
+"use strict";
+__webpack_require__.r(__webpack_exports__);
+/* harmony import */ var _DeletePlaylistButtonComponent_vue_vue_type_template_id_74631776___WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! ./DeletePlaylistButtonComponent.vue?vue&type=template&id=74631776& */ "./resources/js/Components/Playlists/DeletePlaylistButtonComponent.vue?vue&type=template&id=74631776&");
+/* harmony import */ var _DeletePlaylistButtonComponent_vue_vue_type_script_lang_js___WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! ./DeletePlaylistButtonComponent.vue?vue&type=script&lang=js& */ "./resources/js/Components/Playlists/DeletePlaylistButtonComponent.vue?vue&type=script&lang=js&");
+/* empty/unused harmony star reexport *//* harmony import */ var _node_modules_vue_loader_lib_runtime_componentNormalizer_js__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(/*! ../../../../node_modules/vue-loader/lib/runtime/componentNormalizer.js */ "./node_modules/vue-loader/lib/runtime/componentNormalizer.js");
+
+
+
+
+
+/* normalize component */
+
+var component = Object(_node_modules_vue_loader_lib_runtime_componentNormalizer_js__WEBPACK_IMPORTED_MODULE_2__["default"])(
+  _DeletePlaylistButtonComponent_vue_vue_type_script_lang_js___WEBPACK_IMPORTED_MODULE_1__["default"],
+  _DeletePlaylistButtonComponent_vue_vue_type_template_id_74631776___WEBPACK_IMPORTED_MODULE_0__["render"],
+  _DeletePlaylistButtonComponent_vue_vue_type_template_id_74631776___WEBPACK_IMPORTED_MODULE_0__["staticRenderFns"],
+  false,
+  null,
+  null,
+  null
+  
+)
+
+/* hot reload */
+if (false) { var api; }
+component.options.__file = "resources/js/Components/Playlists/DeletePlaylistButtonComponent.vue"
+/* harmony default export */ __webpack_exports__["default"] = (component.exports);
+
+/***/ }),
+
+/***/ "./resources/js/Components/Playlists/DeletePlaylistButtonComponent.vue?vue&type=script&lang=js&":
+/*!******************************************************************************************************!*\
+  !*** ./resources/js/Components/Playlists/DeletePlaylistButtonComponent.vue?vue&type=script&lang=js& ***!
+  \******************************************************************************************************/
+/*! exports provided: default */
+/***/ (function(module, __webpack_exports__, __webpack_require__) {
+
+"use strict";
+__webpack_require__.r(__webpack_exports__);
+/* harmony import */ var _node_modules_babel_loader_lib_index_js_ref_4_0_node_modules_vue_loader_lib_index_js_vue_loader_options_DeletePlaylistButtonComponent_vue_vue_type_script_lang_js___WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! -!../../../../node_modules/babel-loader/lib??ref--4-0!../../../../node_modules/vue-loader/lib??vue-loader-options!./DeletePlaylistButtonComponent.vue?vue&type=script&lang=js& */ "./node_modules/babel-loader/lib/index.js?!./node_modules/vue-loader/lib/index.js?!./resources/js/Components/Playlists/DeletePlaylistButtonComponent.vue?vue&type=script&lang=js&");
+/* empty/unused harmony star reexport */ /* harmony default export */ __webpack_exports__["default"] = (_node_modules_babel_loader_lib_index_js_ref_4_0_node_modules_vue_loader_lib_index_js_vue_loader_options_DeletePlaylistButtonComponent_vue_vue_type_script_lang_js___WEBPACK_IMPORTED_MODULE_0__["default"]); 
+
+/***/ }),
+
+/***/ "./resources/js/Components/Playlists/DeletePlaylistButtonComponent.vue?vue&type=template&id=74631776&":
+/*!************************************************************************************************************!*\
+  !*** ./resources/js/Components/Playlists/DeletePlaylistButtonComponent.vue?vue&type=template&id=74631776& ***!
+  \************************************************************************************************************/
+/*! exports provided: render, staticRenderFns */
+/***/ (function(module, __webpack_exports__, __webpack_require__) {
+
+"use strict";
+__webpack_require__.r(__webpack_exports__);
+/* harmony import */ var _node_modules_vue_loader_lib_loaders_templateLoader_js_vue_loader_options_node_modules_vue_loader_lib_index_js_vue_loader_options_DeletePlaylistButtonComponent_vue_vue_type_template_id_74631776___WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! -!../../../../node_modules/vue-loader/lib/loaders/templateLoader.js??vue-loader-options!../../../../node_modules/vue-loader/lib??vue-loader-options!./DeletePlaylistButtonComponent.vue?vue&type=template&id=74631776& */ "./node_modules/vue-loader/lib/loaders/templateLoader.js?!./node_modules/vue-loader/lib/index.js?!./resources/js/Components/Playlists/DeletePlaylistButtonComponent.vue?vue&type=template&id=74631776&");
+/* harmony reexport (safe) */ __webpack_require__.d(__webpack_exports__, "render", function() { return _node_modules_vue_loader_lib_loaders_templateLoader_js_vue_loader_options_node_modules_vue_loader_lib_index_js_vue_loader_options_DeletePlaylistButtonComponent_vue_vue_type_template_id_74631776___WEBPACK_IMPORTED_MODULE_0__["render"]; });
+
+/* harmony reexport (safe) */ __webpack_require__.d(__webpack_exports__, "staticRenderFns", function() { return _node_modules_vue_loader_lib_loaders_templateLoader_js_vue_loader_options_node_modules_vue_loader_lib_index_js_vue_loader_options_DeletePlaylistButtonComponent_vue_vue_type_template_id_74631776___WEBPACK_IMPORTED_MODULE_0__["staticRenderFns"]; });
+
+
+
+/***/ }),
+
+/***/ "./resources/js/Components/Playlists/PlaylistComponent.vue":
+/*!*****************************************************************!*\
+  !*** ./resources/js/Components/Playlists/PlaylistComponent.vue ***!
+  \*****************************************************************/
+/*! exports provided: default */
+/***/ (function(module, __webpack_exports__, __webpack_require__) {
+
+"use strict";
+__webpack_require__.r(__webpack_exports__);
+/* harmony import */ var _PlaylistComponent_vue_vue_type_template_id_0f6bb7fc___WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! ./PlaylistComponent.vue?vue&type=template&id=0f6bb7fc& */ "./resources/js/Components/Playlists/PlaylistComponent.vue?vue&type=template&id=0f6bb7fc&");
+/* harmony import */ var _PlaylistComponent_vue_vue_type_script_lang_js___WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! ./PlaylistComponent.vue?vue&type=script&lang=js& */ "./resources/js/Components/Playlists/PlaylistComponent.vue?vue&type=script&lang=js&");
+/* empty/unused harmony star reexport *//* harmony import */ var _node_modules_vue_loader_lib_runtime_componentNormalizer_js__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(/*! ../../../../node_modules/vue-loader/lib/runtime/componentNormalizer.js */ "./node_modules/vue-loader/lib/runtime/componentNormalizer.js");
+
+
+
+
+
+/* normalize component */
+
+var component = Object(_node_modules_vue_loader_lib_runtime_componentNormalizer_js__WEBPACK_IMPORTED_MODULE_2__["default"])(
+  _PlaylistComponent_vue_vue_type_script_lang_js___WEBPACK_IMPORTED_MODULE_1__["default"],
+  _PlaylistComponent_vue_vue_type_template_id_0f6bb7fc___WEBPACK_IMPORTED_MODULE_0__["render"],
+  _PlaylistComponent_vue_vue_type_template_id_0f6bb7fc___WEBPACK_IMPORTED_MODULE_0__["staticRenderFns"],
+  false,
+  null,
+  null,
+  null
+  
+)
+
+/* hot reload */
+if (false) { var api; }
+component.options.__file = "resources/js/Components/Playlists/PlaylistComponent.vue"
+/* harmony default export */ __webpack_exports__["default"] = (component.exports);
+
+/***/ }),
+
+/***/ "./resources/js/Components/Playlists/PlaylistComponent.vue?vue&type=script&lang=js&":
+/*!******************************************************************************************!*\
+  !*** ./resources/js/Components/Playlists/PlaylistComponent.vue?vue&type=script&lang=js& ***!
+  \******************************************************************************************/
+/*! exports provided: default */
+/***/ (function(module, __webpack_exports__, __webpack_require__) {
+
+"use strict";
+__webpack_require__.r(__webpack_exports__);
+/* harmony import */ var _node_modules_babel_loader_lib_index_js_ref_4_0_node_modules_vue_loader_lib_index_js_vue_loader_options_PlaylistComponent_vue_vue_type_script_lang_js___WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! -!../../../../node_modules/babel-loader/lib??ref--4-0!../../../../node_modules/vue-loader/lib??vue-loader-options!./PlaylistComponent.vue?vue&type=script&lang=js& */ "./node_modules/babel-loader/lib/index.js?!./node_modules/vue-loader/lib/index.js?!./resources/js/Components/Playlists/PlaylistComponent.vue?vue&type=script&lang=js&");
+/* empty/unused harmony star reexport */ /* harmony default export */ __webpack_exports__["default"] = (_node_modules_babel_loader_lib_index_js_ref_4_0_node_modules_vue_loader_lib_index_js_vue_loader_options_PlaylistComponent_vue_vue_type_script_lang_js___WEBPACK_IMPORTED_MODULE_0__["default"]); 
+
+/***/ }),
+
+/***/ "./resources/js/Components/Playlists/PlaylistComponent.vue?vue&type=template&id=0f6bb7fc&":
+/*!************************************************************************************************!*\
+  !*** ./resources/js/Components/Playlists/PlaylistComponent.vue?vue&type=template&id=0f6bb7fc& ***!
+  \************************************************************************************************/
+/*! exports provided: render, staticRenderFns */
+/***/ (function(module, __webpack_exports__, __webpack_require__) {
+
+"use strict";
+__webpack_require__.r(__webpack_exports__);
+/* harmony import */ var _node_modules_vue_loader_lib_loaders_templateLoader_js_vue_loader_options_node_modules_vue_loader_lib_index_js_vue_loader_options_PlaylistComponent_vue_vue_type_template_id_0f6bb7fc___WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! -!../../../../node_modules/vue-loader/lib/loaders/templateLoader.js??vue-loader-options!../../../../node_modules/vue-loader/lib??vue-loader-options!./PlaylistComponent.vue?vue&type=template&id=0f6bb7fc& */ "./node_modules/vue-loader/lib/loaders/templateLoader.js?!./node_modules/vue-loader/lib/index.js?!./resources/js/Components/Playlists/PlaylistComponent.vue?vue&type=template&id=0f6bb7fc&");
+/* harmony reexport (safe) */ __webpack_require__.d(__webpack_exports__, "render", function() { return _node_modules_vue_loader_lib_loaders_templateLoader_js_vue_loader_options_node_modules_vue_loader_lib_index_js_vue_loader_options_PlaylistComponent_vue_vue_type_template_id_0f6bb7fc___WEBPACK_IMPORTED_MODULE_0__["render"]; });
+
+/* harmony reexport (safe) */ __webpack_require__.d(__webpack_exports__, "staticRenderFns", function() { return _node_modules_vue_loader_lib_loaders_templateLoader_js_vue_loader_options_node_modules_vue_loader_lib_index_js_vue_loader_options_PlaylistComponent_vue_vue_type_template_id_0f6bb7fc___WEBPACK_IMPORTED_MODULE_0__["staticRenderFns"]; });
+
+
+
+/***/ }),
+
 /***/ "./resources/js/Components/Songs/DeleteSongButtonComponent.vue":
 /*!*********************************************************************!*\
   !*** ./resources/js/Components/Songs/DeleteSongButtonComponent.vue ***!
@@ -42481,17 +43599,20 @@ component.options.__file = "resources/js/Pages/Playlists/Edit.vue"
 
 "use strict";
 __webpack_require__.r(__webpack_exports__);
-/* harmony import */ var _node_modules_vue_loader_lib_runtime_componentNormalizer_js__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! ../../../../node_modules/vue-loader/lib/runtime/componentNormalizer.js */ "./node_modules/vue-loader/lib/runtime/componentNormalizer.js");
-var render, staticRenderFns
-var script = {}
+/* harmony import */ var _Index_vue_vue_type_template_id_732c416b___WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! ./Index.vue?vue&type=template&id=732c416b& */ "./resources/js/Pages/Playlists/Index.vue?vue&type=template&id=732c416b&");
+/* harmony import */ var _Index_vue_vue_type_script_lang_js___WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! ./Index.vue?vue&type=script&lang=js& */ "./resources/js/Pages/Playlists/Index.vue?vue&type=script&lang=js&");
+/* empty/unused harmony star reexport *//* harmony import */ var _node_modules_vue_loader_lib_runtime_componentNormalizer_js__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(/*! ../../../../node_modules/vue-loader/lib/runtime/componentNormalizer.js */ "./node_modules/vue-loader/lib/runtime/componentNormalizer.js");
+
+
+
 
 
 /* normalize component */
 
-var component = Object(_node_modules_vue_loader_lib_runtime_componentNormalizer_js__WEBPACK_IMPORTED_MODULE_0__["default"])(
-  script,
-  render,
-  staticRenderFns,
+var component = Object(_node_modules_vue_loader_lib_runtime_componentNormalizer_js__WEBPACK_IMPORTED_MODULE_2__["default"])(
+  _Index_vue_vue_type_script_lang_js___WEBPACK_IMPORTED_MODULE_1__["default"],
+  _Index_vue_vue_type_template_id_732c416b___WEBPACK_IMPORTED_MODULE_0__["render"],
+  _Index_vue_vue_type_template_id_732c416b___WEBPACK_IMPORTED_MODULE_0__["staticRenderFns"],
   false,
   null,
   null,
@@ -42499,8 +43620,42 @@ var component = Object(_node_modules_vue_loader_lib_runtime_componentNormalizer_
   
 )
 
+/* hot reload */
+if (false) { var api; }
 component.options.__file = "resources/js/Pages/Playlists/Index.vue"
 /* harmony default export */ __webpack_exports__["default"] = (component.exports);
+
+/***/ }),
+
+/***/ "./resources/js/Pages/Playlists/Index.vue?vue&type=script&lang=js&":
+/*!*************************************************************************!*\
+  !*** ./resources/js/Pages/Playlists/Index.vue?vue&type=script&lang=js& ***!
+  \*************************************************************************/
+/*! exports provided: default */
+/***/ (function(module, __webpack_exports__, __webpack_require__) {
+
+"use strict";
+__webpack_require__.r(__webpack_exports__);
+/* harmony import */ var _node_modules_babel_loader_lib_index_js_ref_4_0_node_modules_vue_loader_lib_index_js_vue_loader_options_Index_vue_vue_type_script_lang_js___WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! -!../../../../node_modules/babel-loader/lib??ref--4-0!../../../../node_modules/vue-loader/lib??vue-loader-options!./Index.vue?vue&type=script&lang=js& */ "./node_modules/babel-loader/lib/index.js?!./node_modules/vue-loader/lib/index.js?!./resources/js/Pages/Playlists/Index.vue?vue&type=script&lang=js&");
+/* empty/unused harmony star reexport */ /* harmony default export */ __webpack_exports__["default"] = (_node_modules_babel_loader_lib_index_js_ref_4_0_node_modules_vue_loader_lib_index_js_vue_loader_options_Index_vue_vue_type_script_lang_js___WEBPACK_IMPORTED_MODULE_0__["default"]); 
+
+/***/ }),
+
+/***/ "./resources/js/Pages/Playlists/Index.vue?vue&type=template&id=732c416b&":
+/*!*******************************************************************************!*\
+  !*** ./resources/js/Pages/Playlists/Index.vue?vue&type=template&id=732c416b& ***!
+  \*******************************************************************************/
+/*! exports provided: render, staticRenderFns */
+/***/ (function(module, __webpack_exports__, __webpack_require__) {
+
+"use strict";
+__webpack_require__.r(__webpack_exports__);
+/* harmony import */ var _node_modules_vue_loader_lib_loaders_templateLoader_js_vue_loader_options_node_modules_vue_loader_lib_index_js_vue_loader_options_Index_vue_vue_type_template_id_732c416b___WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! -!../../../../node_modules/vue-loader/lib/loaders/templateLoader.js??vue-loader-options!../../../../node_modules/vue-loader/lib??vue-loader-options!./Index.vue?vue&type=template&id=732c416b& */ "./node_modules/vue-loader/lib/loaders/templateLoader.js?!./node_modules/vue-loader/lib/index.js?!./resources/js/Pages/Playlists/Index.vue?vue&type=template&id=732c416b&");
+/* harmony reexport (safe) */ __webpack_require__.d(__webpack_exports__, "render", function() { return _node_modules_vue_loader_lib_loaders_templateLoader_js_vue_loader_options_node_modules_vue_loader_lib_index_js_vue_loader_options_Index_vue_vue_type_template_id_732c416b___WEBPACK_IMPORTED_MODULE_0__["render"]; });
+
+/* harmony reexport (safe) */ __webpack_require__.d(__webpack_exports__, "staticRenderFns", function() { return _node_modules_vue_loader_lib_loaders_templateLoader_js_vue_loader_options_node_modules_vue_loader_lib_index_js_vue_loader_options_Index_vue_vue_type_template_id_732c416b___WEBPACK_IMPORTED_MODULE_0__["staticRenderFns"]; });
+
+
 
 /***/ }),
 
@@ -42954,22 +44109,26 @@ __webpack_require__.r(__webpack_exports__);
 /*!*********************************************!*\
   !*** ./resources/js/Pages/Songs/Create.vue ***!
   \*********************************************/
-/*! exports provided: default */
+/*! no static exports found */
 /***/ (function(module, __webpack_exports__, __webpack_require__) {
 
 "use strict";
 __webpack_require__.r(__webpack_exports__);
-/* harmony import */ var _node_modules_vue_loader_lib_runtime_componentNormalizer_js__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! ../../../../node_modules/vue-loader/lib/runtime/componentNormalizer.js */ "./node_modules/vue-loader/lib/runtime/componentNormalizer.js");
-var render, staticRenderFns
-var script = {}
+/* harmony import */ var _Create_vue_vue_type_template_id_2bf7e414___WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! ./Create.vue?vue&type=template&id=2bf7e414& */ "./resources/js/Pages/Songs/Create.vue?vue&type=template&id=2bf7e414&");
+/* harmony import */ var _Create_vue_vue_type_script_lang_js___WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! ./Create.vue?vue&type=script&lang=js& */ "./resources/js/Pages/Songs/Create.vue?vue&type=script&lang=js&");
+/* harmony reexport (unknown) */ for(var __WEBPACK_IMPORT_KEY__ in _Create_vue_vue_type_script_lang_js___WEBPACK_IMPORTED_MODULE_1__) if(["default"].indexOf(__WEBPACK_IMPORT_KEY__) < 0) (function(key) { __webpack_require__.d(__webpack_exports__, key, function() { return _Create_vue_vue_type_script_lang_js___WEBPACK_IMPORTED_MODULE_1__[key]; }) }(__WEBPACK_IMPORT_KEY__));
+/* harmony import */ var _node_modules_vue_loader_lib_runtime_componentNormalizer_js__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(/*! ../../../../node_modules/vue-loader/lib/runtime/componentNormalizer.js */ "./node_modules/vue-loader/lib/runtime/componentNormalizer.js");
+
+
+
 
 
 /* normalize component */
 
-var component = Object(_node_modules_vue_loader_lib_runtime_componentNormalizer_js__WEBPACK_IMPORTED_MODULE_0__["default"])(
-  script,
-  render,
-  staticRenderFns,
+var component = Object(_node_modules_vue_loader_lib_runtime_componentNormalizer_js__WEBPACK_IMPORTED_MODULE_2__["default"])(
+  _Create_vue_vue_type_script_lang_js___WEBPACK_IMPORTED_MODULE_1__["default"],
+  _Create_vue_vue_type_template_id_2bf7e414___WEBPACK_IMPORTED_MODULE_0__["render"],
+  _Create_vue_vue_type_template_id_2bf7e414___WEBPACK_IMPORTED_MODULE_0__["staticRenderFns"],
   false,
   null,
   null,
@@ -42977,8 +44136,42 @@ var component = Object(_node_modules_vue_loader_lib_runtime_componentNormalizer_
   
 )
 
+/* hot reload */
+if (false) { var api; }
 component.options.__file = "resources/js/Pages/Songs/Create.vue"
 /* harmony default export */ __webpack_exports__["default"] = (component.exports);
+
+/***/ }),
+
+/***/ "./resources/js/Pages/Songs/Create.vue?vue&type=script&lang=js&":
+/*!**********************************************************************!*\
+  !*** ./resources/js/Pages/Songs/Create.vue?vue&type=script&lang=js& ***!
+  \**********************************************************************/
+/*! no static exports found */
+/***/ (function(module, __webpack_exports__, __webpack_require__) {
+
+"use strict";
+__webpack_require__.r(__webpack_exports__);
+/* harmony import */ var _node_modules_babel_loader_lib_index_js_ref_4_0_node_modules_vue_loader_lib_index_js_vue_loader_options_Create_vue_vue_type_script_lang_js___WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! -!../../../../node_modules/babel-loader/lib??ref--4-0!../../../../node_modules/vue-loader/lib??vue-loader-options!./Create.vue?vue&type=script&lang=js& */ "./node_modules/babel-loader/lib/index.js?!./node_modules/vue-loader/lib/index.js?!./resources/js/Pages/Songs/Create.vue?vue&type=script&lang=js&");
+/* empty/unused harmony star reexport */ /* harmony default export */ __webpack_exports__["default"] = (_node_modules_babel_loader_lib_index_js_ref_4_0_node_modules_vue_loader_lib_index_js_vue_loader_options_Create_vue_vue_type_script_lang_js___WEBPACK_IMPORTED_MODULE_0__["default"]); 
+
+/***/ }),
+
+/***/ "./resources/js/Pages/Songs/Create.vue?vue&type=template&id=2bf7e414&":
+/*!****************************************************************************!*\
+  !*** ./resources/js/Pages/Songs/Create.vue?vue&type=template&id=2bf7e414& ***!
+  \****************************************************************************/
+/*! exports provided: render, staticRenderFns */
+/***/ (function(module, __webpack_exports__, __webpack_require__) {
+
+"use strict";
+__webpack_require__.r(__webpack_exports__);
+/* harmony import */ var _node_modules_vue_loader_lib_loaders_templateLoader_js_vue_loader_options_node_modules_vue_loader_lib_index_js_vue_loader_options_Create_vue_vue_type_template_id_2bf7e414___WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! -!../../../../node_modules/vue-loader/lib/loaders/templateLoader.js??vue-loader-options!../../../../node_modules/vue-loader/lib??vue-loader-options!./Create.vue?vue&type=template&id=2bf7e414& */ "./node_modules/vue-loader/lib/loaders/templateLoader.js?!./node_modules/vue-loader/lib/index.js?!./resources/js/Pages/Songs/Create.vue?vue&type=template&id=2bf7e414&");
+/* harmony reexport (safe) */ __webpack_require__.d(__webpack_exports__, "render", function() { return _node_modules_vue_loader_lib_loaders_templateLoader_js_vue_loader_options_node_modules_vue_loader_lib_index_js_vue_loader_options_Create_vue_vue_type_template_id_2bf7e414___WEBPACK_IMPORTED_MODULE_0__["render"]; });
+
+/* harmony reexport (safe) */ __webpack_require__.d(__webpack_exports__, "staticRenderFns", function() { return _node_modules_vue_loader_lib_loaders_templateLoader_js_vue_loader_options_node_modules_vue_loader_lib_index_js_vue_loader_options_Create_vue_vue_type_template_id_2bf7e414___WEBPACK_IMPORTED_MODULE_0__["staticRenderFns"]; });
+
+
 
 /***/ }),
 

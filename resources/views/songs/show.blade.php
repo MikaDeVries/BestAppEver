@@ -35,17 +35,7 @@
 
 
     <!-- The Modal -->
-    <div id="myModal" class="modal">
-    <div class="modal-content text-black">
-        <span class="close">&times;</span>
-        <div class="mb-5">Weet je het zeker dat je het wilt verwijderen?</div>
-        <span class="bg-gray-500 hover:bg-gray-700  text-2xl rounded-md p-2"><a href="">annuleren</a></span> | 
-        <form action="{{ route('songs.destroy',$song) }}" class=" max-w-sm" method="POST">
-            @method('DELETE')
-            @csrf
-            <button type="submit" class="text-red">delete</button>
-        </form>
-    </div>
+    
 
     </div>
         <script type="text/javascript" src="{{ URL::asset('js/delete_modal.js') }}"></script>

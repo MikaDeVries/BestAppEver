@@ -45,18 +45,21 @@
                                                 <div class="flex w-1/2">Thumbnail: </div>
                                                 <div class="flex w-1/2">
                                                     <input style="text" id="thumbnail" v-model="form.thumbnail" />
+                                                    <jet-input-error :message="form.error('thumbnail')" class="mt-2" />
                                                 </div>
                                             </div>
                                             <div class="flex w-1/1 p-1">
                                                 <div class="flex w-1/2">length </div>
                                                 <div class="flex w-1/2">
                                                     <input style="text" id="length" v-model="form.length" />
+                                                    <jet-input-error :message="form.error('length')" class="mt-2" />
                                                 </div>
                                             </div>
                                             <div class="flex w-1/1 p-1">
                                                 <div class="flex w-1/2">mp3_link </div>
                                                 <div class="flex w-1/2">
                                                     <input style="text" id="mp3_link" v-model="form.mp3_link" />
+                                                    <jet-input-error :message="form.error('mp3_link')" class="mt-2" />
                                                 </div>
                                             </div>
                                             <button type="submit">Submit</button>

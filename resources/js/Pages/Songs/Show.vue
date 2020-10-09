@@ -18,9 +18,7 @@
                             <inertia-link :href="'/songs/'+song.id+'/edit'" >
                                 <div class="text-gray-700 text-center bg-blue-400 hover:bg-blue-500 px-4 py-2 m-2">Edit</div>
                             </inertia-link>
-                            <inertia-link :href="'/songs/delete'" >
-                                <div class="text-gray-700 text-center bg-red-500 hover:bg-red-600 px-4 py-2 m-2">Delete</div>
-                            </inertia-link>
+                            <delete-song :song="song"/>
                         </div>
                         <div class="flex w-1/5">
 
@@ -60,18 +58,28 @@
                 </div>
             </div>
         </div>
+           
     </app-layout>
 </template>
+
+
+
 
 <script>
     import AppLayout from './../../Layouts/AppLayout'
     import Song from './../../Components/Songs/SongComponent'
+    import DeleteSong from './../../Components/Songs/DeleteSongButtonComponent'
 
     export default {
         props: ['song'],
         components: {
             AppLayout,
             Song,
+            DeleteSong
         },
+        mounted(){
+           
+        }
     }
+
 </script>
