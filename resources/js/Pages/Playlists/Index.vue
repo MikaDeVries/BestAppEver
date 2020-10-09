@@ -13,7 +13,8 @@
                 <div class="bg-white overflow-hidden shadow-xl sm:rounded-lg">
                     <div class="flex flex-wrap bg-gray-500 bg-opacity-25 rounded justify-center "> 
                         
-                         <div class="flex flex-col"> 
+                         <div class="flex flex-col text-left .w-56"> 
+                             
                             <playlist v-for="playlist in playlists" :key="playlist.id" :playlist="playlist"/>
                          </div>
                     </div>

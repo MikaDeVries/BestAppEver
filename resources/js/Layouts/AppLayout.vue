@@ -1,4 +1,5 @@
 <template>
+    
     <div class="min-h-screen bg-gray-100">
         <nav class="bg-white border-b border-gray-100">
             <!-- Primary Navigation Menu -->
@@ -25,7 +26,7 @@
                             </jet-nav-link>
                         </div>
                     </div>
-
+             
                     <!-- Settings Dropdown -->
                     <div class="hidden sm:flex sm:items-center sm:ml-6">
                         <div class="ml-3 relative">

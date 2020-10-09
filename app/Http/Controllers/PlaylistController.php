@@ -72,7 +72,9 @@ class PlaylistController extends Controller
      * @return \Illuminate\Http\Response
      */
     public function show(Playlist $playlist)
-    {
+    {   
+        $playlist->load('songs');
+
         return Inertia\Inertia::render('Playlists/Show', [
             'playlist' => $playlist
         ]);
@@ -86,7 +88,7 @@ class PlaylistController extends Controller
      */
     public function edit(Playlist $playlist)
     {
-        return Inertia\Inertia::render('Playlist/Edit', [
+        return Inertia\Inertia::render('Playlists/Edit', [
             'playlist' => $playlist
         ]);
     }
