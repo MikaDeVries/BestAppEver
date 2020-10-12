@@ -51,16 +51,15 @@ class PlaylistController extends Controller
             'name' => 'required',
             'description' => 'required',
             'thumbnail' => 'required',
-             
+            'user_id' => 'required',
         ]);
 
         Playlist::create([
             'name' => $request->get('name'),
             'description' => $request->get('description'),
             'thumbnail' => $request->get('thumbnail'),
-            
+            'user_id' => $request->get('user_id'),
         ]);
-
         return redirect()->route('playlists.index')
             ->with('success', 'Playlist created successfully.');
     }

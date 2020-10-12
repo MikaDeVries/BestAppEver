@@ -11,8 +11,8 @@
                 <img class="object-cover object-center h-12 w-12" :src="song.thumbnail" :alt="song.name">
             </inertia-link>
             </div>
-            <div class="w-12 flex justify-center">
-                <i @click="play()" class="far fa-play-circle text-2xl self-center  cursor-pointer"></i>
+            <div @click="startMusic()" class="w-12 flex justify-center" id="playButton"   ref="playButton">
+                <i  class="far fa-play-circle text-2xl self-center  cursor-pointer"></i>
             </div>
             <div class="flex-1 ml-4 justify-center self-center">
                 <inertia-link :href="song.permalink" class="my-auto text-lg self-center text-black hover:text-gray-500 no-underline hover:underline text-center">{{song.name}}</inertia-link>
@@ -28,20 +28,37 @@
 </template>
 
 <script>
-
+    
     import DeleteSong from './DeleteSongButtonComponent'
     export default {
         
-        props: ['song'],
         components: {
             DeleteSong
         },
-        mounted(){
-           
+        props: {
+            song: {},
+            playButton: { type: Boolean, default: false }
         },
-        // play : function (){
-        //     var audio = new Audio('file://storage/app/public/upload/files/audio'+{{song.audio}}); // path to file
-        //     audio.play();
-        // }
+        data() {
+            return {
+                isPlaying: false
+            }
+        },
+        mounted(){
+            if (this.playButton) this.startMusic();
+        },
+        methods:{
+            startMusic () {
+                this.isPlaying = true;
+                console.log("music is now playing");
+
+            },
+
+            pauzeMusic () {
+                this.isPlaying= false;
+                console.log("music has stopt playting");
+            }
+        }
+
     }
 </script>

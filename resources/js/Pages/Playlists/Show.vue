@@ -59,7 +59,8 @@
             Playlist,
             Song,
             SongListItem,
-            DeletePlaylist
+            DeletePlaylist,
+            
         },
         mounted(){
         }
