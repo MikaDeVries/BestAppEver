@@ -19,6 +19,22 @@
                 <div class="bg-white overflow-hidden shadow-xl sm:rounded-lg">
                  
                     <!-- playlist information -->
+                    <div class="w-full flex ">
+                        <div class="w-12 flex justify-center">
+                            <div class="text-lg self-center"></div>
+                        </div>
+                        <div class="w-12 flex justify-center">
+                            <div class="text-lg self-center">Play:</div>
+                        </div>
+                        <div class="flex-1 ml-4 justify-center self-center">
+                            <div class="text-lg self-center">Name:</div>
+                        </div>
+
+                        <div class="w-32 flex justify-center">
+                            <div class="w-16 self-center">option</div>
+                            <div class="w-16 flex justify-center self-center"><i class="far fa-clock self-center"></i></div>
+                        </div>
+                    </div>
                      <song-list-item v-for="song in playlist.songs" :key="song.id" :song="song"/>
                 </div>
             </div>

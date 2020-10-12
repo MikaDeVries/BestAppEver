@@ -2,8 +2,8 @@
     <app-layout>
         <template #header>
             <h2 class="font-semibold text-xl text-gray-800 leading-tight">
-                Dashboard<i class="fas fa-hourglass-start"></i>
-            </h2>
+                Dashboard
+            </h2>    
         </template>
 
         <div class="py-12">

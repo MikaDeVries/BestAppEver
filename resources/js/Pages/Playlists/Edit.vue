@@ -80,42 +80,22 @@
 
 <script>
     import AppLayout from './../../Layouts/AppLayout'
-    import JetInputError from './../../Jetstream/InputError'
     import Playlist from './../../Components/Playlists/PlaylistComponent'
+    import Song from './../../Components/Songs/SongComponent'
+    import SongListItem from './../../Components/Songs/SongListItemComponent'
+    import DeletePlaylist from './../../Components/Playlists/DeletePlaylistButtonComponent'
 
     export default {
-
         props: ['playlist'],
         components: {
             AppLayout,
-            JetInputError,
             Playlist,
+            Song,
+            SongListItem,
+            DeletePlaylist
         },
-        data() {
-            return {
-                form: this.$inertia.form({
-                    '_method': 'PUT',
-                    name: this.playlist.name,
-                    description: this.playlist.description,
-                    thumbnail: this.playlist.thumbnail,
-                    user_id : this.playlist.user_id,
-                    
-                }, {
-                    // bag: 'updateProfileInformation',
-                    resetOnSuccess: false,
-                }),
-
-                photoPreview: null,
-            }
-        },
-        methods: {
-            submit() {
-            this.$inertia.post(`/playlists/${this.playlist.id}`, this.form)
-            },
-        },
-        
-       
-        
+        mounted(){
+        }
     }
     
 </script>
