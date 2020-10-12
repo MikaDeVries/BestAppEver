@@ -38,6 +38,10 @@
         },
         mounted(){
            
-        }
+        },
+        // play : function (){
+        //     var audio = new Audio('file://storage/app/public/upload/files/audio'+{{song.audio}}); // path to file
+        //     audio.play();
+        // }
     }
 </script>

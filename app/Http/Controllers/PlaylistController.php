@@ -106,9 +106,16 @@ class PlaylistController extends Controller
             'name' => 'required',
             'description' => 'required',
             'thumbnail' => 'required',
+            'user_id' => 'required'
             
         ]);
-        $songs->update($request->all());
+        // $playlists->update($request->all());
+        $playlist->update([
+            'name' => $request->get('name'),
+            'description' => $request->get('description'),
+            'thumbnail' => $request->get('thumbnail'),
+            'user_id' => $request->get('user_id'),
+        ]);
 
         return redirect()->route('playlists.index')
             ->with('success', 'playlists updated successfully');

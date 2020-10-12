@@ -1,9 +1,8 @@
 <template>
     <app-layout>
         <template #header>
-            <h2 class="font-semibold text-xl text-gray-800 leading-tight"> Playlist :{{Playlist.name}}</h2>
+            <h2 class="font-semibold text-xl text-gray-800 leading-tight"> Playlist :{{playlist.name}}</h2>
         </template>
-
         <div class="py-12">
             <div class="max-w-7xl mx-auto sm:px-6 lg:px-8">
                 <div class="bg-white overflow-hidden shadow-xl sm:rounded-lg">
@@ -21,13 +20,13 @@
                         </div>
                     </div>
 <!-- playlist information -->
-                   <div class="flex justify-center  bg-gray-500 bg-opacity-25 rounded  p-5 "> 
+                   
                        <div class="flex flex-wrap-reverse bg-gray-200">
-                            <div class="w-2/5 p-2">
+                            <div class="w-1/5 p-2 bg-blue-600">
                                 <!-- <img class="w-full object-cover h-48 overflow-hidden" :src="song.thumbnail" alt="Song image"> -->
                             </div>
-                            <div class="w-3/5 p-2">
-                                <div class="text-gray-700 text-center bg-black-400 p-2">
+                            <div class="w-4/5 p-2">
+                                
                                     <div class="texts-center text-xl pb-3"> 
                                         <h1>Editor</h1>
                                     </div>
@@ -65,10 +64,10 @@
                                             <button type="submit">Submit</button>
                                         </div>
                                     </form>
-                                </div>
+                                
                             </div>
                         </div>
-                    </div>
+                    
                        
                    </div>
                 </div>
@@ -80,22 +79,40 @@
 
 <script>
     import AppLayout from './../../Layouts/AppLayout'
-    import Playlist from './../../Components/Playlists/PlaylistComponent'
-    import Song from './../../Components/Songs/SongComponent'
-    import SongListItem from './../../Components/Songs/SongListItemComponent'
-    import DeletePlaylist from './../../Components/Playlists/DeletePlaylistButtonComponent'
+    // import Playlist from './../../Components/Playlists/PlaylistComponent'
+    import JetInputError from './../../Jetstream/InputError'
+    // import DeletePlaylist from './../../Components/Playlists/DeletePlaylistButtonComponent'
 
     export default {
         props: ['playlist'],
         components: {
             AppLayout,
-            Playlist,
-            Song,
-            SongListItem,
-            DeletePlaylist
+            // Playlist,
+            JetInputError,
+            // DeletePlaylist
         },
-        mounted(){
-        }
+        data() {
+            return {
+                form: this.$inertia.form({
+                    '_method': 'PUT',
+                    name: this.playlist.name,
+                    description: this.playlist.description,
+                    thumbnail: this.playlist.thumbnail,
+                    user_id : this.playlist.user_id,
+                    
+                }, {
+                    // bag: 'updateProfileInformation',
+                    resetOnSuccess: false,
+                }),
+
+                photoPreview: null,
+            }
+        },
+        methods: {
+            submit() {
+            this.$inertia.post(`/playlists/${this.playlist.id}`, this.form)
+            },
+        },
     }
     
 </script>

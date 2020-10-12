@@ -6560,6 +6560,7 @@ __webpack_require__.r(__webpack_exports__);
 //
 //
 //
+//
 /* harmony default export */ __webpack_exports__["default"] = ({
   props: ['playlist'],
   components: {},
@@ -6726,7 +6727,11 @@ __webpack_require__.r(__webpack_exports__);
   components: {
     DeleteSong: _DeleteSongButtonComponent__WEBPACK_IMPORTED_MODULE_0__["default"]
   },
-  mounted: function mounted() {}
+  mounted: function mounted() {} // play : function (){
+  //     var audio = new Audio('file://storage/app/public/upload/files/audio'+{{song.audio}}); // path to file
+  //     audio.play();
+  // }
+
 });
 
 /***/ }),
@@ -8253,10 +8258,7 @@ __webpack_require__.r(__webpack_exports__);
 "use strict";
 __webpack_require__.r(__webpack_exports__);
 /* harmony import */ var _Layouts_AppLayout__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! ./../../Layouts/AppLayout */ "./resources/js/Layouts/AppLayout.vue");
-/* harmony import */ var _Components_Playlists_PlaylistComponent__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! ./../../Components/Playlists/PlaylistComponent */ "./resources/js/Components/Playlists/PlaylistComponent.vue");
-/* harmony import */ var _Components_Songs_SongComponent__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(/*! ./../../Components/Songs/SongComponent */ "./resources/js/Components/Songs/SongComponent.vue");
-/* harmony import */ var _Components_Songs_SongListItemComponent__WEBPACK_IMPORTED_MODULE_3__ = __webpack_require__(/*! ./../../Components/Songs/SongListItemComponent */ "./resources/js/Components/Songs/SongListItemComponent.vue");
-/* harmony import */ var _Components_Playlists_DeletePlaylistButtonComponent__WEBPACK_IMPORTED_MODULE_4__ = __webpack_require__(/*! ./../../Components/Playlists/DeletePlaylistButtonComponent */ "./resources/js/Components/Playlists/DeletePlaylistButtonComponent.vue");
+/* harmony import */ var _Jetstream_InputError__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! ./../../Jetstream/InputError */ "./resources/js/Jetstream/InputError.vue");
 //
 //
 //
@@ -8336,22 +8338,38 @@ __webpack_require__.r(__webpack_exports__);
 //
 //
 //
-//
+ // import Playlist from './../../Components/Playlists/PlaylistComponent'
 
-
-
-
+ // import DeletePlaylist from './../../Components/Playlists/DeletePlaylistButtonComponent'
 
 /* harmony default export */ __webpack_exports__["default"] = ({
   props: ['playlist'],
   components: {
     AppLayout: _Layouts_AppLayout__WEBPACK_IMPORTED_MODULE_0__["default"],
-    Playlist: _Components_Playlists_PlaylistComponent__WEBPACK_IMPORTED_MODULE_1__["default"],
-    Song: _Components_Songs_SongComponent__WEBPACK_IMPORTED_MODULE_2__["default"],
-    SongListItem: _Components_Songs_SongListItemComponent__WEBPACK_IMPORTED_MODULE_3__["default"],
-    DeletePlaylist: _Components_Playlists_DeletePlaylistButtonComponent__WEBPACK_IMPORTED_MODULE_4__["default"]
+    // Playlist,
+    JetInputError: _Jetstream_InputError__WEBPACK_IMPORTED_MODULE_1__["default"] // DeletePlaylist
+
   },
-  mounted: function mounted() {}
+  data: function data() {
+    return {
+      form: this.$inertia.form({
+        '_method': 'PUT',
+        name: this.playlist.name,
+        description: this.playlist.description,
+        thumbnail: this.playlist.thumbnail,
+        user_id: this.playlist.user_id
+      }, {
+        // bag: 'updateProfileInformation',
+        resetOnSuccess: false
+      }),
+      photoPreview: null
+    };
+  },
+  methods: {
+    submit: function submit() {
+      this.$inertia.post("/playlists/".concat(this.playlist.id), this.form);
+    }
+  }
 });
 
 /***/ }),
@@ -29055,11 +29073,20 @@ var render = function() {
   var _h = _vm.$createElement
   var _c = _vm._self._c || _h
   return _c("div", { staticClass: " .w-56  lg:flex p-5" }, [
-    _c("div", {
-      staticClass:
-        "h-48 bg-blue-400 lg:h-auto lg:w-56 flex-none bg-cover rounded-t lg:rounded-t-none lg:rounded-l text-center overflow-hidden",
-      attrs: { title: "image" }
-    }),
+    _c(
+      "div",
+      {
+        staticClass:
+          "h-48 bg-blue-400 lg:h-auto lg:w-56 flex-none bg-cover rounded-t lg:rounded-t-none lg:rounded-l text-center overflow-hidden",
+        attrs: { title: "image" }
+      },
+      [
+        _c("img", {
+          staticClass: "object-cover object-center h-full w-full",
+          attrs: { src: _vm.playlist.thumbnail, alt: _vm.playlist.name }
+        })
+      ]
+    ),
     _vm._v(" "),
     _c(
       "div",
@@ -29089,20 +29116,24 @@ var render = function() {
               ])
             ]),
             _vm._v(" "),
-            _c("div", { staticClass: "pr-1" }, [
-              _c("p", { staticClass: "text-gray-700 text-base " }, [
-                _vm._v(_vm._s(_vm.playlist.thumbnail))
-              ])
-            ])
+            _vm._m(0)
           ])
         ]),
         _vm._v(" "),
-        _vm._m(0)
+        _vm._m(1)
       ]
     )
   ])
 }
 var staticRenderFns = [
+  function() {
+    var _vm = this
+    var _h = _vm.$createElement
+    var _c = _vm._self._c || _h
+    return _c("div", { staticClass: "pr-1" }, [
+      _c("p", { staticClass: "text-gray-700 text-base " }, [_vm._v("somthing")])
+    ])
+  },
   function() {
     var _vm = this
     var _h = _vm.$createElement
@@ -32307,7 +32338,7 @@ var render = function() {
                   staticClass:
                     "font-semibold text-xl text-gray-800 leading-tight"
                 },
-                [_vm._v(" Playlist :" + _vm._s(_vm.Playlist.name))]
+                [_vm._v(" Playlist :" + _vm._s(_vm.playlist.name))]
               )
             ]
           },
@@ -32353,248 +32384,212 @@ var render = function() {
                 _c("div", { staticClass: "flex w-1/5" })
               ]),
               _vm._v(" "),
-              _c(
-                "div",
-                {
-                  staticClass:
-                    "flex justify-center  bg-gray-500 bg-opacity-25 rounded  p-5 "
-                },
-                [
+              _c("div", { staticClass: "flex flex-wrap-reverse bg-gray-200" }, [
+                _c("div", { staticClass: "w-1/5 p-2 bg-blue-600" }),
+                _vm._v(" "),
+                _c("div", { staticClass: "w-4/5 p-2" }, [
+                  _c("div", { staticClass: "texts-center text-xl pb-3" }, [
+                    _c("h1", [_vm._v("Editor")])
+                  ]),
+                  _vm._v(" "),
                   _c(
-                    "div",
-                    { staticClass: "flex flex-wrap-reverse bg-gray-200" },
+                    "form",
+                    {
+                      on: {
+                        submit: function($event) {
+                          $event.preventDefault()
+                          return _vm.submit($event)
+                        }
+                      }
+                    },
                     [
-                      _c("div", { staticClass: "w-2/5 p-2" }),
-                      _vm._v(" "),
-                      _c("div", { staticClass: "w-3/5 p-2" }, [
-                        _c(
-                          "div",
-                          {
-                            staticClass:
-                              "text-gray-700 text-center bg-black-400 p-2"
-                          },
-                          [
-                            _c(
-                              "div",
-                              { staticClass: "texts-center text-xl pb-3" },
-                              [_c("h1", [_vm._v("Editor")])]
-                            ),
-                            _vm._v(" "),
-                            _c(
-                              "form",
-                              {
+                      _c("div", { staticClass: "flex flex-col" }, [
+                        _c("div", { staticClass: "flex w-1/1 p-1" }, [
+                          _c("div", { staticClass: "flex w-1/2" }, [
+                            _vm._v("Name: ")
+                          ]),
+                          _vm._v(" "),
+                          _c(
+                            "div",
+                            { staticClass: "flex w-1/2" },
+                            [
+                              _c("input", {
+                                directives: [
+                                  {
+                                    name: "model",
+                                    rawName: "v-model",
+                                    value: _vm.form.name,
+                                    expression: "form.name"
+                                  }
+                                ],
+                                staticStyle: {},
+                                attrs: { id: "name" },
+                                domProps: { value: _vm.form.name },
                                 on: {
-                                  submit: function($event) {
-                                    $event.preventDefault()
-                                    return _vm.submit($event)
+                                  input: function($event) {
+                                    if ($event.target.composing) {
+                                      return
+                                    }
+                                    _vm.$set(
+                                      _vm.form,
+                                      "name",
+                                      $event.target.value
+                                    )
                                   }
                                 }
-                              },
-                              [
-                                _c("div", { staticClass: "flex flex-col" }, [
-                                  _c("div", { staticClass: "flex w-1/1 p-1" }, [
-                                    _c("div", { staticClass: "flex w-1/2" }, [
-                                      _vm._v("Name: ")
-                                    ]),
-                                    _vm._v(" "),
-                                    _c(
-                                      "div",
-                                      { staticClass: "flex w-1/2" },
-                                      [
-                                        _c("input", {
-                                          directives: [
-                                            {
-                                              name: "model",
-                                              rawName: "v-model",
-                                              value: _vm.form.name,
-                                              expression: "form.name"
-                                            }
-                                          ],
-                                          staticStyle: {},
-                                          attrs: { id: "name" },
-                                          domProps: { value: _vm.form.name },
-                                          on: {
-                                            input: function($event) {
-                                              if ($event.target.composing) {
-                                                return
-                                              }
-                                              _vm.$set(
-                                                _vm.form,
-                                                "name",
-                                                $event.target.value
-                                              )
-                                            }
-                                          }
-                                        }),
-                                        _vm._v(" "),
-                                        _c("jet-input-error", {
-                                          staticClass: "mt-2",
-                                          attrs: {
-                                            message: _vm.form.error("name")
-                                          }
-                                        })
-                                      ],
-                                      1
+                              }),
+                              _vm._v(" "),
+                              _c("jet-input-error", {
+                                staticClass: "mt-2",
+                                attrs: { message: _vm.form.error("name") }
+                              })
+                            ],
+                            1
+                          )
+                        ]),
+                        _vm._v(" "),
+                        _c("div", { staticClass: "flex w-1/1 p-1" }, [
+                          _c("div", { staticClass: "flex w-1/2" }, [
+                            _vm._v("Description: ")
+                          ]),
+                          _vm._v(" "),
+                          _c(
+                            "div",
+                            { staticClass: "flex w-1/2" },
+                            [
+                              _c("input", {
+                                directives: [
+                                  {
+                                    name: "model",
+                                    rawName: "v-model",
+                                    value: _vm.form.description,
+                                    expression: "form.description"
+                                  }
+                                ],
+                                staticStyle: {},
+                                attrs: { id: "description" },
+                                domProps: { value: _vm.form.description },
+                                on: {
+                                  input: function($event) {
+                                    if ($event.target.composing) {
+                                      return
+                                    }
+                                    _vm.$set(
+                                      _vm.form,
+                                      "description",
+                                      $event.target.value
                                     )
-                                  ]),
-                                  _vm._v(" "),
-                                  _c("div", { staticClass: "flex w-1/1 p-1" }, [
-                                    _c("div", { staticClass: "flex w-1/2" }, [
-                                      _vm._v("Description: ")
-                                    ]),
-                                    _vm._v(" "),
-                                    _c(
-                                      "div",
-                                      { staticClass: "flex w-1/2" },
-                                      [
-                                        _c("input", {
-                                          directives: [
-                                            {
-                                              name: "model",
-                                              rawName: "v-model",
-                                              value: _vm.form.description,
-                                              expression: "form.description"
-                                            }
-                                          ],
-                                          staticStyle: {},
-                                          attrs: { id: "description" },
-                                          domProps: {
-                                            value: _vm.form.description
-                                          },
-                                          on: {
-                                            input: function($event) {
-                                              if ($event.target.composing) {
-                                                return
-                                              }
-                                              _vm.$set(
-                                                _vm.form,
-                                                "description",
-                                                $event.target.value
-                                              )
-                                            }
-                                          }
-                                        }),
-                                        _vm._v(" "),
-                                        _c("jet-input-error", {
-                                          staticClass: "mt-2",
-                                          attrs: {
-                                            message: _vm.form.error(
-                                              "description"
-                                            )
-                                          }
-                                        })
-                                      ],
-                                      1
+                                  }
+                                }
+                              }),
+                              _vm._v(" "),
+                              _c("jet-input-error", {
+                                staticClass: "mt-2",
+                                attrs: {
+                                  message: _vm.form.error("description")
+                                }
+                              })
+                            ],
+                            1
+                          )
+                        ]),
+                        _vm._v(" "),
+                        _c("div", { staticClass: "flex w-1/1 p-1" }, [
+                          _c("div", { staticClass: "flex w-1/2" }, [
+                            _vm._v("thumbnail ")
+                          ]),
+                          _vm._v(" "),
+                          _c(
+                            "div",
+                            { staticClass: "flex w-1/2" },
+                            [
+                              _c("input", {
+                                directives: [
+                                  {
+                                    name: "model",
+                                    rawName: "v-model",
+                                    value: _vm.form.thumbnail,
+                                    expression: "form.thumbnail"
+                                  }
+                                ],
+                                staticStyle: {},
+                                attrs: { id: "thumbnail" },
+                                domProps: { value: _vm.form.thumbnail },
+                                on: {
+                                  input: function($event) {
+                                    if ($event.target.composing) {
+                                      return
+                                    }
+                                    _vm.$set(
+                                      _vm.form,
+                                      "thumbnail",
+                                      $event.target.value
                                     )
-                                  ]),
-                                  _vm._v(" "),
-                                  _c("div", { staticClass: "flex w-1/1 p-1" }, [
-                                    _c("div", { staticClass: "flex w-1/2" }, [
-                                      _vm._v("thumbnail ")
-                                    ]),
-                                    _vm._v(" "),
-                                    _c(
-                                      "div",
-                                      { staticClass: "flex w-1/2" },
-                                      [
-                                        _c("input", {
-                                          directives: [
-                                            {
-                                              name: "model",
-                                              rawName: "v-model",
-                                              value: _vm.form.thumbnail,
-                                              expression: "form.thumbnail"
-                                            }
-                                          ],
-                                          staticStyle: {},
-                                          attrs: { id: "thumbnail" },
-                                          domProps: {
-                                            value: _vm.form.thumbnail
-                                          },
-                                          on: {
-                                            input: function($event) {
-                                              if ($event.target.composing) {
-                                                return
-                                              }
-                                              _vm.$set(
-                                                _vm.form,
-                                                "thumbnail",
-                                                $event.target.value
-                                              )
-                                            }
-                                          }
-                                        }),
-                                        _vm._v(" "),
-                                        _c("jet-input-error", {
-                                          staticClass: "mt-2",
-                                          attrs: {
-                                            message: _vm.form.error("thumbnail")
-                                          }
-                                        })
-                                      ],
-                                      1
+                                  }
+                                }
+                              }),
+                              _vm._v(" "),
+                              _c("jet-input-error", {
+                                staticClass: "mt-2",
+                                attrs: { message: _vm.form.error("thumbnail") }
+                              })
+                            ],
+                            1
+                          )
+                        ]),
+                        _vm._v(" "),
+                        _c("div", { staticClass: "flex w-1/1 p-1" }, [
+                          _c("div", { staticClass: "flex w-1/2" }, [
+                            _vm._v("user_id ")
+                          ]),
+                          _vm._v(" "),
+                          _c(
+                            "div",
+                            { staticClass: "flex w-1/2" },
+                            [
+                              _c("input", {
+                                directives: [
+                                  {
+                                    name: "model",
+                                    rawName: "v-model",
+                                    value: _vm.form.user_id,
+                                    expression: "form.user_id"
+                                  }
+                                ],
+                                staticStyle: {},
+                                attrs: { id: "user_id" },
+                                domProps: { value: _vm.form.user_id },
+                                on: {
+                                  input: function($event) {
+                                    if ($event.target.composing) {
+                                      return
+                                    }
+                                    _vm.$set(
+                                      _vm.form,
+                                      "user_id",
+                                      $event.target.value
                                     )
-                                  ]),
-                                  _vm._v(" "),
-                                  _c("div", { staticClass: "flex w-1/1 p-1" }, [
-                                    _c("div", { staticClass: "flex w-1/2" }, [
-                                      _vm._v("user_id ")
-                                    ]),
-                                    _vm._v(" "),
-                                    _c(
-                                      "div",
-                                      { staticClass: "flex w-1/2" },
-                                      [
-                                        _c("input", {
-                                          directives: [
-                                            {
-                                              name: "model",
-                                              rawName: "v-model",
-                                              value: _vm.form.user_id,
-                                              expression: "form.user_id"
-                                            }
-                                          ],
-                                          staticStyle: {},
-                                          attrs: { id: "user_id" },
-                                          domProps: { value: _vm.form.user_id },
-                                          on: {
-                                            input: function($event) {
-                                              if ($event.target.composing) {
-                                                return
-                                              }
-                                              _vm.$set(
-                                                _vm.form,
-                                                "user_id",
-                                                $event.target.value
-                                              )
-                                            }
-                                          }
-                                        }),
-                                        _vm._v(" "),
-                                        _c("jet-input-error", {
-                                          staticClass: "mt-2",
-                                          attrs: {
-                                            message: _vm.form.error("user_id")
-                                          }
-                                        })
-                                      ],
-                                      1
-                                    )
-                                  ]),
-                                  _vm._v(" "),
-                                  _c("button", { attrs: { type: "submit" } }, [
-                                    _vm._v("Submit")
-                                  ])
-                                ])
-                              ]
-                            )
-                          ]
-                        )
+                                  }
+                                }
+                              }),
+                              _vm._v(" "),
+                              _c("jet-input-error", {
+                                staticClass: "mt-2",
+                                attrs: { message: _vm.form.error("user_id") }
+                              })
+                            ],
+                            1
+                          )
+                        ]),
+                        _vm._v(" "),
+                        _c("button", { attrs: { type: "submit" } }, [
+                          _vm._v("Submit")
+                        ])
                       ])
                     ]
                   )
-                ]
-              )
+                ])
+              ])
             ]
           )
         ])

@@ -2,6 +2,7 @@
     
     <div class=" .w-56  lg:flex p-5">
         <div class="h-48 bg-blue-400 lg:h-auto lg:w-56 flex-none bg-cover rounded-t lg:rounded-t-none lg:rounded-l text-center overflow-hidden" title="image">
+            <img class="object-cover object-center h-full w-full" :src="playlist.thumbnail" :alt="playlist.name">
         </div>
         <div class="border-r border-b border-l lg:w-56 border-gray-400 lg:border-l-0 lg:border-t lg:border-gray-400 bg-white rounded-b lg:rounded-b-none lg:rounded-r p-4 flex flex-col justify-between leading-normal">
             <div >
@@ -9,7 +10,7 @@
                 
                     <div class="flex flex-row">
                         <div class="pr-1"><p class="text-gray-700 text-base ">{{playlist.description}}</p> </div>
-                        <div class="pr-1"><p class="text-gray-700 text-base ">{{playlist.thumbnail}}</p></div>
+                        <div class="pr-1"><p class="text-gray-700 text-base ">somthing</p></div>
                     </div>
                 
             </div>
