@@ -1,5 +1,6 @@
 <template>
-    <app-layout>
+    <app-layout >
+        
         <template #header>
             <div class="flex justify-between">
             <div class="flex-1">
@@ -13,32 +14,36 @@
                 </div>
             </div>
         </template>
+            <div class="my-12">
+                <div class="max-w-7xl mx-auto sm:px-6 lg:px-8">
+                    <div class="bg-white overflow-hidden shadow-xl sm:rounded-lg">
+                    
+                        <!-- playlist information -->
+                        <div class="w-full flex ">
+                            <div class="w-12 flex justify-center">
+                                <div class="text-lg self-center"></div>
+                            </div>
+                            <div class="w-12 flex justify-center">
+                                <div class="text-lg self-center">Play:</div>
+                            </div>
+                            <div class="flex-1 ml-4 justify-center self-center">
+                                <div class="text-lg self-center">Name:</div>
+                            </div>
 
-        <div class="my-12">
-            <div class="max-w-7xl mx-auto sm:px-6 lg:px-8">
-                <div class="bg-white overflow-hidden shadow-xl sm:rounded-lg">
-                 
-                    <!-- playlist information -->
-                    <div class="w-full flex ">
-                        <div class="w-12 flex justify-center">
-                            <div class="text-lg self-center"></div>
+                            <div class="w-32 flex justify-center">
+                                <div class="w-16 self-center">option</div>
+                                <div class="w-16 flex justify-center self-center"><i class="far fa-clock self-center"></i></div>
+                            </div>
                         </div>
-                        <div class="w-12 flex justify-center">
-                            <div class="text-lg self-center">Play:</div>
-                        </div>
-                        <div class="flex-1 ml-4 justify-center self-center">
-                            <div class="text-lg self-center">Name:</div>
-                        </div>
-
-                        <div class="w-32 flex justify-center">
-                            <div class="w-16 self-center">option</div>
-                            <div class="w-16 flex justify-center self-center"><i class="far fa-clock self-center"></i></div>
-                        </div>
+                        <song-list-item v-for="song in playlist.songs" :key="song.id" :song="song"/>
                     </div>
-                     <song-list-item v-for="song in playlist.songs" :key="song.id" :song="song"/>
                 </div>
             </div>
-        </div>
+            <div>
+                <!-- <playlist-bar-controles /> -->
+            </div>
+        
+        
     </app-layout>
 </template>
 
@@ -51,6 +56,7 @@
     import Song from './../../Components/Songs/SongComponent'
     import SongListItem from './../../Components/Songs/SongListItemComponent'
     import DeletePlaylist from './../../Components/Playlists/DeletePlaylistButtonComponent'
+    import PlaylistBarControles from './../../Components/Playlists/PlaylistBarControles'
 
     export default {
         props: ['playlist'],
@@ -60,6 +66,7 @@
             Song,
             SongListItem,
             DeletePlaylist,
+            PlaylistBarControles,
             
         },
         mounted(){

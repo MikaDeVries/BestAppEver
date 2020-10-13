@@ -214,6 +214,9 @@
         <!-- Modal Portal -->
         <portal-target name="modal" multiple>
         </portal-target>
+
+
+            <playlist-bar-controles />
     </div>
 </template>
 
@@ -224,6 +227,8 @@
     import JetDropdownLink from './../Jetstream/DropdownLink'
     import JetNavLink from './../Jetstream/NavLink'
     import JetResponsiveNavLink from './../Jetstream/ResponsiveNavLink'
+    import PlaylistBarControles from './../Components/Playlists/PlaylistBarControles'
+
 
     export default {
         components: {
@@ -233,6 +238,7 @@
             JetDropdownLink,
             JetNavLink,
             JetResponsiveNavLink,
+            PlaylistBarControles
         },
 
         data() {

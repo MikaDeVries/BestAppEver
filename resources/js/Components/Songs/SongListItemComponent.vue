@@ -11,9 +11,14 @@
                 <img class="object-cover object-center h-12 w-12" :src="song.thumbnail" :alt="song.name">
             </inertia-link>
             </div>
-            <div @click="startMusic()" class="w-12 flex justify-center" id="playButton"   ref="playButton">
-                <i  class="far fa-play-circle text-2xl self-center  cursor-pointer"></i>
-            </div>
+
+            <button id="play"  class="play flex-1 text-xl hover:text-gray-300" v-if="!isPlaying" @click="play()" >
+                <i class="far fa-play-circle"></i></button>
+
+            <button id="pause" class="pause flex-1 text-xl hover:text-gray-300" v-else @click="pause()" >
+                <i class="far fa-pause-circle"></i>
+            </button>
+            
             <div class="flex-1 ml-4 justify-center self-center">
                 <inertia-link :href="song.permalink" class="my-auto text-lg self-center text-black hover:text-gray-500 no-underline hover:underline text-center">{{song.name}}</inertia-link>
             </div>

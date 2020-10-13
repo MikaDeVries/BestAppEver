@@ -6523,6 +6523,87 @@ __webpack_require__.r(__webpack_exports__);
 
 /***/ }),
 
+/***/ "./node_modules/babel-loader/lib/index.js?!./node_modules/vue-loader/lib/index.js?!./resources/js/Components/Playlists/PlaylistBarControles.vue?vue&type=script&lang=js&":
+/*!*****************************************************************************************************************************************************************************************!*\
+  !*** ./node_modules/babel-loader/lib??ref--4-0!./node_modules/vue-loader/lib??vue-loader-options!./resources/js/Components/Playlists/PlaylistBarControles.vue?vue&type=script&lang=js& ***!
+  \*****************************************************************************************************************************************************************************************/
+/*! exports provided: default */
+/***/ (function(module, __webpack_exports__, __webpack_require__) {
+
+"use strict";
+__webpack_require__.r(__webpack_exports__);
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+/* harmony default export */ __webpack_exports__["default"] = ({
+  props: ['playlist'],
+  components: {},
+  mounted: function mounted() {},
+  data: function data() {
+    return {
+      isPlaying: false
+    };
+  },
+  methods: {
+    play: function play() {
+      this.isPlaying = true;
+      console.log("play pressed");
+      document.getElementById("play").innerHTML = '<i class="far fa-pause-circle"></i>';
+    },
+    pause: function pause() {
+      console.log("pause pressed");
+      document.getElementById("pause").innerHTML = '<i class="far fa-play-circle"></i></button>';
+      this.isPlaying = false;
+    },
+    forward: function forward() {
+      console.log("forward pressed");
+    },
+    back: function back() {
+      console.log("back pressed");
+    }
+  }
+});
+
+/***/ }),
+
 /***/ "./node_modules/babel-loader/lib/index.js?!./node_modules/vue-loader/lib/index.js?!./resources/js/Components/Playlists/PlaylistComponent.vue?vue&type=script&lang=js&":
 /*!**************************************************************************************************************************************************************************************!*\
   !*** ./node_modules/babel-loader/lib??ref--4-0!./node_modules/vue-loader/lib??vue-loader-options!./resources/js/Components/Playlists/PlaylistComponent.vue?vue&type=script&lang=js& ***!
@@ -6692,6 +6773,11 @@ __webpack_require__.r(__webpack_exports__);
 "use strict";
 __webpack_require__.r(__webpack_exports__);
 /* harmony import */ var _DeleteSongButtonComponent__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! ./DeleteSongButtonComponent */ "./resources/js/Components/Songs/DeleteSongButtonComponent.vue");
+//
+//
+//
+//
+//
 //
 //
 //
@@ -7549,6 +7635,7 @@ __webpack_require__.r(__webpack_exports__);
 /* harmony import */ var _Jetstream_DropdownLink__WEBPACK_IMPORTED_MODULE_3__ = __webpack_require__(/*! ./../Jetstream/DropdownLink */ "./resources/js/Jetstream/DropdownLink.vue");
 /* harmony import */ var _Jetstream_NavLink__WEBPACK_IMPORTED_MODULE_4__ = __webpack_require__(/*! ./../Jetstream/NavLink */ "./resources/js/Jetstream/NavLink.vue");
 /* harmony import */ var _Jetstream_ResponsiveNavLink__WEBPACK_IMPORTED_MODULE_5__ = __webpack_require__(/*! ./../Jetstream/ResponsiveNavLink */ "./resources/js/Jetstream/ResponsiveNavLink.vue");
+/* harmony import */ var _Components_Playlists_PlaylistBarControles__WEBPACK_IMPORTED_MODULE_6__ = __webpack_require__(/*! ./../Components/Playlists/PlaylistBarControles */ "./resources/js/Components/Playlists/PlaylistBarControles.vue");
 //
 //
 //
@@ -7768,6 +7855,10 @@ __webpack_require__.r(__webpack_exports__);
 //
 //
 //
+//
+//
+//
+
 
 
 
@@ -7781,7 +7872,8 @@ __webpack_require__.r(__webpack_exports__);
     JetDropdown: _Jetstream_Dropdown__WEBPACK_IMPORTED_MODULE_2__["default"],
     JetDropdownLink: _Jetstream_DropdownLink__WEBPACK_IMPORTED_MODULE_3__["default"],
     JetNavLink: _Jetstream_NavLink__WEBPACK_IMPORTED_MODULE_4__["default"],
-    JetResponsiveNavLink: _Jetstream_ResponsiveNavLink__WEBPACK_IMPORTED_MODULE_5__["default"]
+    JetResponsiveNavLink: _Jetstream_ResponsiveNavLink__WEBPACK_IMPORTED_MODULE_5__["default"],
+    PlaylistBarControles: _Components_Playlists_PlaylistBarControles__WEBPACK_IMPORTED_MODULE_6__["default"]
   },
   data: function data() {
     return {
@@ -8468,6 +8560,7 @@ __webpack_require__.r(__webpack_exports__);
 /* harmony import */ var _Components_Songs_SongComponent__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(/*! ./../../Components/Songs/SongComponent */ "./resources/js/Components/Songs/SongComponent.vue");
 /* harmony import */ var _Components_Songs_SongListItemComponent__WEBPACK_IMPORTED_MODULE_3__ = __webpack_require__(/*! ./../../Components/Songs/SongListItemComponent */ "./resources/js/Components/Songs/SongListItemComponent.vue");
 /* harmony import */ var _Components_Playlists_DeletePlaylistButtonComponent__WEBPACK_IMPORTED_MODULE_4__ = __webpack_require__(/*! ./../../Components/Playlists/DeletePlaylistButtonComponent */ "./resources/js/Components/Playlists/DeletePlaylistButtonComponent.vue");
+/* harmony import */ var _Components_Playlists_PlaylistBarControles__WEBPACK_IMPORTED_MODULE_5__ = __webpack_require__(/*! ./../../Components/Playlists/PlaylistBarControles */ "./resources/js/Components/Playlists/PlaylistBarControles.vue");
 //
 //
 //
@@ -8515,6 +8608,12 @@ __webpack_require__.r(__webpack_exports__);
 //
 //
 //
+//
+//
+//
+//
+//
+
 
 
 
@@ -8527,7 +8626,8 @@ __webpack_require__.r(__webpack_exports__);
     Playlist: _Components_Playlists_PlaylistComponent__WEBPACK_IMPORTED_MODULE_1__["default"],
     Song: _Components_Songs_SongComponent__WEBPACK_IMPORTED_MODULE_2__["default"],
     SongListItem: _Components_Songs_SongListItemComponent__WEBPACK_IMPORTED_MODULE_3__["default"],
-    DeletePlaylist: _Components_Playlists_DeletePlaylistButtonComponent__WEBPACK_IMPORTED_MODULE_4__["default"]
+    DeletePlaylist: _Components_Playlists_DeletePlaylistButtonComponent__WEBPACK_IMPORTED_MODULE_4__["default"],
+    PlaylistBarControles: _Components_Playlists_PlaylistBarControles__WEBPACK_IMPORTED_MODULE_5__["default"]
   },
   mounted: function mounted() {}
 });
@@ -29087,6 +29187,120 @@ render._withStripped = true
 
 /***/ }),
 
+/***/ "./node_modules/vue-loader/lib/loaders/templateLoader.js?!./node_modules/vue-loader/lib/index.js?!./resources/js/Components/Playlists/PlaylistBarControles.vue?vue&type=template&id=8dd51efa&":
+/*!*********************************************************************************************************************************************************************************************************************************!*\
+  !*** ./node_modules/vue-loader/lib/loaders/templateLoader.js??vue-loader-options!./node_modules/vue-loader/lib??vue-loader-options!./resources/js/Components/Playlists/PlaylistBarControles.vue?vue&type=template&id=8dd51efa& ***!
+  \*********************************************************************************************************************************************************************************************************************************/
+/*! exports provided: render, staticRenderFns */
+/***/ (function(module, __webpack_exports__, __webpack_require__) {
+
+"use strict";
+__webpack_require__.r(__webpack_exports__);
+/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "render", function() { return render; });
+/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "staticRenderFns", function() { return staticRenderFns; });
+var render = function() {
+  var _vm = this
+  var _h = _vm.$createElement
+  var _c = _vm._self._c || _h
+  return _c(
+    "div",
+    { staticClass: "flex w-full bg-white h-32 sticky bottom-0" },
+    [
+      _c("div", { staticClass: "w-1/5" }),
+      _vm._v(" "),
+      _c("div", { staticClass: "w-3/5 flex flex-col m-2" }, [
+        _c(
+          "div",
+          {
+            staticClass:
+              "flex flex-col bg-gradient-to-r from-teal-400 to-blue-500 rounded text-center h-full justify-center"
+          },
+          [
+            _c("div", { staticClass: "text-white bottom-0" }),
+            _vm._v(" "),
+            _c("div", { staticClass: "text-white space-x-4" }, [
+              _c(
+                "button",
+                {
+                  staticClass: "back flex-1 text-xl hover:text-gray-300",
+                  on: {
+                    click: function($event) {
+                      return _vm.back()
+                    }
+                  }
+                },
+                [_c("i", { staticClass: "fas fa-step-backward" })]
+              ),
+              _vm._v(" "),
+              !_vm.isPlaying
+                ? _c(
+                    "button",
+                    {
+                      staticClass: "play flex-1 text-xl hover:text-gray-300",
+                      attrs: { id: "play" },
+                      on: {
+                        click: function($event) {
+                          return _vm.play()
+                        }
+                      }
+                    },
+                    [_c("i", { staticClass: "far fa-play-circle" })]
+                  )
+                : _c(
+                    "button",
+                    {
+                      staticClass: "pause flex-1 text-xl hover:text-gray-300",
+                      attrs: { id: "pause" },
+                      on: {
+                        click: function($event) {
+                          return _vm.pause()
+                        }
+                      }
+                    },
+                    [_c("i", { staticClass: "far fa-pause-circle" })]
+                  ),
+              _vm._v(" "),
+              _c(
+                "button",
+                {
+                  staticClass: "forward flex-1 text-xl hover:text-gray-300 ",
+                  on: {
+                    click: function($event) {
+                      return _vm.forward()
+                    }
+                  }
+                },
+                [_c("i", { staticClass: "fas fa-step-forward" })]
+              )
+            ]),
+            _vm._v(" "),
+            _c("div", { staticClass: "text-white top-0  text-center" }, [
+              _vm._v(
+                "\n                \n                song.length\n            "
+              )
+            ])
+          ]
+        )
+      ]),
+      _vm._v(" "),
+      _vm._m(0)
+    ]
+  )
+}
+var staticRenderFns = [
+  function() {
+    var _vm = this
+    var _h = _vm.$createElement
+    var _c = _vm._self._c || _h
+    return _c("div", { staticClass: "w-1/5" }, [_c("div", [_vm._v("volume:")])])
+  }
+]
+render._withStripped = true
+
+
+
+/***/ }),
+
 /***/ "./node_modules/vue-loader/lib/loaders/templateLoader.js?!./node_modules/vue-loader/lib/index.js?!./resources/js/Components/Playlists/PlaylistComponent.vue?vue&type=template&id=0f6bb7fc&":
 /*!******************************************************************************************************************************************************************************************************************************!*\
   !*** ./node_modules/vue-loader/lib/loaders/templateLoader.js??vue-loader-options!./node_modules/vue-loader/lib??vue-loader-options!./resources/js/Components/Playlists/PlaylistComponent.vue?vue&type=template&id=0f6bb7fc& ***!
@@ -29430,24 +29644,33 @@ var render = function() {
       1
     ),
     _vm._v(" "),
-    _c(
-      "div",
-      {
-        ref: "playButton",
-        staticClass: "w-12 flex justify-center",
-        attrs: { id: "playButton" },
-        on: {
-          click: function($event) {
-            return _vm.startMusic()
-          }
-        }
-      },
-      [
-        _c("i", {
-          staticClass: "far fa-play-circle text-2xl self-center  cursor-pointer"
-        })
-      ]
-    ),
+    !_vm.isPlaying
+      ? _c(
+          "button",
+          {
+            staticClass: "play flex-1 text-xl hover:text-gray-300",
+            attrs: { id: "play" },
+            on: {
+              click: function($event) {
+                return _vm.play()
+              }
+            }
+          },
+          [_c("i", { staticClass: "far fa-play-circle" })]
+        )
+      : _c(
+          "button",
+          {
+            staticClass: "pause flex-1 text-xl hover:text-gray-300",
+            attrs: { id: "pause" },
+            on: {
+              click: function($event) {
+                return _vm.pause()
+              }
+            }
+          },
+          [_c("i", { staticClass: "far fa-pause-circle" })]
+        ),
     _vm._v(" "),
     _c(
       "div",
@@ -31420,7 +31643,9 @@ var render = function() {
       _vm._v(" "),
       _c("main", [_vm._t("default")], 2),
       _vm._v(" "),
-      _c("portal-target", { attrs: { name: "modal", multiple: "" } })
+      _c("portal-target", { attrs: { name: "modal", multiple: "" } }),
+      _vm._v(" "),
+      _c("playlist-bar-controles")
     ],
     1
   )
@@ -32986,7 +33211,9 @@ var render = function() {
             2
           )
         ])
-      ])
+      ]),
+      _vm._v(" "),
+      _c("div")
     ]
   )
 }
@@ -47387,6 +47614,75 @@ __webpack_require__.r(__webpack_exports__);
 /* harmony reexport (safe) */ __webpack_require__.d(__webpack_exports__, "render", function() { return _node_modules_vue_loader_lib_loaders_templateLoader_js_vue_loader_options_node_modules_vue_loader_lib_index_js_vue_loader_options_DeletePlaylistButtonComponent_vue_vue_type_template_id_74631776___WEBPACK_IMPORTED_MODULE_0__["render"]; });
 
 /* harmony reexport (safe) */ __webpack_require__.d(__webpack_exports__, "staticRenderFns", function() { return _node_modules_vue_loader_lib_loaders_templateLoader_js_vue_loader_options_node_modules_vue_loader_lib_index_js_vue_loader_options_DeletePlaylistButtonComponent_vue_vue_type_template_id_74631776___WEBPACK_IMPORTED_MODULE_0__["staticRenderFns"]; });
+
+
+
+/***/ }),
+
+/***/ "./resources/js/Components/Playlists/PlaylistBarControles.vue":
+/*!********************************************************************!*\
+  !*** ./resources/js/Components/Playlists/PlaylistBarControles.vue ***!
+  \********************************************************************/
+/*! exports provided: default */
+/***/ (function(module, __webpack_exports__, __webpack_require__) {
+
+"use strict";
+__webpack_require__.r(__webpack_exports__);
+/* harmony import */ var _PlaylistBarControles_vue_vue_type_template_id_8dd51efa___WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! ./PlaylistBarControles.vue?vue&type=template&id=8dd51efa& */ "./resources/js/Components/Playlists/PlaylistBarControles.vue?vue&type=template&id=8dd51efa&");
+/* harmony import */ var _PlaylistBarControles_vue_vue_type_script_lang_js___WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! ./PlaylistBarControles.vue?vue&type=script&lang=js& */ "./resources/js/Components/Playlists/PlaylistBarControles.vue?vue&type=script&lang=js&");
+/* empty/unused harmony star reexport *//* harmony import */ var _node_modules_vue_loader_lib_runtime_componentNormalizer_js__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(/*! ../../../../node_modules/vue-loader/lib/runtime/componentNormalizer.js */ "./node_modules/vue-loader/lib/runtime/componentNormalizer.js");
+
+
+
+
+
+/* normalize component */
+
+var component = Object(_node_modules_vue_loader_lib_runtime_componentNormalizer_js__WEBPACK_IMPORTED_MODULE_2__["default"])(
+  _PlaylistBarControles_vue_vue_type_script_lang_js___WEBPACK_IMPORTED_MODULE_1__["default"],
+  _PlaylistBarControles_vue_vue_type_template_id_8dd51efa___WEBPACK_IMPORTED_MODULE_0__["render"],
+  _PlaylistBarControles_vue_vue_type_template_id_8dd51efa___WEBPACK_IMPORTED_MODULE_0__["staticRenderFns"],
+  false,
+  null,
+  null,
+  null
+  
+)
+
+/* hot reload */
+if (false) { var api; }
+component.options.__file = "resources/js/Components/Playlists/PlaylistBarControles.vue"
+/* harmony default export */ __webpack_exports__["default"] = (component.exports);
+
+/***/ }),
+
+/***/ "./resources/js/Components/Playlists/PlaylistBarControles.vue?vue&type=script&lang=js&":
+/*!*********************************************************************************************!*\
+  !*** ./resources/js/Components/Playlists/PlaylistBarControles.vue?vue&type=script&lang=js& ***!
+  \*********************************************************************************************/
+/*! exports provided: default */
+/***/ (function(module, __webpack_exports__, __webpack_require__) {
+
+"use strict";
+__webpack_require__.r(__webpack_exports__);
+/* harmony import */ var _node_modules_babel_loader_lib_index_js_ref_4_0_node_modules_vue_loader_lib_index_js_vue_loader_options_PlaylistBarControles_vue_vue_type_script_lang_js___WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! -!../../../../node_modules/babel-loader/lib??ref--4-0!../../../../node_modules/vue-loader/lib??vue-loader-options!./PlaylistBarControles.vue?vue&type=script&lang=js& */ "./node_modules/babel-loader/lib/index.js?!./node_modules/vue-loader/lib/index.js?!./resources/js/Components/Playlists/PlaylistBarControles.vue?vue&type=script&lang=js&");
+/* empty/unused harmony star reexport */ /* harmony default export */ __webpack_exports__["default"] = (_node_modules_babel_loader_lib_index_js_ref_4_0_node_modules_vue_loader_lib_index_js_vue_loader_options_PlaylistBarControles_vue_vue_type_script_lang_js___WEBPACK_IMPORTED_MODULE_0__["default"]); 
+
+/***/ }),
+
+/***/ "./resources/js/Components/Playlists/PlaylistBarControles.vue?vue&type=template&id=8dd51efa&":
+/*!***************************************************************************************************!*\
+  !*** ./resources/js/Components/Playlists/PlaylistBarControles.vue?vue&type=template&id=8dd51efa& ***!
+  \***************************************************************************************************/
+/*! exports provided: render, staticRenderFns */
+/***/ (function(module, __webpack_exports__, __webpack_require__) {
+
+"use strict";
+__webpack_require__.r(__webpack_exports__);
+/* harmony import */ var _node_modules_vue_loader_lib_loaders_templateLoader_js_vue_loader_options_node_modules_vue_loader_lib_index_js_vue_loader_options_PlaylistBarControles_vue_vue_type_template_id_8dd51efa___WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! -!../../../../node_modules/vue-loader/lib/loaders/templateLoader.js??vue-loader-options!../../../../node_modules/vue-loader/lib??vue-loader-options!./PlaylistBarControles.vue?vue&type=template&id=8dd51efa& */ "./node_modules/vue-loader/lib/loaders/templateLoader.js?!./node_modules/vue-loader/lib/index.js?!./resources/js/Components/Playlists/PlaylistBarControles.vue?vue&type=template&id=8dd51efa&");
+/* harmony reexport (safe) */ __webpack_require__.d(__webpack_exports__, "render", function() { return _node_modules_vue_loader_lib_loaders_templateLoader_js_vue_loader_options_node_modules_vue_loader_lib_index_js_vue_loader_options_PlaylistBarControles_vue_vue_type_template_id_8dd51efa___WEBPACK_IMPORTED_MODULE_0__["render"]; });
+
+/* harmony reexport (safe) */ __webpack_require__.d(__webpack_exports__, "staticRenderFns", function() { return _node_modules_vue_loader_lib_loaders_templateLoader_js_vue_loader_options_node_modules_vue_loader_lib_index_js_vue_loader_options_PlaylistBarControles_vue_vue_type_template_id_8dd51efa___WEBPACK_IMPORTED_MODULE_0__["staticRenderFns"]; });
 
 
 

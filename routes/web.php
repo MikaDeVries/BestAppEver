@@ -21,8 +21,7 @@ use Illuminate\Support\Facades\Route;
 Route::resource('songs', 'App\Http\Controllers\SongController');
 Route::resource('playlists', 'App\Http\Controllers\PlaylistController');
 
-Route::get('/', 'App\Http\Controllers\DashboardController@index');
-
+Route::middleware(['auth:sanctum', 'verified'])->get('/', 'App\Http\Controllers\DashboardController@index')->name('');
 
 
 // Route::middleware(['auth:sanctum', 'verified'])->get('/dashboard', function () {
