@@ -62,7 +62,7 @@
                                                     <jet-input-error :message="form.error('mp3_link')" class="mt-2" />
                                                 </div>
                                             </div>
-                                            <button type="submit">Submit</button>
+                                            <button class="bg-blue-500 hover:bg-blue-700 text-white font-bold py-2 px-4 border border-blue-700 rounded" type="submit">Submit</button>
                                         </div>
                                     </form>
                                 </div>

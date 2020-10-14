@@ -33240,9 +33240,15 @@ var render = function() {
                           )
                         ]),
                         _vm._v(" "),
-                        _c("button", { attrs: { type: "submit" } }, [
-                          _vm._v("Submit")
-                        ])
+                        _c(
+                          "button",
+                          {
+                            staticClass:
+                              "bg-blue-500 hover:bg-blue-700 text-white font-bold py-2 px-4 border border-blue-700 rounded",
+                            attrs: { type: "submit" }
+                          },
+                          [_vm._v("Submit")]
+                        )
                       ])
                     ]
                   )
@@ -35328,9 +35334,15 @@ var render = function() {
                                     )
                                   ]),
                                   _vm._v(" "),
-                                  _c("button", { attrs: { type: "submit" } }, [
-                                    _vm._v("Submit")
-                                  ])
+                                  _c(
+                                    "button",
+                                    {
+                                      staticClass:
+                                        "bg-blue-500 hover:bg-blue-700 text-white font-bold py-2 px-4 border border-blue-700 rounded",
+                                      attrs: { type: "submit" }
+                                    },
+                                    [_vm._v("Submit")]
+                                  )
                                 ])
                               ]
                             )
