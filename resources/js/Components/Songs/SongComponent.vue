@@ -12,7 +12,7 @@
                 <div>
                     <div class="font-bold text-black text-xl mb-2 text-center"><inertia-link :href="song.permalink" >{{song.name}}</inertia-link></div>
                     
-                <play-lists-dropdown />
+                <play-lists-dropdown :song="song" />
                         
                 </div>
                 <p class="text-gray-700 text-base flex" >

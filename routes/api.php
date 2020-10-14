@@ -3,6 +3,7 @@
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Route;
 
+use App\Models\Playlist;
 /*
 |--------------------------------------------------------------------------
 | API Routes
@@ -24,3 +25,11 @@ Route::middleware(['auth:sanctum'])->get('/user/playlists', function (Request $r
     return $user->playlists;
 });
 
+
+Route::middleware(['auth:sanctum'])->post('/user/playlists/{id}/add-song', function (Request $request,$id) {
+    $user = $request->user();
+    $playlist = Playlist::findOrFail($id);
+
+    $playlist->songs()->toggle($request->get('id'));
+    return $request->get('id');
+});

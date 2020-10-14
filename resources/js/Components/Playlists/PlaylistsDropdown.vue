@@ -1,37 +1,40 @@
 <template>
     <div>
-        <button @click="isOpen = true"></button>
-        <button @click="isOpen = false"></button>
-        <div v-if="isOpen = true">
-           <div>Your Playlists</div>
-           <div v-if="isLoaded">
-                <play-list-name v-for="playlist in items" :key="playlist.id" :playlist="playlist"/>
-           </div>
-                
-           <div>End of playlists</div>
-        </div>
+        <button @click="isOpen = true" v-if="!isOpen">Open</button>
+        <button @click="isOpen = false" v-else>Close</button> 
+        <transition name="fade">
+            <div v-if="isOpen">
+            <div>Your Playlists :</div>
+            <div v-if="isLoaded">
+                    <div v-for="playlist in items" :key="playlist.id" @click="addSongToPlaylist(playlist)" :playlist="playlist" >{{playlist.name}}</div>
+            </div>
+                    
+            <div>End of playlists</div>
+            </div>
+        </transition>
     </div>
 
 </template>
 
 <script>
 
-    import PlayListName from './../../Components/Playlists/PlaylistName'
+    import PlayListItem from './../../Components/Playlists/PlayListItem'
     export default {
         
-        props: ['playlists'],
+        props: ['playlists', 'song'],
         components: {
-            PlayListName,
+            PlayListItem,
            
         },
         data(){
             return{
-                isOpen:true,
+                isOpen: false,
+                ListIsOpen:false,
                 isLoaded: false,
                 items: []
             }
         },
-        created(){
+        mounted(){
             // if(!this.playlists){
             //     console.log('hallo haloo')
             // }
@@ -45,9 +48,22 @@
            
         },
         watch: {
-                // call again the method if the route changes
-                '$route': 'fetchData'
-            },
+            isOpen: function(val){
+                console.log('changeeee')
+            }
+        },
+        methods: {
+            addSongToPlaylist: function(playlist){
+
+                 axios.post(`/api/user/playlists/${playlist.id}/add-song`,{id:this.song.id}).then( res => {
+                   console.log(res.data)           
+            });
+            }
+        }
+        // watch: {
+        //         // call again the method if the route changes
+        //         '$route': 'fetchData'
+        //     },
         
     }
 </script>

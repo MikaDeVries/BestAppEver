@@ -1,7 +1,7 @@
 <template>
 
             
-                <div class="flex w-full bg-white h-32 sticky bottom-0">
+                <div class="flex w-full bg-white h-14 sticky bottom-0">
                     <div class="w-1/5"></div>
                     <div class="w-3/5 flex flex-col m-2">
                         <div class="flex flex-col bg-gradient-to-r from-teal-400 to-blue-500 rounded text-center h-full justify-center">

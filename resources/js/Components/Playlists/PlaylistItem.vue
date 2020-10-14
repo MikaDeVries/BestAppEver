@@ -1,8 +1,7 @@
 <template>
     
-    <div>
+    <div class="cursor-pointer">
         {{playlist.name}}
-        hallo?
     </div>
 </template>
 
