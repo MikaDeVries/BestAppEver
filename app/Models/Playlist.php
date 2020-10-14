@@ -26,4 +26,10 @@ class Playlist extends Model
     {
         return $this->belongsToMany('App\Models\Song');
     }
+
+
+    public function containsSong($song)
+    {
+        return $this->songs()->where('song_id', $song->id)->exists();
+    }
 }

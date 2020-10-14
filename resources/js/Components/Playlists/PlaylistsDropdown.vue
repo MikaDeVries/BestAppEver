@@ -6,7 +6,12 @@
             <div v-if="isOpen">
             <div>Your Playlists :</div>
             <div v-if="isLoaded">
-                    <div v-for="playlist in items" :key="playlist.id" @click="addSongToPlaylist(playlist)" :playlist="playlist" >{{playlist.name}}</div>
+                <div>
+                    <div class="w-1/4"><i class="fas fa-check"></i></div>
+                    <div class="w-3/4">
+                        <div v-for="playlist in items" :key="playlist.id" @click="addSongToPlaylist(playlist)" :playlist="playlist" >{{playlist.name}}</div>
+                    </div>
+                </div>
             </div>
                     
             <div>End of playlists</div>

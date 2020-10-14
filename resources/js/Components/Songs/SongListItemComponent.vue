@@ -3,7 +3,7 @@
    <delete-song :song="song"/>
    -->
     
-    <div class="w-full flex ">
+    <div class="group w-full flex hover:bg-cool-gray-200 ">
             
             
             <div class="w-12">
@@ -11,14 +11,14 @@
                 <img class="object-cover object-center h-12 w-12" :src="song.thumbnail" :alt="song.name">
             </inertia-link>
             </div>
+            <div class="self-center text-center  w-12">
+                <button id="play"  class="play flex-1 text-3xl text-white group-hover:text-black" v-if="!isPlaying" @click="play()" >
+                    <i class="far fa-play-circle"></i></button>
 
-            <button id="play"  class="play flex-1 text-xl hover:text-gray-300" v-if="!isPlaying" @click="play()" >
-                <i class="far fa-play-circle"></i></button>
-
-            <button id="pause" class="pause flex-1 text-xl hover:text-gray-300" v-else @click="pause()" >
-                <i class="far fa-pause-circle"></i>
-            </button>
-            
+                <button id="pause" class="pause flex-1 text-3xl text-white group-hover:text-black" v-else @click="pause()" >
+                    <i class="far fa-pause-circle"></i>
+                </button>
+            </div>
             <div class="flex-1 ml-4 justify-center self-center">
                 <inertia-link :href="song.permalink" class="my-auto text-lg self-center text-black hover:text-gray-500 no-underline hover:underline text-center">{{song.name}}</inertia-link>
             </div>

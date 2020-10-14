@@ -24,7 +24,7 @@
                                 <div class="text-lg self-center"></div>
                             </div>
                             <div class="w-12 flex justify-center">
-                                <div class="text-lg self-center">Play:</div>
+                                <div class="text-lg self-center"></div>
                             </div>
                             <div class="flex-1 ml-4 justify-center self-center">
                                 <div class="text-lg self-center">Name:</div>

@@ -6710,6 +6710,11 @@ __webpack_require__.r(__webpack_exports__);
 //
 //
 //
+//
+//
+//
+//
+//
 
 /* harmony default export */ __webpack_exports__["default"] = ({
   props: ['playlists', 'song'],
@@ -29347,7 +29352,7 @@ var render = function() {
   var _c = _vm._self._c || _h
   return _c(
     "div",
-    { staticClass: "flex w-full bg-white h-14 sticky bottom-0" },
+    { staticClass: "flex w-full bg-white h-14 absolute bottom-0" },
     [
       _c("div", { staticClass: "w-1/5" }),
       _vm._v(" "),
@@ -29590,25 +29595,34 @@ var render = function() {
               _c("div", [_vm._v("Your Playlists :")]),
               _vm._v(" "),
               _vm.isLoaded
-                ? _c(
-                    "div",
-                    _vm._l(_vm.items, function(playlist) {
-                      return _c(
+                ? _c("div", [
+                    _c("div", [
+                      _c("div", { staticClass: "w-1/4" }, [
+                        _c("i", { staticClass: "fas fa-check" })
+                      ]),
+                      _vm._v(" "),
+                      _c(
                         "div",
-                        {
-                          key: playlist.id,
-                          attrs: { playlist: playlist },
-                          on: {
-                            click: function($event) {
-                              return _vm.addSongToPlaylist(playlist)
-                            }
-                          }
-                        },
-                        [_vm._v(_vm._s(playlist.name))]
+                        { staticClass: "w-3/4" },
+                        _vm._l(_vm.items, function(playlist) {
+                          return _c(
+                            "div",
+                            {
+                              key: playlist.id,
+                              attrs: { playlist: playlist },
+                              on: {
+                                click: function($event) {
+                                  return _vm.addSongToPlaylist(playlist)
+                                }
+                              }
+                            },
+                            [_vm._v(_vm._s(playlist.name))]
+                          )
+                        }),
+                        0
                       )
-                    }),
-                    0
-                  )
+                    ])
+                  ])
                 : _vm._e(),
               _vm._v(" "),
               _c("div", [_vm._v("End of playlists")])
@@ -29866,74 +29880,82 @@ var render = function() {
   var _vm = this
   var _h = _vm.$createElement
   var _c = _vm._self._c || _h
-  return _c("div", { staticClass: "w-full flex " }, [
-    _c(
-      "div",
-      { staticClass: "w-12" },
-      [
-        _c("inertia-link", { attrs: { href: _vm.song.permalink } }, [
-          _c("img", {
-            staticClass: "object-cover object-center h-12 w-12",
-            attrs: { src: _vm.song.thumbnail, alt: _vm.song.name }
-          })
-        ])
-      ],
-      1
-    ),
-    _vm._v(" "),
-    !_vm.isPlaying
-      ? _c(
-          "button",
-          {
-            staticClass: "play flex-1 text-xl hover:text-gray-300",
-            attrs: { id: "play" },
-            on: {
-              click: function($event) {
-                return _vm.play()
-              }
-            }
-          },
-          [_c("i", { staticClass: "far fa-play-circle" })]
-        )
-      : _c(
-          "button",
-          {
-            staticClass: "pause flex-1 text-xl hover:text-gray-300",
-            attrs: { id: "pause" },
-            on: {
-              click: function($event) {
-                return _vm.pause()
-              }
-            }
-          },
-          [_c("i", { staticClass: "far fa-pause-circle" })]
-        ),
-    _vm._v(" "),
-    _c(
-      "div",
-      { staticClass: "flex-1 ml-4 justify-center self-center" },
-      [
-        _c(
-          "inertia-link",
-          {
-            staticClass:
-              "my-auto text-lg self-center text-black hover:text-gray-500 no-underline hover:underline text-center",
-            attrs: { href: _vm.song.permalink }
-          },
-          [_vm._v(_vm._s(_vm.song.name))]
-        )
-      ],
-      1
-    ),
-    _vm._v(" "),
-    _c("div", { staticClass: "w-32 flex justify-center self-center" }, [
-      _c("div", { staticClass: "w-16 self-center" }, [_vm._v("option")]),
+  return _c(
+    "div",
+    { staticClass: "group w-full flex hover:bg-cool-gray-200 " },
+    [
+      _c(
+        "div",
+        { staticClass: "w-12" },
+        [
+          _c("inertia-link", { attrs: { href: _vm.song.permalink } }, [
+            _c("img", {
+              staticClass: "object-cover object-center h-12 w-12",
+              attrs: { src: _vm.song.thumbnail, alt: _vm.song.name }
+            })
+          ])
+        ],
+        1
+      ),
       _vm._v(" "),
-      _c("div", { staticClass: "w-16 flex justify-center" }, [
-        _vm._v(_vm._s(_vm.song.length))
+      _c("div", { staticClass: "self-center text-center  w-12" }, [
+        !_vm.isPlaying
+          ? _c(
+              "button",
+              {
+                staticClass:
+                  "play flex-1 text-3xl text-white group-hover:text-black",
+                attrs: { id: "play" },
+                on: {
+                  click: function($event) {
+                    return _vm.play()
+                  }
+                }
+              },
+              [_c("i", { staticClass: "far fa-play-circle" })]
+            )
+          : _c(
+              "button",
+              {
+                staticClass:
+                  "pause flex-1 text-3xl text-white group-hover:text-black",
+                attrs: { id: "pause" },
+                on: {
+                  click: function($event) {
+                    return _vm.pause()
+                  }
+                }
+              },
+              [_c("i", { staticClass: "far fa-pause-circle" })]
+            )
+      ]),
+      _vm._v(" "),
+      _c(
+        "div",
+        { staticClass: "flex-1 ml-4 justify-center self-center" },
+        [
+          _c(
+            "inertia-link",
+            {
+              staticClass:
+                "my-auto text-lg self-center text-black hover:text-gray-500 no-underline hover:underline text-center",
+              attrs: { href: _vm.song.permalink }
+            },
+            [_vm._v(_vm._s(_vm.song.name))]
+          )
+        ],
+        1
+      ),
+      _vm._v(" "),
+      _c("div", { staticClass: "w-32 flex justify-center self-center" }, [
+        _c("div", { staticClass: "w-16 self-center" }, [_vm._v("option")]),
+        _vm._v(" "),
+        _c("div", { staticClass: "w-16 flex justify-center" }, [
+          _vm._v(_vm._s(_vm.song.length))
+        ])
       ])
-    ])
-  ])
+    ]
+  )
 }
 var staticRenderFns = []
 render._withStripped = true
@@ -33400,9 +33422,7 @@ var render = function() {
                 ]),
                 _vm._v(" "),
                 _c("div", { staticClass: "w-12 flex justify-center" }, [
-                  _c("div", { staticClass: "text-lg self-center" }, [
-                    _vm._v("Play:")
-                  ])
+                  _c("div", { staticClass: "text-lg self-center" })
                 ]),
                 _vm._v(" "),
                 _c(
