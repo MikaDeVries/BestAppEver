@@ -6650,6 +6650,99 @@ __webpack_require__.r(__webpack_exports__);
 
 /***/ }),
 
+/***/ "./node_modules/babel-loader/lib/index.js?!./node_modules/vue-loader/lib/index.js?!./resources/js/Components/Playlists/PlaylistName.vue?vue&type=script&lang=js&":
+/*!*********************************************************************************************************************************************************************************!*\
+  !*** ./node_modules/babel-loader/lib??ref--4-0!./node_modules/vue-loader/lib??vue-loader-options!./resources/js/Components/Playlists/PlaylistName.vue?vue&type=script&lang=js& ***!
+  \*********************************************************************************************************************************************************************************/
+/*! exports provided: default */
+/***/ (function(module, __webpack_exports__, __webpack_require__) {
+
+"use strict";
+__webpack_require__.r(__webpack_exports__);
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+/* harmony default export */ __webpack_exports__["default"] = ({
+  props: ['playlist'],
+  components: {},
+  // mounted(){
+  //    console.log(playlists)
+  // },
+  data: function data() {
+    return {};
+  }
+});
+
+/***/ }),
+
+/***/ "./node_modules/babel-loader/lib/index.js?!./node_modules/vue-loader/lib/index.js?!./resources/js/Components/Playlists/PlaylistsDropdown.vue?vue&type=script&lang=js&":
+/*!**************************************************************************************************************************************************************************************!*\
+  !*** ./node_modules/babel-loader/lib??ref--4-0!./node_modules/vue-loader/lib??vue-loader-options!./resources/js/Components/Playlists/PlaylistsDropdown.vue?vue&type=script&lang=js& ***!
+  \**************************************************************************************************************************************************************************************/
+/*! exports provided: default */
+/***/ (function(module, __webpack_exports__, __webpack_require__) {
+
+"use strict";
+__webpack_require__.r(__webpack_exports__);
+/* harmony import */ var _Components_Playlists_PlaylistName__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! ./../../Components/Playlists/PlaylistName */ "./resources/js/Components/Playlists/PlaylistName.vue");
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+
+/* harmony default export */ __webpack_exports__["default"] = ({
+  props: ['playlists'],
+  components: {
+    PlayListName: _Components_Playlists_PlaylistName__WEBPACK_IMPORTED_MODULE_0__["default"]
+  },
+  data: function data() {
+    return {
+      isOpen: true,
+      isLoaded: false,
+      items: []
+    };
+  },
+  created: function created() {
+    var _this = this;
+
+    // if(!this.playlists){
+    //     console.log('hallo haloo')
+    // }
+    axios.get("/api/user/playlists").then(function (res) {
+      _this.items = res.data; // this.items = res.data
+
+      _this.isLoaded = true;
+      console.log(res.data);
+    });
+  },
+  watch: {
+    // call again the method if the route changes
+    '$route': 'fetchData'
+  }
+});
+
+/***/ }),
+
 /***/ "./node_modules/babel-loader/lib/index.js?!./node_modules/vue-loader/lib/index.js?!./resources/js/Components/Songs/DeleteSongButtonComponent.vue?vue&type=script&lang=js&":
 /*!******************************************************************************************************************************************************************************************!*\
   !*** ./node_modules/babel-loader/lib??ref--4-0!./node_modules/vue-loader/lib??vue-loader-options!./resources/js/Components/Songs/DeleteSongButtonComponent.vue?vue&type=script&lang=js& ***!
@@ -6722,7 +6815,12 @@ __webpack_require__.r(__webpack_exports__);
 
 "use strict";
 __webpack_require__.r(__webpack_exports__);
-/* harmony import */ var _DeleteSongButtonComponent__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! ./DeleteSongButtonComponent */ "./resources/js/Components/Songs/DeleteSongButtonComponent.vue");
+/* harmony import */ var _Components_Playlists_PlaylistsDropdown__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! ./../../Components/Playlists/PlaylistsDropdown */ "./resources/js/Components/Playlists/PlaylistsDropdown.vue");
+//
+//
+//
+//
+//
 //
 //
 //
@@ -6754,11 +6852,13 @@ __webpack_require__.r(__webpack_exports__);
 //
 
 /* harmony default export */ __webpack_exports__["default"] = ({
-  props: ['song'],
+  props: ['song', 'playlists'],
+  // mounted(){
+  //    console.log(this.playlist)
+  // },
   components: {
-    DeleteSong: _DeleteSongButtonComponent__WEBPACK_IMPORTED_MODULE_0__["default"]
-  },
-  mounted: function mounted() {}
+    PlayListsDropdown: _Components_Playlists_PlaylistsDropdown__WEBPACK_IMPORTED_MODULE_0__["default"]
+  }
 });
 
 /***/ }),
@@ -8461,6 +8561,7 @@ __webpack_require__.r(__webpack_exports__);
 //
 //
 //
+//
  // import Playlist from './../../Components/Playlists/PlaylistComponent'
 
 
@@ -9698,7 +9799,7 @@ __webpack_require__.r(__webpack_exports__);
 
 
 /* harmony default export */ __webpack_exports__["default"] = ({
-  props: ['songs'],
+  props: ['songs', 'playlists'],
   components: {
     AppLayout: _Layouts_AppLayout__WEBPACK_IMPORTED_MODULE_0__["default"],
     Song: _Components_Songs_SongComponent__WEBPACK_IMPORTED_MODULE_1__["default"]
@@ -29399,6 +29500,93 @@ render._withStripped = true
 
 /***/ }),
 
+/***/ "./node_modules/vue-loader/lib/loaders/templateLoader.js?!./node_modules/vue-loader/lib/index.js?!./resources/js/Components/Playlists/PlaylistName.vue?vue&type=template&id=dd2a16d4&":
+/*!*************************************************************************************************************************************************************************************************************************!*\
+  !*** ./node_modules/vue-loader/lib/loaders/templateLoader.js??vue-loader-options!./node_modules/vue-loader/lib??vue-loader-options!./resources/js/Components/Playlists/PlaylistName.vue?vue&type=template&id=dd2a16d4& ***!
+  \*************************************************************************************************************************************************************************************************************************/
+/*! exports provided: render, staticRenderFns */
+/***/ (function(module, __webpack_exports__, __webpack_require__) {
+
+"use strict";
+__webpack_require__.r(__webpack_exports__);
+/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "render", function() { return render; });
+/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "staticRenderFns", function() { return staticRenderFns; });
+var render = function() {
+  var _vm = this
+  var _h = _vm.$createElement
+  var _c = _vm._self._c || _h
+  return _c("div", [
+    _vm._v("\n    " + _vm._s(_vm.playlist.name) + "\n    hallo?\n")
+  ])
+}
+var staticRenderFns = []
+render._withStripped = true
+
+
+
+/***/ }),
+
+/***/ "./node_modules/vue-loader/lib/loaders/templateLoader.js?!./node_modules/vue-loader/lib/index.js?!./resources/js/Components/Playlists/PlaylistsDropdown.vue?vue&type=template&id=009e9d6e&":
+/*!******************************************************************************************************************************************************************************************************************************!*\
+  !*** ./node_modules/vue-loader/lib/loaders/templateLoader.js??vue-loader-options!./node_modules/vue-loader/lib??vue-loader-options!./resources/js/Components/Playlists/PlaylistsDropdown.vue?vue&type=template&id=009e9d6e& ***!
+  \******************************************************************************************************************************************************************************************************************************/
+/*! exports provided: render, staticRenderFns */
+/***/ (function(module, __webpack_exports__, __webpack_require__) {
+
+"use strict";
+__webpack_require__.r(__webpack_exports__);
+/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "render", function() { return render; });
+/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "staticRenderFns", function() { return staticRenderFns; });
+var render = function() {
+  var _vm = this
+  var _h = _vm.$createElement
+  var _c = _vm._self._c || _h
+  return _c("div", [
+    _c("button", {
+      on: {
+        click: function($event) {
+          _vm.isOpen = true
+        }
+      }
+    }),
+    _vm._v(" "),
+    _c("button", {
+      on: {
+        click: function($event) {
+          _vm.isOpen = false
+        }
+      }
+    }),
+    _vm._v(" "),
+    (_vm.isOpen = true)
+      ? _c("div", [
+          _c("div", [_vm._v("Your Playlists")]),
+          _vm._v(" "),
+          _vm.isLoaded
+            ? _c(
+                "div",
+                _vm._l(_vm.items, function(playlist) {
+                  return _c("play-list-name", {
+                    key: playlist.id,
+                    attrs: { playlist: playlist }
+                  })
+                }),
+                1
+              )
+            : _vm._e(),
+          _vm._v(" "),
+          _c("div", [_vm._v("End of playlists")])
+        ])
+      : _vm._e()
+  ])
+}
+var staticRenderFns = []
+render._withStripped = true
+
+
+
+/***/ }),
+
 /***/ "./node_modules/vue-loader/lib/loaders/templateLoader.js?!./node_modules/vue-loader/lib/index.js?!./resources/js/Components/Songs/DeleteSongButtonComponent.vue?vue&type=template&id=00b638ff&":
 /*!**********************************************************************************************************************************************************************************************************************************!*\
   !*** ./node_modules/vue-loader/lib/loaders/templateLoader.js??vue-loader-options!./node_modules/vue-loader/lib??vue-loader-options!./resources/js/Components/Songs/DeleteSongButtonComponent.vue?vue&type=template&id=00b638ff& ***!
@@ -29542,11 +29730,21 @@ var render = function() {
         _c("div", { staticClass: "px-6 py-4" }, [
           _c(
             "div",
-            { staticClass: "font-bold text-black text-xl mb-2 text-center" },
             [
-              _c("inertia-link", { attrs: { href: _vm.song.permalink } }, [
-                _vm._v(_vm._s(_vm.song.name))
-              ])
+              _c(
+                "div",
+                {
+                  staticClass: "font-bold text-black text-xl mb-2 text-center"
+                },
+                [
+                  _c("inertia-link", { attrs: { href: _vm.song.permalink } }, [
+                    _vm._v(_vm._s(_vm.song.name))
+                  ])
+                ],
+                1
+              ),
+              _vm._v(" "),
+              _c("play-lists-dropdown")
             ],
             1
           ),
@@ -29560,7 +29758,7 @@ var render = function() {
                   attrs: { scr: _vm.song.mp3_link, type: "audio/mpeg" }
                 }),
                 _vm._v(
-                  "\n                 Your browser does not support the audio element.\n             "
+                  "\n                     Your browser does not support the audio element.\n                 "
                 )
               ]
             )
@@ -33126,16 +33324,6 @@ var render = function() {
                   "div",
                   { staticClass: "flex" },
                   [
-                    _c(
-                      "inertia-link",
-                      {
-                        staticClass:
-                          "text-gray-700 text-center bg-blue-400 hover:bg-blue-500 px-4 py-2 m-2",
-                        attrs: { href: "/playlists/" }
-                      },
-                      [_vm._v("Back")]
-                    ),
-                    _vm._v(" "),
                     _c(
                       "inertia-link",
                       {
@@ -47752,6 +47940,144 @@ __webpack_require__.r(__webpack_exports__);
 /* harmony reexport (safe) */ __webpack_require__.d(__webpack_exports__, "render", function() { return _node_modules_vue_loader_lib_loaders_templateLoader_js_vue_loader_options_node_modules_vue_loader_lib_index_js_vue_loader_options_PlaylistComponent_vue_vue_type_template_id_0f6bb7fc___WEBPACK_IMPORTED_MODULE_0__["render"]; });
 
 /* harmony reexport (safe) */ __webpack_require__.d(__webpack_exports__, "staticRenderFns", function() { return _node_modules_vue_loader_lib_loaders_templateLoader_js_vue_loader_options_node_modules_vue_loader_lib_index_js_vue_loader_options_PlaylistComponent_vue_vue_type_template_id_0f6bb7fc___WEBPACK_IMPORTED_MODULE_0__["staticRenderFns"]; });
+
+
+
+/***/ }),
+
+/***/ "./resources/js/Components/Playlists/PlaylistName.vue":
+/*!************************************************************!*\
+  !*** ./resources/js/Components/Playlists/PlaylistName.vue ***!
+  \************************************************************/
+/*! exports provided: default */
+/***/ (function(module, __webpack_exports__, __webpack_require__) {
+
+"use strict";
+__webpack_require__.r(__webpack_exports__);
+/* harmony import */ var _PlaylistName_vue_vue_type_template_id_dd2a16d4___WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! ./PlaylistName.vue?vue&type=template&id=dd2a16d4& */ "./resources/js/Components/Playlists/PlaylistName.vue?vue&type=template&id=dd2a16d4&");
+/* harmony import */ var _PlaylistName_vue_vue_type_script_lang_js___WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! ./PlaylistName.vue?vue&type=script&lang=js& */ "./resources/js/Components/Playlists/PlaylistName.vue?vue&type=script&lang=js&");
+/* empty/unused harmony star reexport *//* harmony import */ var _node_modules_vue_loader_lib_runtime_componentNormalizer_js__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(/*! ../../../../node_modules/vue-loader/lib/runtime/componentNormalizer.js */ "./node_modules/vue-loader/lib/runtime/componentNormalizer.js");
+
+
+
+
+
+/* normalize component */
+
+var component = Object(_node_modules_vue_loader_lib_runtime_componentNormalizer_js__WEBPACK_IMPORTED_MODULE_2__["default"])(
+  _PlaylistName_vue_vue_type_script_lang_js___WEBPACK_IMPORTED_MODULE_1__["default"],
+  _PlaylistName_vue_vue_type_template_id_dd2a16d4___WEBPACK_IMPORTED_MODULE_0__["render"],
+  _PlaylistName_vue_vue_type_template_id_dd2a16d4___WEBPACK_IMPORTED_MODULE_0__["staticRenderFns"],
+  false,
+  null,
+  null,
+  null
+  
+)
+
+/* hot reload */
+if (false) { var api; }
+component.options.__file = "resources/js/Components/Playlists/PlaylistName.vue"
+/* harmony default export */ __webpack_exports__["default"] = (component.exports);
+
+/***/ }),
+
+/***/ "./resources/js/Components/Playlists/PlaylistName.vue?vue&type=script&lang=js&":
+/*!*************************************************************************************!*\
+  !*** ./resources/js/Components/Playlists/PlaylistName.vue?vue&type=script&lang=js& ***!
+  \*************************************************************************************/
+/*! exports provided: default */
+/***/ (function(module, __webpack_exports__, __webpack_require__) {
+
+"use strict";
+__webpack_require__.r(__webpack_exports__);
+/* harmony import */ var _node_modules_babel_loader_lib_index_js_ref_4_0_node_modules_vue_loader_lib_index_js_vue_loader_options_PlaylistName_vue_vue_type_script_lang_js___WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! -!../../../../node_modules/babel-loader/lib??ref--4-0!../../../../node_modules/vue-loader/lib??vue-loader-options!./PlaylistName.vue?vue&type=script&lang=js& */ "./node_modules/babel-loader/lib/index.js?!./node_modules/vue-loader/lib/index.js?!./resources/js/Components/Playlists/PlaylistName.vue?vue&type=script&lang=js&");
+/* empty/unused harmony star reexport */ /* harmony default export */ __webpack_exports__["default"] = (_node_modules_babel_loader_lib_index_js_ref_4_0_node_modules_vue_loader_lib_index_js_vue_loader_options_PlaylistName_vue_vue_type_script_lang_js___WEBPACK_IMPORTED_MODULE_0__["default"]); 
+
+/***/ }),
+
+/***/ "./resources/js/Components/Playlists/PlaylistName.vue?vue&type=template&id=dd2a16d4&":
+/*!*******************************************************************************************!*\
+  !*** ./resources/js/Components/Playlists/PlaylistName.vue?vue&type=template&id=dd2a16d4& ***!
+  \*******************************************************************************************/
+/*! exports provided: render, staticRenderFns */
+/***/ (function(module, __webpack_exports__, __webpack_require__) {
+
+"use strict";
+__webpack_require__.r(__webpack_exports__);
+/* harmony import */ var _node_modules_vue_loader_lib_loaders_templateLoader_js_vue_loader_options_node_modules_vue_loader_lib_index_js_vue_loader_options_PlaylistName_vue_vue_type_template_id_dd2a16d4___WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! -!../../../../node_modules/vue-loader/lib/loaders/templateLoader.js??vue-loader-options!../../../../node_modules/vue-loader/lib??vue-loader-options!./PlaylistName.vue?vue&type=template&id=dd2a16d4& */ "./node_modules/vue-loader/lib/loaders/templateLoader.js?!./node_modules/vue-loader/lib/index.js?!./resources/js/Components/Playlists/PlaylistName.vue?vue&type=template&id=dd2a16d4&");
+/* harmony reexport (safe) */ __webpack_require__.d(__webpack_exports__, "render", function() { return _node_modules_vue_loader_lib_loaders_templateLoader_js_vue_loader_options_node_modules_vue_loader_lib_index_js_vue_loader_options_PlaylistName_vue_vue_type_template_id_dd2a16d4___WEBPACK_IMPORTED_MODULE_0__["render"]; });
+
+/* harmony reexport (safe) */ __webpack_require__.d(__webpack_exports__, "staticRenderFns", function() { return _node_modules_vue_loader_lib_loaders_templateLoader_js_vue_loader_options_node_modules_vue_loader_lib_index_js_vue_loader_options_PlaylistName_vue_vue_type_template_id_dd2a16d4___WEBPACK_IMPORTED_MODULE_0__["staticRenderFns"]; });
+
+
+
+/***/ }),
+
+/***/ "./resources/js/Components/Playlists/PlaylistsDropdown.vue":
+/*!*****************************************************************!*\
+  !*** ./resources/js/Components/Playlists/PlaylistsDropdown.vue ***!
+  \*****************************************************************/
+/*! exports provided: default */
+/***/ (function(module, __webpack_exports__, __webpack_require__) {
+
+"use strict";
+__webpack_require__.r(__webpack_exports__);
+/* harmony import */ var _PlaylistsDropdown_vue_vue_type_template_id_009e9d6e___WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! ./PlaylistsDropdown.vue?vue&type=template&id=009e9d6e& */ "./resources/js/Components/Playlists/PlaylistsDropdown.vue?vue&type=template&id=009e9d6e&");
+/* harmony import */ var _PlaylistsDropdown_vue_vue_type_script_lang_js___WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! ./PlaylistsDropdown.vue?vue&type=script&lang=js& */ "./resources/js/Components/Playlists/PlaylistsDropdown.vue?vue&type=script&lang=js&");
+/* empty/unused harmony star reexport *//* harmony import */ var _node_modules_vue_loader_lib_runtime_componentNormalizer_js__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(/*! ../../../../node_modules/vue-loader/lib/runtime/componentNormalizer.js */ "./node_modules/vue-loader/lib/runtime/componentNormalizer.js");
+
+
+
+
+
+/* normalize component */
+
+var component = Object(_node_modules_vue_loader_lib_runtime_componentNormalizer_js__WEBPACK_IMPORTED_MODULE_2__["default"])(
+  _PlaylistsDropdown_vue_vue_type_script_lang_js___WEBPACK_IMPORTED_MODULE_1__["default"],
+  _PlaylistsDropdown_vue_vue_type_template_id_009e9d6e___WEBPACK_IMPORTED_MODULE_0__["render"],
+  _PlaylistsDropdown_vue_vue_type_template_id_009e9d6e___WEBPACK_IMPORTED_MODULE_0__["staticRenderFns"],
+  false,
+  null,
+  null,
+  null
+  
+)
+
+/* hot reload */
+if (false) { var api; }
+component.options.__file = "resources/js/Components/Playlists/PlaylistsDropdown.vue"
+/* harmony default export */ __webpack_exports__["default"] = (component.exports);
+
+/***/ }),
+
+/***/ "./resources/js/Components/Playlists/PlaylistsDropdown.vue?vue&type=script&lang=js&":
+/*!******************************************************************************************!*\
+  !*** ./resources/js/Components/Playlists/PlaylistsDropdown.vue?vue&type=script&lang=js& ***!
+  \******************************************************************************************/
+/*! exports provided: default */
+/***/ (function(module, __webpack_exports__, __webpack_require__) {
+
+"use strict";
+__webpack_require__.r(__webpack_exports__);
+/* harmony import */ var _node_modules_babel_loader_lib_index_js_ref_4_0_node_modules_vue_loader_lib_index_js_vue_loader_options_PlaylistsDropdown_vue_vue_type_script_lang_js___WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! -!../../../../node_modules/babel-loader/lib??ref--4-0!../../../../node_modules/vue-loader/lib??vue-loader-options!./PlaylistsDropdown.vue?vue&type=script&lang=js& */ "./node_modules/babel-loader/lib/index.js?!./node_modules/vue-loader/lib/index.js?!./resources/js/Components/Playlists/PlaylistsDropdown.vue?vue&type=script&lang=js&");
+/* empty/unused harmony star reexport */ /* harmony default export */ __webpack_exports__["default"] = (_node_modules_babel_loader_lib_index_js_ref_4_0_node_modules_vue_loader_lib_index_js_vue_loader_options_PlaylistsDropdown_vue_vue_type_script_lang_js___WEBPACK_IMPORTED_MODULE_0__["default"]); 
+
+/***/ }),
+
+/***/ "./resources/js/Components/Playlists/PlaylistsDropdown.vue?vue&type=template&id=009e9d6e&":
+/*!************************************************************************************************!*\
+  !*** ./resources/js/Components/Playlists/PlaylistsDropdown.vue?vue&type=template&id=009e9d6e& ***!
+  \************************************************************************************************/
+/*! exports provided: render, staticRenderFns */
+/***/ (function(module, __webpack_exports__, __webpack_require__) {
+
+"use strict";
+__webpack_require__.r(__webpack_exports__);
+/* harmony import */ var _node_modules_vue_loader_lib_loaders_templateLoader_js_vue_loader_options_node_modules_vue_loader_lib_index_js_vue_loader_options_PlaylistsDropdown_vue_vue_type_template_id_009e9d6e___WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! -!../../../../node_modules/vue-loader/lib/loaders/templateLoader.js??vue-loader-options!../../../../node_modules/vue-loader/lib??vue-loader-options!./PlaylistsDropdown.vue?vue&type=template&id=009e9d6e& */ "./node_modules/vue-loader/lib/loaders/templateLoader.js?!./node_modules/vue-loader/lib/index.js?!./resources/js/Components/Playlists/PlaylistsDropdown.vue?vue&type=template&id=009e9d6e&");
+/* harmony reexport (safe) */ __webpack_require__.d(__webpack_exports__, "render", function() { return _node_modules_vue_loader_lib_loaders_templateLoader_js_vue_loader_options_node_modules_vue_loader_lib_index_js_vue_loader_options_PlaylistsDropdown_vue_vue_type_template_id_009e9d6e___WEBPACK_IMPORTED_MODULE_0__["render"]; });
+
+/* harmony reexport (safe) */ __webpack_require__.d(__webpack_exports__, "staticRenderFns", function() { return _node_modules_vue_loader_lib_loaders_templateLoader_js_vue_loader_options_node_modules_vue_loader_lib_index_js_vue_loader_options_PlaylistsDropdown_vue_vue_type_template_id_009e9d6e___WEBPACK_IMPORTED_MODULE_0__["staticRenderFns"]; });
 
 
 

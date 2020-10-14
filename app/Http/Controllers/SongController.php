@@ -3,6 +3,7 @@
 namespace App\Http\Controllers;
 
 use App\Models\Song;
+use App\Models\Playlist;
 use Illuminate\Http\Request;
 use App\Http\Controllers\Controller;
 use Illuminate\Support\Facades\DB;
@@ -17,14 +18,15 @@ class SongController extends Controller
      *
      * @return \Illuminate\Http\Response
      */
-    public function index()
+    public function index(Song $song) 
     {
         $songs = Song::all();
-
+        $playlists = Playlist::all();
+        $songs->load('playlists');
         // return view('songs.index', ['songs' => $songs]);
 
         return Inertia\Inertia::render('Songs/Index', [
-            'songs' => $songs
+            'songs' => $songs  , 'playlists' => $playlists
         ]);
        
     }
@@ -75,6 +77,7 @@ class SongController extends Controller
      */
     public function show(Song $song)
     {
+        $song->load('playlists');
         // return view('songs.show', ['song' => $song]);
         return Inertia\Inertia::render('Songs/Show', [
             'song' => $song

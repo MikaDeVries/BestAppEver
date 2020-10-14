@@ -29,7 +29,7 @@
     import Song from './../../Components/Songs/SongComponent'
 
     export default {
-        props: ['songs'],
+        props: ['songs','playlists'],
         components: {
             AppLayout,
             Song,

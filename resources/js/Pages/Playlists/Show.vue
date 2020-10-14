@@ -8,7 +8,7 @@
             </div>
 
                 <div class="flex">
-                        <inertia-link :href="'/playlists/'" class="text-gray-700 text-center bg-blue-400 hover:bg-blue-500 px-4 py-2 m-2">Back</inertia-link>
+                        <!-- <inertia-link :href="'/playlists/'" class="text-gray-700 text-center bg-blue-400 hover:bg-blue-500 px-4 py-2 m-2">Back</inertia-link> -->
                         <inertia-link :href="'/playlists/'+playlist.id+'/edit'" class="text-gray-700 text-center bg-blue-400 hover:bg-blue-500 px-4 py-2 m-2">Edit</inertia-link>
                         <delete-playlist :playlist="playlist"/>
                 </div>

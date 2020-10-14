@@ -18,8 +18,8 @@ use Illuminate\Support\Facades\Route;
 //     return View::make('pages.home');
 // }); 
 
-Route::resource('songs', 'App\Http\Controllers\SongController');
-Route::resource('playlists', 'App\Http\Controllers\PlaylistController');
+Route::middleware(['auth:sanctum', 'verified'])->resource('songs', 'App\Http\Controllers\SongController');
+Route::middleware(['auth:sanctum', 'verified'])->resource('playlists', 'App\Http\Controllers\PlaylistController');
 
 Route::middleware(['auth:sanctum', 'verified'])->get('/', 'App\Http\Controllers\DashboardController@index')->name('');
 
@@ -27,7 +27,7 @@ Route::middleware(['auth:sanctum', 'verified'])->get('/', 'App\Http\Controllers\
 // Route::middleware(['auth:sanctum', 'verified'])->get('/dashboard', function () {
 //     return Inertia\Inertia::render('Dashboard');
 // })->name('dashboard');
-// Route::middleware()->get('/', 'App\Http\Controllers\DashboardController@index')->name('dashboard');
+
 
 Route::middleware(['auth:sanctum', 'verified'])->get('/dashboard', 'App\Http\Controllers\DashboardController@index')->name('dashboard');
 
