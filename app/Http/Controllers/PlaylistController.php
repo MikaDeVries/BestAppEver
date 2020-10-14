@@ -19,15 +19,15 @@ class PlaylistController extends Controller
     public function index()
     {
         $playlists = Playlist::all();
-        $songs = Song::all();
-        $playlists->load('songs');
+        // $songs = Song::all();
+        // $playlists->load('songs');
+        // , 'songs' => $songs 
         
 
         // return view('playlists.index', ['playlists' => $playlists]);
         
         return Inertia\Inertia::render('Playlists/Index', [
-            'playlists' => $playlists , 'songs' => $songs  
-        ]);
+            'playlists' => $playlists   ]);
     }
 
     /**

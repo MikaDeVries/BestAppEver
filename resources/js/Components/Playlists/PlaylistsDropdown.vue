@@ -2,19 +2,17 @@
     <div>
         <button @click="isOpen = true" v-if="!isOpen">Open</button>
         <button @click="isOpen = false" v-else>Close</button> 
-        <transition name="fade">
-            <div v-if="isOpen">
-            <div>Your Playlists :</div>
-            <div v-if="isLoaded">
-                <div>
-                    <div class="w-1/4"><i class="fas fa-check"></i></div>
-                    <div class="w-3/4">
-                        <div v-for="playlist in items" :key="playlist.id" @click="addSongToPlaylist(playlist)" :playlist="playlist" >{{playlist.name}}</div>
+        <transition name="fade" >
+            <div v-if="isOpen" class="absolute bg-white rounded-lg p-6 shadow-lg border-solid border-2 border-gray-300">
+                <div class="border-b-2 border-gray-300">Your Playlists :</div>
+                <div v-if="isLoaded">
+                    <div>
+                        <div class="w-1/4 "><!--<i class="fas fa-check"></i>--></div>
+                        <div class="w-3/4">
+                            <div class="hover:bg-cool-gray-400" v-for="playlist in items" :key="playlist.id" @click="addSongToPlaylist(playlist)" :playlist="playlist" >{{playlist.name}}</div>
+                        </div>
                     </div>
                 </div>
-            </div>
-                    
-            <div>End of playlists</div>
             </div>
         </transition>
     </div>

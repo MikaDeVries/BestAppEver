@@ -16,7 +16,7 @@
                         
                 </div>
                 <p class="text-gray-700 text-base flex" >
-                    <audio controls class="flex-1 align-center">
+                    <audio controls class="hidden flex-1 align-center">
                         <source :scr="song.mp3_link" type="audio/mpeg">
                         Your browser does not support the audio element.
                     </audio>

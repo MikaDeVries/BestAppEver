@@ -6713,8 +6713,6 @@ __webpack_require__.r(__webpack_exports__);
 //
 //
 //
-//
-//
 
 /* harmony default export */ __webpack_exports__["default"] = ({
   props: ['playlists', 'song'],
@@ -29591,42 +29589,48 @@ var render = function() {
       _vm._v(" "),
       _c("transition", { attrs: { name: "fade" } }, [
         _vm.isOpen
-          ? _c("div", [
-              _c("div", [_vm._v("Your Playlists :")]),
-              _vm._v(" "),
-              _vm.isLoaded
-                ? _c("div", [
-                    _c("div", [
-                      _c("div", { staticClass: "w-1/4" }, [
-                        _c("i", { staticClass: "fas fa-check" })
-                      ]),
-                      _vm._v(" "),
-                      _c(
-                        "div",
-                        { staticClass: "w-3/4" },
-                        _vm._l(_vm.items, function(playlist) {
-                          return _c(
-                            "div",
-                            {
-                              key: playlist.id,
-                              attrs: { playlist: playlist },
-                              on: {
-                                click: function($event) {
-                                  return _vm.addSongToPlaylist(playlist)
+          ? _c(
+              "div",
+              {
+                staticClass:
+                  "absolute bg-white rounded-lg p-6 shadow-lg border-solid border-2 border-gray-300"
+              },
+              [
+                _c("div", { staticClass: "border-b-2 border-gray-300" }, [
+                  _vm._v("Your Playlists :")
+                ]),
+                _vm._v(" "),
+                _vm.isLoaded
+                  ? _c("div", [
+                      _c("div", [
+                        _c("div", { staticClass: "w-1/4 " }),
+                        _vm._v(" "),
+                        _c(
+                          "div",
+                          { staticClass: "w-3/4" },
+                          _vm._l(_vm.items, function(playlist) {
+                            return _c(
+                              "div",
+                              {
+                                key: playlist.id,
+                                staticClass: "hover:bg-cool-gray-400",
+                                attrs: { playlist: playlist },
+                                on: {
+                                  click: function($event) {
+                                    return _vm.addSongToPlaylist(playlist)
+                                  }
                                 }
-                              }
-                            },
-                            [_vm._v(_vm._s(playlist.name))]
-                          )
-                        }),
-                        0
-                      )
+                              },
+                              [_vm._v(_vm._s(playlist.name))]
+                            )
+                          }),
+                          0
+                        )
+                      ])
                     ])
-                  ])
-                : _vm._e(),
-              _vm._v(" "),
-              _c("div", [_vm._v("End of playlists")])
-            ])
+                  : _vm._e()
+              ]
+            )
           : _vm._e()
       ])
     ],
@@ -29805,7 +29809,10 @@ var render = function() {
           _c("p", { staticClass: "text-gray-700 text-base flex" }, [
             _c(
               "audio",
-              { staticClass: "flex-1 align-center", attrs: { controls: "" } },
+              {
+                staticClass: "hidden flex-1 align-center",
+                attrs: { controls: "" }
+              },
               [
                 _c("source", {
                   attrs: { scr: _vm.song.mp3_link, type: "audio/mpeg" }
@@ -31209,7 +31216,7 @@ var render = function() {
   var _c = _vm._self._c || _h
   return _c(
     "div",
-    { staticClass: "min-h-screen bg-gray-100" },
+    { staticClass: "min-h-screen relative bg-gray-100" },
     [
       _c("nav", { staticClass: "bg-white border-b border-gray-100" }, [
         _c("div", { staticClass: "max-w-7xl mx-auto px-4 sm:px-6 lg:px-8" }, [
