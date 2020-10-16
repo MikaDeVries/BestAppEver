@@ -10,49 +10,55 @@
 <!-- song buttons -->
                     
 <!-- song information -->
-                   <div class="flex justify-center  bg-gray-500 bg-opacity-25 rounded  p-5 "> 
+                   <div class="flex justify-center bg-gray-200 bg-opacity-25 rounded  p-5 "> 
                         <div class="w-full p-2">                              
-                                <div class="texts-center text-xl pb-3"> 
+                                <div class="text-center text-xl pb-3"> 
                                     <h1>Create</h1>
                                 </div>
-                                <form @submit.prevent="submit">
-                                    <div class="flex flex-col">
-                                        <div class="flex w-1/1 p-1">
-                                            <div class="flex w-1/5">Name: </div>
-                                            <div class="flex w-4/5">
-                                                <input style="text" id="name" v-model="form.name" />
-                                                <jet-input-error :message="form.error('name')" class="mt-2" />
+                                <div class="flex flex-row">
+                                    <div class="w-1/5"></div>
+                                    <div class="flex w-3/5  justify-center">
+                                        <form @submit.prevent="submit">
+                                            <div class="flex flex-col ">
+                                                <div class="flex w-1/1 p-1">
+                                                    <div class="flex w-2/5">Name: </div>
+                                                    <div class="flex w-3/5">
+                                                        <input style="text shadow appearance-none border rounded w-full py-2 px-3 text-gray-700 leading-tight focus:outline-none focus:shadow-outline" id="name" v-model="form.name" />
+                                                        <jet-input-error :message="form.error('name')" class="mt-2" />
+                                                    </div>
+                                                </div>
+                                                <div class="flex w-1/1 p-1">
+                                                    <div class="flex w-2/5">Description: </div>
+                                                    <div class="flex w-3/5">
+                                                        <input style="text" id="description" v-model="form.description" />
+                                                        <jet-input-error :message="form.error('description')" class="mt-2" />
+                                                    </div>
+                                                </div>
+                                                <div class="flex w-1/1 p-1">
+                                                    <div class="flex w-2/5">thumbnail </div>
+                                                    <div class="flex w-3/5">
+                                                        <input style="text" id="thumbnail" v-model="form.thumbnail" />
+                                                        <jet-input-error :message="form.error('thumbnail')" class="mt-2" />
+                                                    </div>
+                                                </div>
+                                                <div class="flex w-1/1 p-1">
+                                                    <div class="flex w-2/5">user_id </div>
+                                                    <div class="flex w-3/5">
+                                                        <input style="text" id="user_id" v-model="form.user_id" />
+                                                        <jet-input-error :message="form.error('user_id')" class="mt-2" />
+                                                    </div>
+                                                </div>
+                                                <div class="flex w-1/1 p-1">
+                                                    <div class="flex w-2/5"></div>
+                                                    <div class="flex w-3/5">
+                                                        <button class="bg-transparent hover:bg-blue-500 text-blue-700 font-semibold hover:text-white py-2 px-4 border border-blue-500 hover:border-transparent rounded" type="submit">Submit</button>
+                                                    </div>
+                                                </div>
                                             </div>
-                                        </div>
-                                        <div class="flex w-1/1 p-1">
-                                            <div class="flex w-1/5">Description: </div>
-                                            <div class="flex w-4/5">
-                                                <input style="text" id="description" v-model="form.description" />
-                                                <jet-input-error :message="form.error('description')" class="mt-2" />
-                                            </div>
-                                        </div>
-                                        <div class="flex w-1/1 p-1">
-                                            <div class="flex w-1/5">thumbnail </div>
-                                            <div class="flex w-4/5">
-                                                <input style="text" id="thumbnail" v-model="form.thumbnail" />
-                                                <jet-input-error :message="form.error('thumbnail')" class="mt-2" />
-                                            </div>
-                                        </div>
-                                        <div class="flex w-1/1 p-1">
-                                            <div class="flex w-1/5">user_id </div>
-                                            <div class="flex w-4/5">
-                                                <input style="text" id="user_id" v-model="form.user_id" />
-                                                <jet-input-error :message="form.error('user_id')" class="mt-2" />
-                                            </div>
-                                        </div>
-                                        <div class="flex w-1/1 p-1">
-                                            <div class="flex w-1/5"></div>
-                                            <div class="flex w-1/5">
-                                                <button class="bg-transparent hover:bg-blue-500 text-blue-700 font-semibold hover:text-white py-2 px-4 border border-blue-500 hover:border-transparent rounded" type="submit">Submit</button>
-                                            </div>
-                                        </div>
+                                        </form>
                                     </div>
-                                </form>
+                                <div class="w-1/5"></div>
+                                </div>
                             </div>
                         </div>
                    </div>

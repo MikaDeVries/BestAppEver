@@ -215,8 +215,8 @@
         <portal-target name="modal" multiple>
         </portal-target>
 
-
-            <playlist-bar-controles />
+            <!-- footer  -->
+            <!-- <playlist-bar-controles /> -->
     </div>
 </template>
 

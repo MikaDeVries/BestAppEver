@@ -1,6 +1,7 @@
 require('./bootstrap');
 require('@fortawesome/fontawesome-free/js/all.js');
 
+
 import Vue from 'vue';
 
 import { InertiaApp } from '@inertiajs/inertia-vue';

@@ -2,7 +2,7 @@
     <app-layout>
         <template #header>
             <h2 class="font-semibold text-xl text-gray-800 leading-tight">
-                Dashboard
+                Songs
             </h2>
         </template> 
         <inertia-link :href="'/playlists/create'" >

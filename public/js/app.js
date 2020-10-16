@@ -6960,6 +6960,47 @@ __webpack_require__.r(__webpack_exports__);
 
 /***/ }),
 
+/***/ "./node_modules/babel-loader/lib/index.js?!./node_modules/vue-loader/lib/index.js?!./resources/js/Components/Songs/SongSliderComponent.vue?vue&type=script&lang=js&":
+/*!************************************************************************************************************************************************************************************!*\
+  !*** ./node_modules/babel-loader/lib??ref--4-0!./node_modules/vue-loader/lib??vue-loader-options!./resources/js/Components/Songs/SongSliderComponent.vue?vue&type=script&lang=js& ***!
+  \************************************************************************************************************************************************************************************/
+/*! exports provided: default */
+/***/ (function(module, __webpack_exports__, __webpack_require__) {
+
+"use strict";
+__webpack_require__.r(__webpack_exports__);
+//
+//
+//
+//
+//
+//
+//
+//
+//
+// import songlistimport from './SongSliderLoadList';
+/* harmony default export */ __webpack_exports__["default"] = ({
+  props: ['songs'],
+  components: {// songlistimport,
+  },
+  data: function data() {
+    return {
+      SongID: 1
+    };
+  },
+  methods: {
+    getAnimalByIndex: function getAnimalByIndex(_ref) {
+      var _ref$songs = _ref.songs,
+          songs = _ref$songs === void 0 ? [] : _ref$songs,
+          _ref$index = _ref.index,
+          index = _ref$index === void 0 ? 0 : _ref$index;
+      return songs[index] || {};
+    }
+  }
+});
+
+/***/ }),
+
 /***/ "./node_modules/babel-loader/lib/index.js?!./node_modules/vue-loader/lib/index.js?!./resources/js/Jetstream/ActionMessage.vue?vue&type=script&lang=js&":
 /*!***********************************************************************************************************************************************************************!*\
   !*** ./node_modules/babel-loader/lib??ref--4-0!./node_modules/vue-loader/lib??vue-loader-options!./resources/js/Jetstream/ActionMessage.vue?vue&type=script&lang=js& ***!
@@ -8357,7 +8398,7 @@ __webpack_require__.r(__webpack_exports__);
 "use strict";
 __webpack_require__.r(__webpack_exports__);
 /* harmony import */ var _Layouts_AppLayout__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! ./../Layouts/AppLayout */ "./resources/js/Layouts/AppLayout.vue");
-/* harmony import */ var _Components_Songs_SongComponent__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! ./../Components/Songs/SongComponent */ "./resources/js/Components/Songs/SongComponent.vue");
+/* harmony import */ var _Components_Songs_SongSliderComponent__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! ./../Components/Songs/SongSliderComponent */ "./resources/js/Components/Songs/SongSliderComponent.vue");
 //
 //
 //
@@ -8378,13 +8419,98 @@ __webpack_require__.r(__webpack_exports__);
 //
 //
 //
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+ // import Song from './../Components/Songs/SongComponent'
 
 
 /* harmony default export */ __webpack_exports__["default"] = ({
   props: ['songs'],
   components: {
     AppLayout: _Layouts_AppLayout__WEBPACK_IMPORTED_MODULE_0__["default"],
-    Song: _Components_Songs_SongComponent__WEBPACK_IMPORTED_MODULE_1__["default"]
+    // Song,
+    Songslyder: _Components_Songs_SongSliderComponent__WEBPACK_IMPORTED_MODULE_1__["default"]
+  },
+  data: function data() {
+    return {
+      SongID: 1
+    };
+  },
+  methods: {
+    getAnimalByIndex: function getAnimalByIndex(_ref) {
+      var _ref$songs = _ref.songs,
+          songs = _ref$songs === void 0 ? [] : _ref$songs,
+          _ref$index = _ref.index,
+          index = _ref$index === void 0 ? 0 : _ref$index;
+      return songs[index] || {};
+    },
+    songNext: function songNext() {
+      this.SongID = this.SongID + 1;
+    }
   }
 });
 
@@ -8401,6 +8527,12 @@ __webpack_require__.r(__webpack_exports__);
 __webpack_require__.r(__webpack_exports__);
 /* harmony import */ var _Layouts_AppLayout__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! ./../../Layouts/AppLayout */ "./resources/js/Layouts/AppLayout.vue");
 /* harmony import */ var _Jetstream_InputError__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! ./../../Jetstream/InputError */ "./resources/js/Jetstream/InputError.vue");
+//
+//
+//
+//
+//
+//
 //
 //
 //
@@ -9789,7 +9921,6 @@ __webpack_require__.r(__webpack_exports__);
 __webpack_require__.r(__webpack_exports__);
 /* harmony import */ var _Layouts_AppLayout__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! ./../../Layouts/AppLayout */ "./resources/js/Layouts/AppLayout.vue");
 /* harmony import */ var _Components_Songs_SongComponent__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! ./../../Components/Songs/SongComponent */ "./resources/js/Components/Songs/SongComponent.vue");
-//
 //
 //
 //
@@ -29221,7 +29352,7 @@ var render = function() {
           }
         }
       },
-      [_vm._v("\n                Delete\n    ")]
+      [_vm._v("\r\n                Delete\r\n    ")]
     ),
     _vm._v(" "),
     _c(
@@ -29280,7 +29411,7 @@ var render = function() {
                 )
               ]
             ),
-            _vm._v(" | \n            "),
+            _vm._v(" | \r\n            "),
             _c(
               "button",
               {
@@ -29292,7 +29423,7 @@ var render = function() {
                   }
                 }
               },
-              [_vm._v("\n                Delete\n            ")]
+              [_vm._v("\r\n                Delete\r\n            ")]
             )
           ]
         )
@@ -29671,7 +29802,7 @@ var render = function() {
           }
         }
       },
-      [_vm._v("\n                Delete\n    ")]
+      [_vm._v("\r\n                Delete\r\n    ")]
     ),
     _vm._v(" "),
     _c(
@@ -29730,7 +29861,7 @@ var render = function() {
                 )
               ]
             ),
-            _vm._v(" | \n            "),
+            _vm._v(" | \r\n            "),
             _c(
               "button",
               {
@@ -29742,7 +29873,7 @@ var render = function() {
                   }
                 }
               },
-              [_vm._v("\n                Delete\n            ")]
+              [_vm._v("\r\n                Delete\r\n            ")]
             )
           ]
         )
@@ -29963,6 +30094,30 @@ var render = function() {
       ])
     ]
   )
+}
+var staticRenderFns = []
+render._withStripped = true
+
+
+
+/***/ }),
+
+/***/ "./node_modules/vue-loader/lib/loaders/templateLoader.js?!./node_modules/vue-loader/lib/index.js?!./resources/js/Components/Songs/SongSliderComponent.vue?vue&type=template&id=0f8686db&":
+/*!****************************************************************************************************************************************************************************************************************************!*\
+  !*** ./node_modules/vue-loader/lib/loaders/templateLoader.js??vue-loader-options!./node_modules/vue-loader/lib??vue-loader-options!./resources/js/Components/Songs/SongSliderComponent.vue?vue&type=template&id=0f8686db& ***!
+  \****************************************************************************************************************************************************************************************************************************/
+/*! exports provided: render, staticRenderFns */
+/***/ (function(module, __webpack_exports__, __webpack_require__) {
+
+"use strict";
+__webpack_require__.r(__webpack_exports__);
+/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "render", function() { return render; });
+/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "staticRenderFns", function() { return staticRenderFns; });
+var render = function() {
+  var _vm = this
+  var _h = _vm.$createElement
+  var _c = _vm._self._c || _h
+  return _c("div")
 }
 var staticRenderFns = []
 render._withStripped = true
@@ -31909,9 +32064,7 @@ var render = function() {
       _vm._v(" "),
       _c("main", [_vm._t("default")], 2),
       _vm._v(" "),
-      _c("portal-target", { attrs: { name: "modal", multiple: "" } }),
-      _vm._v(" "),
-      _c("playlist-bar-controles")
+      _c("portal-target", { attrs: { name: "modal", multiple: "" } })
     ],
     1
   )
@@ -32637,12 +32790,12 @@ var render = function() {
           fn: function() {
             return [
               _c(
-                "h2",
+                "h1",
                 {
                   staticClass:
                     "font-semibold text-xl text-gray-800 leading-tight"
                 },
-                [_vm._v("\n            Dashboard\n        ")]
+                [_vm._v("\n                   Dashboard\n               ")]
               )
             ]
           },
@@ -32652,26 +32805,165 @@ var render = function() {
     },
     [
       _vm._v(" "),
-      _c("div", { staticClass: "py-12" }, [
-        _c("div", { staticClass: "max-w-7xl mx-auto sm:px-6 lg:px-8" }, [
+      _c(
+        "div",
+        {
+          staticClass:
+            "flex p-20 flex-col items-center bg-gradient-to-r from-teal-400 to-blue-500 bg-opacity-50 shadow-inner"
+        },
+        [
+          _c("div", { staticClass: "w-1/5" }),
+          _vm._v(" "),
+          _c("div", { staticClass: "w-3/5  " }, [
+            _c("h1", { staticClass: "text-center pt-4 text-white text-5xl" }, [
+              _vm._v("Songify")
+            ])
+          ]),
+          _vm._v(" "),
+          _c("div", { staticClass: "w-1/5" }, [
+            _c("div", { staticClass: "text-center text-white text-xl" }, [
+              _vm._v("Welkom terug " + _vm._s(_vm.$page.user.name))
+            ])
+          ])
+        ]
+      ),
+      _vm._v(" "),
+      _c("div", { staticClass: "p-20 bg-gray-300", attrs: { id: "body" } }, [
+        _c("div", { staticClass: "flex space-x-4" }, [
           _c(
             "div",
-            { staticClass: "bg-white overflow-hidden shadow-xl sm:rounded-lg" },
+            {
+              staticClass:
+                "w-3/5 p-10 bg-white rounded border-solid border-1 border-black shadow-xl text-center "
+            },
             [
-              _c(
-                "div",
-                {
+              _c("h2", [_vm._v("Songify the playlist")]),
+              _vm._v(" "),
+              _c("div", [
+                _vm._v(
+                  '"Sed ut perspiciatis unde omnis iste natus error sit voluptatem accusantium doloremque laudantium, \n                   totam rem aperiam, eaque ipsa quae ab illo inventore veritatis et quasi architecto beatae vitae dicta sunt explicabo. \n                   Nemo enim ipsam voluptatem quia voluptas sit aspernatur aut odit aut fugit, sed quia consequuntur magni dolores eos qui \n                   ratione voluptatem sequi nesciunt. Neque porro quisquam est, qui dolorem ipsum quia dolor sit amet, consectetur, adipisci velit, \n                   sed quia non numquam eius modi tempora incidunt ut labore et dolore magnam aliquam quaerat voluptatem. Ut enim ad minima veniam,\n                    quis nostrum exercitationem ullam corporis suscipit laboriosam, nisi ut aliquid ex ea commodi consequatur? Quis autem vel eum iure \n                    reprehenderit qui in ea voluptate velit esse quam nihil molestiae consequatur, vel illum qui dolorem eum fugiat quo voluptas nulla\n                     pariatur?"\n               '
+                )
+              ])
+            ]
+          ),
+          _vm._v(" "),
+          _c("div", {
+            staticClass:
+              "w-2/5 bg-white rounded border-solid border-1 border-black shadow-xl bg-cover bg-center",
+            staticStyle: {
+              "background-image":
+                "url(https://images.unsplash.com/photo-1511671782779-c97d3d27a1d4?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=crop&w=500&q=60)"
+            }
+          })
+        ]),
+        _vm._v(" "),
+        _c("div", { staticClass: "mt-10 flex space-x-4" }, [
+          _c(
+            "div",
+            {
+              staticClass:
+                "w-1/4 bg-white rounded border-solid border-1 border-black shadow-xl"
+            },
+            [
+              _c("div", { staticClass: "m-5 text-center" }, [
+                _c("i", {
+                  staticClass: "fas fa-music text-blue-700 text-xl text-center"
+                })
+              ])
+            ]
+          ),
+          _vm._v(" "),
+          _c(
+            "div",
+            {
+              staticClass:
+                "w-1/4 bg-white rounded border-solid border-1 border-black shadow-xl"
+            },
+            [
+              _c("div", { staticClass: "m-5 text-center" }, [
+                _c("i", {
                   staticClass:
-                    "flex flex-wrap bg-gray-500 bg-opacity-25 rounded justify-center "
-                },
-                _vm._l(_vm.songs, function(song) {
-                  return _c("song", { key: song.id, attrs: { song: song } })
-                }),
-                1
-              )
+                    "far fa-list-alt text-blue-700 text-xl text-center"
+                })
+              ])
+            ]
+          ),
+          _vm._v(" "),
+          _c(
+            "div",
+            {
+              staticClass:
+                "w-1/4 bg-white rounded border-solid border-1 border-black shadow-xl"
+            },
+            [
+              _c("div", { staticClass: "m-5 text-center" }, [
+                _c("i", {
+                  staticClass: "fas fa-user text-blue-700 text-xl text-center"
+                })
+              ])
+            ]
+          ),
+          _vm._v(" "),
+          _c(
+            "div",
+            {
+              staticClass:
+                "w-1/4 bg-white rounded border-solid border-1 border-black shadow-xl"
+            },
+            [
+              _c("div", { staticClass: "m-5 text-center" }, [
+                _c("i", {
+                  staticClass:
+                    "fas fa-volume-up text-blue-700 text-xl text-center"
+                })
+              ])
             ]
           )
         ])
+      ]),
+      _vm._v(" "),
+      _c(
+        "div",
+        {
+          staticClass: "flex flex-row space-x-4 absolute",
+          attrs: { id: "slyder" }
+        },
+        [_c("songslyder")],
+        1
+      ),
+      _vm._v(" "),
+      _c("div", [
+        _c("div", [
+          _vm._v(
+            _vm._s(
+              _vm.getAnimalByIndex({ songs: _vm.songs, index: _vm.songID }).name
+            ) + "  "
+          )
+        ]),
+        _vm._v(" "),
+        _c("div", [
+          _vm._v(
+            "  Image: " +
+              _vm._s(
+                _vm.getAnimalByIndex({ songs: _vm.songs, index: _vm.SongID })
+                  .thumbnail
+              ) +
+              " "
+          )
+        ]),
+        _vm._v(" "),
+        _c(
+          "button",
+          {
+            staticClass: "bg-green p-9 ",
+            on: {
+              click: function($event) {
+                return _vm.songNext()
+              }
+            }
+          },
+          [_vm._v("Next song")]
+        )
       ])
     ]
   )
@@ -32732,224 +33024,237 @@ var render = function() {
                 "div",
                 {
                   staticClass:
-                    "flex justify-center  bg-gray-500 bg-opacity-25 rounded  p-5 "
+                    "flex justify-center bg-gray-200 bg-opacity-25 rounded  p-5 "
                 },
                 [
                   _c("div", { staticClass: "w-full p-2" }, [
-                    _c("div", { staticClass: "texts-center text-xl pb-3" }, [
+                    _c("div", { staticClass: "text-center text-xl pb-3" }, [
                       _c("h1", [_vm._v("Create")])
                     ]),
                     _vm._v(" "),
-                    _c(
-                      "form",
-                      {
-                        on: {
-                          submit: function($event) {
-                            $event.preventDefault()
-                            return _vm.submit($event)
-                          }
-                        }
-                      },
-                      [
-                        _c("div", { staticClass: "flex flex-col" }, [
-                          _c("div", { staticClass: "flex w-1/1 p-1" }, [
-                            _c("div", { staticClass: "flex w-1/5" }, [
-                              _vm._v("Name: ")
-                            ]),
-                            _vm._v(" "),
-                            _c(
-                              "div",
-                              { staticClass: "flex w-4/5" },
-                              [
-                                _c("input", {
-                                  directives: [
-                                    {
-                                      name: "model",
-                                      rawName: "v-model",
-                                      value: _vm.form.name,
-                                      expression: "form.name"
-                                    }
-                                  ],
-                                  staticStyle: {},
-                                  attrs: { id: "name" },
-                                  domProps: { value: _vm.form.name },
-                                  on: {
-                                    input: function($event) {
-                                      if ($event.target.composing) {
-                                        return
-                                      }
-                                      _vm.$set(
-                                        _vm.form,
-                                        "name",
-                                        $event.target.value
-                                      )
-                                    }
-                                  }
-                                }),
+                    _c("div", { staticClass: "flex flex-row" }, [
+                      _c("div", { staticClass: "w-1/5" }),
+                      _vm._v(" "),
+                      _c("div", { staticClass: "flex w-3/5  justify-center" }, [
+                        _c(
+                          "form",
+                          {
+                            on: {
+                              submit: function($event) {
+                                $event.preventDefault()
+                                return _vm.submit($event)
+                              }
+                            }
+                          },
+                          [
+                            _c("div", { staticClass: "flex flex-col " }, [
+                              _c("div", { staticClass: "flex w-1/1 p-1" }, [
+                                _c("div", { staticClass: "flex w-2/5" }, [
+                                  _vm._v("Name: ")
+                                ]),
                                 _vm._v(" "),
-                                _c("jet-input-error", {
-                                  staticClass: "mt-2",
-                                  attrs: { message: _vm.form.error("name") }
-                                })
-                              ],
-                              1
-                            )
-                          ]),
-                          _vm._v(" "),
-                          _c("div", { staticClass: "flex w-1/1 p-1" }, [
-                            _c("div", { staticClass: "flex w-1/5" }, [
-                              _vm._v("Description: ")
-                            ]),
-                            _vm._v(" "),
-                            _c(
-                              "div",
-                              { staticClass: "flex w-4/5" },
-                              [
-                                _c("input", {
-                                  directives: [
-                                    {
-                                      name: "model",
-                                      rawName: "v-model",
-                                      value: _vm.form.description,
-                                      expression: "form.description"
-                                    }
-                                  ],
-                                  staticStyle: {},
-                                  attrs: { id: "description" },
-                                  domProps: { value: _vm.form.description },
-                                  on: {
-                                    input: function($event) {
-                                      if ($event.target.composing) {
-                                        return
+                                _c(
+                                  "div",
+                                  { staticClass: "flex w-3/5" },
+                                  [
+                                    _c("input", {
+                                      directives: [
+                                        {
+                                          name: "model",
+                                          rawName: "v-model",
+                                          value: _vm.form.name,
+                                          expression: "form.name"
+                                        }
+                                      ],
+                                      staticStyle: {
+                                        "text shadow appearance-none border rounded w-full py-2 px-3 text-gray-700 leading-tight focus":
+                                          "outline-none focus:shadow-outline"
+                                      },
+                                      attrs: { id: "name" },
+                                      domProps: { value: _vm.form.name },
+                                      on: {
+                                        input: function($event) {
+                                          if ($event.target.composing) {
+                                            return
+                                          }
+                                          _vm.$set(
+                                            _vm.form,
+                                            "name",
+                                            $event.target.value
+                                          )
+                                        }
                                       }
-                                      _vm.$set(
-                                        _vm.form,
-                                        "description",
-                                        $event.target.value
-                                      )
-                                    }
-                                  }
-                                }),
-                                _vm._v(" "),
-                                _c("jet-input-error", {
-                                  staticClass: "mt-2",
-                                  attrs: {
-                                    message: _vm.form.error("description")
-                                  }
-                                })
-                              ],
-                              1
-                            )
-                          ]),
-                          _vm._v(" "),
-                          _c("div", { staticClass: "flex w-1/1 p-1" }, [
-                            _c("div", { staticClass: "flex w-1/5" }, [
-                              _vm._v("thumbnail ")
-                            ]),
-                            _vm._v(" "),
-                            _c(
-                              "div",
-                              { staticClass: "flex w-4/5" },
-                              [
-                                _c("input", {
-                                  directives: [
-                                    {
-                                      name: "model",
-                                      rawName: "v-model",
-                                      value: _vm.form.thumbnail,
-                                      expression: "form.thumbnail"
-                                    }
+                                    }),
+                                    _vm._v(" "),
+                                    _c("jet-input-error", {
+                                      staticClass: "mt-2",
+                                      attrs: { message: _vm.form.error("name") }
+                                    })
                                   ],
-                                  staticStyle: {},
-                                  attrs: { id: "thumbnail" },
-                                  domProps: { value: _vm.form.thumbnail },
-                                  on: {
-                                    input: function($event) {
-                                      if ($event.target.composing) {
-                                        return
-                                      }
-                                      _vm.$set(
-                                        _vm.form,
-                                        "thumbnail",
-                                        $event.target.value
-                                      )
-                                    }
-                                  }
-                                }),
+                                  1
+                                )
+                              ]),
+                              _vm._v(" "),
+                              _c("div", { staticClass: "flex w-1/1 p-1" }, [
+                                _c("div", { staticClass: "flex w-2/5" }, [
+                                  _vm._v("Description: ")
+                                ]),
                                 _vm._v(" "),
-                                _c("jet-input-error", {
-                                  staticClass: "mt-2",
-                                  attrs: {
-                                    message: _vm.form.error("thumbnail")
-                                  }
-                                })
-                              ],
-                              1
-                            )
-                          ]),
-                          _vm._v(" "),
-                          _c("div", { staticClass: "flex w-1/1 p-1" }, [
-                            _c("div", { staticClass: "flex w-1/5" }, [
-                              _vm._v("user_id ")
-                            ]),
-                            _vm._v(" "),
-                            _c(
-                              "div",
-                              { staticClass: "flex w-4/5" },
-                              [
-                                _c("input", {
-                                  directives: [
-                                    {
-                                      name: "model",
-                                      rawName: "v-model",
-                                      value: _vm.form.user_id,
-                                      expression: "form.user_id"
-                                    }
+                                _c(
+                                  "div",
+                                  { staticClass: "flex w-3/5" },
+                                  [
+                                    _c("input", {
+                                      directives: [
+                                        {
+                                          name: "model",
+                                          rawName: "v-model",
+                                          value: _vm.form.description,
+                                          expression: "form.description"
+                                        }
+                                      ],
+                                      staticStyle: {},
+                                      attrs: { id: "description" },
+                                      domProps: { value: _vm.form.description },
+                                      on: {
+                                        input: function($event) {
+                                          if ($event.target.composing) {
+                                            return
+                                          }
+                                          _vm.$set(
+                                            _vm.form,
+                                            "description",
+                                            $event.target.value
+                                          )
+                                        }
+                                      }
+                                    }),
+                                    _vm._v(" "),
+                                    _c("jet-input-error", {
+                                      staticClass: "mt-2",
+                                      attrs: {
+                                        message: _vm.form.error("description")
+                                      }
+                                    })
                                   ],
-                                  staticStyle: {},
-                                  attrs: { id: "user_id" },
-                                  domProps: { value: _vm.form.user_id },
-                                  on: {
-                                    input: function($event) {
-                                      if ($event.target.composing) {
-                                        return
-                                      }
-                                      _vm.$set(
-                                        _vm.form,
-                                        "user_id",
-                                        $event.target.value
-                                      )
-                                    }
-                                  }
-                                }),
+                                  1
+                                )
+                              ]),
+                              _vm._v(" "),
+                              _c("div", { staticClass: "flex w-1/1 p-1" }, [
+                                _c("div", { staticClass: "flex w-2/5" }, [
+                                  _vm._v("thumbnail ")
+                                ]),
                                 _vm._v(" "),
-                                _c("jet-input-error", {
-                                  staticClass: "mt-2",
-                                  attrs: { message: _vm.form.error("user_id") }
-                                })
-                              ],
-                              1
-                            )
-                          ]),
-                          _vm._v(" "),
-                          _c("div", { staticClass: "flex w-1/1 p-1" }, [
-                            _c("div", { staticClass: "flex w-1/5" }),
-                            _vm._v(" "),
-                            _c("div", { staticClass: "flex w-1/5" }, [
-                              _c(
-                                "button",
-                                {
-                                  staticClass:
-                                    "bg-transparent hover:bg-blue-500 text-blue-700 font-semibold hover:text-white py-2 px-4 border border-blue-500 hover:border-transparent rounded",
-                                  attrs: { type: "submit" }
-                                },
-                                [_vm._v("Submit")]
-                              )
+                                _c(
+                                  "div",
+                                  { staticClass: "flex w-3/5" },
+                                  [
+                                    _c("input", {
+                                      directives: [
+                                        {
+                                          name: "model",
+                                          rawName: "v-model",
+                                          value: _vm.form.thumbnail,
+                                          expression: "form.thumbnail"
+                                        }
+                                      ],
+                                      staticStyle: {},
+                                      attrs: { id: "thumbnail" },
+                                      domProps: { value: _vm.form.thumbnail },
+                                      on: {
+                                        input: function($event) {
+                                          if ($event.target.composing) {
+                                            return
+                                          }
+                                          _vm.$set(
+                                            _vm.form,
+                                            "thumbnail",
+                                            $event.target.value
+                                          )
+                                        }
+                                      }
+                                    }),
+                                    _vm._v(" "),
+                                    _c("jet-input-error", {
+                                      staticClass: "mt-2",
+                                      attrs: {
+                                        message: _vm.form.error("thumbnail")
+                                      }
+                                    })
+                                  ],
+                                  1
+                                )
+                              ]),
+                              _vm._v(" "),
+                              _c("div", { staticClass: "flex w-1/1 p-1" }, [
+                                _c("div", { staticClass: "flex w-2/5" }, [
+                                  _vm._v("user_id ")
+                                ]),
+                                _vm._v(" "),
+                                _c(
+                                  "div",
+                                  { staticClass: "flex w-3/5" },
+                                  [
+                                    _c("input", {
+                                      directives: [
+                                        {
+                                          name: "model",
+                                          rawName: "v-model",
+                                          value: _vm.form.user_id,
+                                          expression: "form.user_id"
+                                        }
+                                      ],
+                                      staticStyle: {},
+                                      attrs: { id: "user_id" },
+                                      domProps: { value: _vm.form.user_id },
+                                      on: {
+                                        input: function($event) {
+                                          if ($event.target.composing) {
+                                            return
+                                          }
+                                          _vm.$set(
+                                            _vm.form,
+                                            "user_id",
+                                            $event.target.value
+                                          )
+                                        }
+                                      }
+                                    }),
+                                    _vm._v(" "),
+                                    _c("jet-input-error", {
+                                      staticClass: "mt-2",
+                                      attrs: {
+                                        message: _vm.form.error("user_id")
+                                      }
+                                    })
+                                  ],
+                                  1
+                                )
+                              ]),
+                              _vm._v(" "),
+                              _c("div", { staticClass: "flex w-1/1 p-1" }, [
+                                _c("div", { staticClass: "flex w-2/5" }),
+                                _vm._v(" "),
+                                _c("div", { staticClass: "flex w-3/5" }, [
+                                  _c(
+                                    "button",
+                                    {
+                                      staticClass:
+                                        "bg-transparent hover:bg-blue-500 text-blue-700 font-semibold hover:text-white py-2 px-4 border border-blue-500 hover:border-transparent rounded",
+                                      attrs: { type: "submit" }
+                                    },
+                                    [_vm._v("Submit")]
+                                  )
+                                ])
+                              ])
                             ])
-                          ])
-                        ])
-                      ]
-                    )
+                          ]
+                        )
+                      ]),
+                      _vm._v(" "),
+                      _c("div", { staticClass: "w-1/5" })
+                    ])
                   ])
                 ]
               )
@@ -33297,7 +33602,7 @@ var render = function() {
                   staticClass:
                     "font-semibold text-xl text-gray-800 leading-tight"
                 },
-                [_vm._v("\n            Dashboard\n        ")]
+                [_vm._v("\n            Songs\n        ")]
               )
             ]
           },
@@ -48368,6 +48673,75 @@ __webpack_require__.r(__webpack_exports__);
 
 /***/ }),
 
+/***/ "./resources/js/Components/Songs/SongSliderComponent.vue":
+/*!***************************************************************!*\
+  !*** ./resources/js/Components/Songs/SongSliderComponent.vue ***!
+  \***************************************************************/
+/*! exports provided: default */
+/***/ (function(module, __webpack_exports__, __webpack_require__) {
+
+"use strict";
+__webpack_require__.r(__webpack_exports__);
+/* harmony import */ var _SongSliderComponent_vue_vue_type_template_id_0f8686db___WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! ./SongSliderComponent.vue?vue&type=template&id=0f8686db& */ "./resources/js/Components/Songs/SongSliderComponent.vue?vue&type=template&id=0f8686db&");
+/* harmony import */ var _SongSliderComponent_vue_vue_type_script_lang_js___WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! ./SongSliderComponent.vue?vue&type=script&lang=js& */ "./resources/js/Components/Songs/SongSliderComponent.vue?vue&type=script&lang=js&");
+/* empty/unused harmony star reexport *//* harmony import */ var _node_modules_vue_loader_lib_runtime_componentNormalizer_js__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(/*! ../../../../node_modules/vue-loader/lib/runtime/componentNormalizer.js */ "./node_modules/vue-loader/lib/runtime/componentNormalizer.js");
+
+
+
+
+
+/* normalize component */
+
+var component = Object(_node_modules_vue_loader_lib_runtime_componentNormalizer_js__WEBPACK_IMPORTED_MODULE_2__["default"])(
+  _SongSliderComponent_vue_vue_type_script_lang_js___WEBPACK_IMPORTED_MODULE_1__["default"],
+  _SongSliderComponent_vue_vue_type_template_id_0f8686db___WEBPACK_IMPORTED_MODULE_0__["render"],
+  _SongSliderComponent_vue_vue_type_template_id_0f8686db___WEBPACK_IMPORTED_MODULE_0__["staticRenderFns"],
+  false,
+  null,
+  null,
+  null
+  
+)
+
+/* hot reload */
+if (false) { var api; }
+component.options.__file = "resources/js/Components/Songs/SongSliderComponent.vue"
+/* harmony default export */ __webpack_exports__["default"] = (component.exports);
+
+/***/ }),
+
+/***/ "./resources/js/Components/Songs/SongSliderComponent.vue?vue&type=script&lang=js&":
+/*!****************************************************************************************!*\
+  !*** ./resources/js/Components/Songs/SongSliderComponent.vue?vue&type=script&lang=js& ***!
+  \****************************************************************************************/
+/*! exports provided: default */
+/***/ (function(module, __webpack_exports__, __webpack_require__) {
+
+"use strict";
+__webpack_require__.r(__webpack_exports__);
+/* harmony import */ var _node_modules_babel_loader_lib_index_js_ref_4_0_node_modules_vue_loader_lib_index_js_vue_loader_options_SongSliderComponent_vue_vue_type_script_lang_js___WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! -!../../../../node_modules/babel-loader/lib??ref--4-0!../../../../node_modules/vue-loader/lib??vue-loader-options!./SongSliderComponent.vue?vue&type=script&lang=js& */ "./node_modules/babel-loader/lib/index.js?!./node_modules/vue-loader/lib/index.js?!./resources/js/Components/Songs/SongSliderComponent.vue?vue&type=script&lang=js&");
+/* empty/unused harmony star reexport */ /* harmony default export */ __webpack_exports__["default"] = (_node_modules_babel_loader_lib_index_js_ref_4_0_node_modules_vue_loader_lib_index_js_vue_loader_options_SongSliderComponent_vue_vue_type_script_lang_js___WEBPACK_IMPORTED_MODULE_0__["default"]); 
+
+/***/ }),
+
+/***/ "./resources/js/Components/Songs/SongSliderComponent.vue?vue&type=template&id=0f8686db&":
+/*!**********************************************************************************************!*\
+  !*** ./resources/js/Components/Songs/SongSliderComponent.vue?vue&type=template&id=0f8686db& ***!
+  \**********************************************************************************************/
+/*! exports provided: render, staticRenderFns */
+/***/ (function(module, __webpack_exports__, __webpack_require__) {
+
+"use strict";
+__webpack_require__.r(__webpack_exports__);
+/* harmony import */ var _node_modules_vue_loader_lib_loaders_templateLoader_js_vue_loader_options_node_modules_vue_loader_lib_index_js_vue_loader_options_SongSliderComponent_vue_vue_type_template_id_0f8686db___WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! -!../../../../node_modules/vue-loader/lib/loaders/templateLoader.js??vue-loader-options!../../../../node_modules/vue-loader/lib??vue-loader-options!./SongSliderComponent.vue?vue&type=template&id=0f8686db& */ "./node_modules/vue-loader/lib/loaders/templateLoader.js?!./node_modules/vue-loader/lib/index.js?!./resources/js/Components/Songs/SongSliderComponent.vue?vue&type=template&id=0f8686db&");
+/* harmony reexport (safe) */ __webpack_require__.d(__webpack_exports__, "render", function() { return _node_modules_vue_loader_lib_loaders_templateLoader_js_vue_loader_options_node_modules_vue_loader_lib_index_js_vue_loader_options_SongSliderComponent_vue_vue_type_template_id_0f8686db___WEBPACK_IMPORTED_MODULE_0__["render"]; });
+
+/* harmony reexport (safe) */ __webpack_require__.d(__webpack_exports__, "staticRenderFns", function() { return _node_modules_vue_loader_lib_loaders_templateLoader_js_vue_loader_options_node_modules_vue_loader_lib_index_js_vue_loader_options_SongSliderComponent_vue_vue_type_template_id_0f8686db___WEBPACK_IMPORTED_MODULE_0__["staticRenderFns"]; });
+
+
+
+/***/ }),
+
 /***/ "./resources/js/Jetstream/ActionMessage.vue":
 /*!**************************************************!*\
   !*** ./resources/js/Jetstream/ActionMessage.vue ***!
@@ -51149,8 +51523,8 @@ window.axios.defaults.headers.common['X-Requested-With'] = 'XMLHttpRequest';
 /*! no static exports found */
 /***/ (function(module, exports, __webpack_require__) {
 
-__webpack_require__(/*! /Users/beterbekend/sites/songify/resources/js/app.js */"./resources/js/app.js");
-module.exports = __webpack_require__(/*! /Users/beterbekend/sites/songify/resources/css/app.css */"./resources/css/app.css");
+__webpack_require__(/*! D:\XAMPP\htdocs\BeterBekend\BestAppEver\resources\js\app.js */"./resources/js/app.js");
+module.exports = __webpack_require__(/*! D:\XAMPP\htdocs\BeterBekend\BestAppEver\resources\css\app.css */"./resources/css/app.css");
 
 
 /***/ })

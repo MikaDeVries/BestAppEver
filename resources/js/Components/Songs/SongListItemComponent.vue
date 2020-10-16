@@ -45,7 +45,7 @@
             playButton: { type: Boolean, default: false }
         },
         data() {
-            return {
+            return{
                 isPlaying: false
             }
         },

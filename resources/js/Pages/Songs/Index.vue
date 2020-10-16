@@ -13,7 +13,6 @@
                 <div class="bg-white overflow-hidden shadow-xl sm:rounded-lg">
                     <div class="flex flex-wrap bg-gray-500 bg-opacity-25 rounded justify-center "> 
                         <div class="flex flex-wrap bg-gray-500 bg-opacity-25 rounded justify-center ">  
-                            
                             <song v-for="song in songs" :key="song.id" :song="song"/>
                         </div>    
                     </div>
